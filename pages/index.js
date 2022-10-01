@@ -1,10 +1,37 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+//import Image from "next/image";
+import { useTheme } from "../contexts/useTheme";
+// content data:
+import { fieldsOfInterests } from "../content/fieldsOfInterests";
+// custom components:
+import Section from "../layout/Section";
+import MarkdownRenderer from "../components/MarkdownRenderer";
+// react-bootstrap:
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+// helper functions:
+import scrollToTop from "../helper-functions/scrollToTop";
+import Link from "next/link";
+
+const BIO = {
+	img: "vadim-gerko-zdjecie-cv.jpg",
+	title: "Cześć!",
+	description: `
+Nazywam się Vadim Gierko.
+
+Jestem osobą o wielu zainteresowaniach i kompetencjach twórczo-intelektualnych,
+którym poświęciłem dłuższe okresy mojego życia.
+
+W każdym z tych obszarów dążę do osiągnięcia najwyższego poziomu w zakresie
+wiedzy, umiejętności, kreatywności i wartości, którą mogę dać innym poprzez moje projekty.
+
+Scrolluj dalej i poznaj mnie lepiej!
+  `,
+};
 
 export default function Home() {
 	return (
-		<div className={styles.container}>
+		<div>
 			<Head>
 				<title>Vadim Gierko</title>
 				<meta name="author" content="Vadim Gierko" />
@@ -15,46 +42,36 @@ export default function Home() {
 				<link rel="icon" href="vadim-gerko-zdjecie-cv.jpg" />
 			</Head>
 
-			{/* <main className={styles.main}>
-				<h1 className={styles.title}>
-					Welcome to my personal website rewritten with Next.js!
-				</h1>
-				<button className="btn btn-outline-primary">Bootstrap Button</button>
-				<p className={styles.description}>
-					Get started by editing{" "}
-					<code className={styles.code}>pages/index.js</code>
-				</p>
-
-				<div className={styles.grid}>
-					<a href="https://nextjs.org/docs" className={styles.card}>
-						<h2>Documentation &rarr;</h2>
-						<p>Find in-depth information about Next.js features and API.</p>
-					</a>
-
-					<a href="https://nextjs.org/learn" className={styles.card}>
-						<h2>Learn &rarr;</h2>
-						<p>Learn about Next.js in an interactive course with quizzes!</p>
-					</a>
-
-					<a
-						href="https://github.com/vercel/next.js/tree/canary/examples"
-						className={styles.card}
-					>
-						<h2>Examples &rarr;</h2>
-						<p>Discover and deploy boilerplate example Next.js projects.</p>
-					</a>
-
-					<a
-						href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-						className={styles.card}
-					>
-						<h2>Deploy &rarr;</h2>
-						<p>
-							Instantly deploy your Next.js site to a public URL with Vercel.
-						</p>
-					</a>
-				</div>
-			</main> */}
+			<header>
+				<Container
+					className="d-flex flex-column justify-content-center align-items-center text-center"
+					style={{ minHeight: globalThis.window?.innerHeight - 70 }}
+				>
+					<Image
+						src={BIO.img}
+						roundedCircle
+						style={{ width: 200 }}
+						className="shadow"
+						alt="Vadim Gierko's avatar"
+					/>
+					<div style={{ maxWidth: 500 }}>
+						<h1 className="my-3">{BIO.title}</h1>
+						<MarkdownRenderer markdown={BIO.description} />
+					</div>
+				</Container>
+			</header>
+			{fieldsOfInterests.map((field) => (
+				<Section key={field.link}>
+					{field.Icon && <field.Icon size={80} />}
+					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
+					{field.description && (
+						<MarkdownRenderer markdown={field.description} />
+					)}
+					<Link href={field.link} onClick={scrollToTop}>
+						Więcej info
+					</Link>
+				</Section>
+			))}
 		</div>
 	);
 }

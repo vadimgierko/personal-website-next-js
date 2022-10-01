@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image";
 // react-icons:
 import { BsLinkedin, BsGithub, BsSunFill, BsMoonFill } from "react-icons/bs";
 // helper functions:
-//import scrollToTop from "../helper-functions/scrollToTop";
+import scrollToTop from "../helper-functions/scrollToTop";
 import Link from "next/link";
 
 const NAV_LINKS = [
@@ -75,7 +75,7 @@ export default function NavigationBar({ maxWidth = "" }) {
 								<Link
 									key={navLink.name}
 									href={navLink.link}
-									// onClick={scrollToTop}
+									onClick={scrollToTop}
 								>
 									<Nav.Link>{navLink.name}</Nav.Link>
 								</Link>

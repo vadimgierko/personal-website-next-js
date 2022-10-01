@@ -1,10 +1,28 @@
+import { useState, useEffect } from "react";
 import { useTheme } from "../contexts/useTheme";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-//import ScrollToTop from "../components/ScrollToTop";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function Layout({ children }) {
-	const { theme } = useTheme();
+	const { theme, setTheme } = useTheme();
+	const [isDarkModePrefered, setIsDarkModePrefered] = useState();
+
+	// DARK MODE:
+	useEffect(() => {
+		const userPrefersDarkMode = () =>
+			window.matchMedia &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches;
+		console.log("Does user prefer dark mode?", userPrefersDarkMode());
+		setIsDarkModePrefered(userPrefersDarkMode());
+	}, []);
+
+	useEffect(() => {
+		if (isDarkModePrefered) {
+			setTheme("dark");
+			console.log("App: switched to the dark mode.");
+		}
+	}, [isDarkModePrefered, setTheme]);
 
 	return (
 		<div
@@ -27,7 +45,7 @@ export default function Layout({ children }) {
 				}}
 			>
 				{children}
-				{/* <ScrollToTop /> */}
+				<ScrollToTop />
 			</main>
 			<Footer />
 		</div>

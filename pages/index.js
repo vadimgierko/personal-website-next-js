@@ -1,6 +1,4 @@
 import Head from "next/head";
-//import Image from "next/image";
-import { useTheme } from "../contexts/useTheme";
 // content data:
 import { fieldsOfInterests } from "../content/fieldsOfInterests";
 // custom components:
@@ -9,14 +7,14 @@ import MarkdownRenderer from "../components/MarkdownRenderer";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
-// helper functions:
-import scrollToTop from "../helper-functions/scrollToTop";
+// next.js:
 import Link from "next/link";
 
-const BIO = {
-	img: "vadim-gerko-zdjecie-cv.jpg",
-	title: "Cześć!",
-	description: `
+export async function getStaticProps() {
+	const bio = {
+		img: "vadim-gerko-zdjecie-cv.jpg",
+		title: "Cześć!",
+		description: `
 Nazywam się Vadim Gierko.
 
 Jestem osobą o wielu zainteresowaniach i kompetencjach twórczo-intelektualnych,
@@ -26,10 +24,37 @@ W każdym z tych obszarów dążę do osiągnięcia najwyższego poziomu w zakre
 wiedzy, umiejętności, kreatywności i wartości, którą mogę dać innym poprzez moje projekty.
 
 Scrolluj dalej i poznaj mnie lepiej!
-  `,
-};
+		`,
+	};
 
-export default function Home() {
+	function getEssentialFieldsData(fields) {
+		if (!fields || !fields.length) return;
+		let essentialData = [];
+		fields.forEach((field) =>
+			essentialData.push({
+				title: field.title,
+				description: field.description,
+				link: field.link,
+			})
+		);
+		return essentialData;
+	}
+
+	const content = {
+		bio,
+		fieldsOfInterests: getEssentialFieldsData(fieldsOfInterests),
+	};
+
+	return {
+		props: {
+			content,
+		},
+	};
+}
+
+export default function Home({ content }) {
+	console.log("passed content:", content);
+	if (!content) return null;
 	return (
 		<div>
 			<Head>
@@ -48,28 +73,26 @@ export default function Home() {
 					style={{ minHeight: globalThis.window?.innerHeight - 70 }}
 				>
 					<Image
-						src={BIO.img}
+						src={content.bio.img}
 						roundedCircle
 						style={{ width: 200 }}
 						className="shadow"
 						alt="Vadim Gierko's avatar"
 					/>
 					<div style={{ maxWidth: 500 }}>
-						<h1 className="my-3">{BIO.title}</h1>
-						<MarkdownRenderer markdown={BIO.description} />
+						<h1 className="my-3">{content.bio.title}</h1>
+						<MarkdownRenderer markdown={content.bio.description} />
 					</div>
 				</Container>
 			</header>
-			{fieldsOfInterests.map((field) => (
+			{content.fieldsOfInterests.map((field) => (
 				<Section key={field.link}>
 					{field.Icon && <field.Icon size={80} />}
 					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
 					{field.description && (
 						<MarkdownRenderer markdown={field.description} />
 					)}
-					<Link href={field.link} onClick={scrollToTop}>
-						Więcej info
-					</Link>
+					<Link href={field.link}>Więcej info</Link>
 				</Section>
 			))}
 		</div>

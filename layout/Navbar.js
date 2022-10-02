@@ -72,11 +72,7 @@ export default function NavigationBar({ maxWidth = "" }) {
 					<Navbar.Collapse id="responsive-navbar-nav">
 						<Nav className="me-auto">
 							{NAV_LINKS.map((navLink) => (
-								<Link
-									key={navLink.name}
-									href={navLink.link}
-									onClick={scrollToTop}
-								>
+								<Link key={navLink.name} href={navLink.link} passHref>
 									<Nav.Link>{navLink.name}</Nav.Link>
 								</Link>
 							))}

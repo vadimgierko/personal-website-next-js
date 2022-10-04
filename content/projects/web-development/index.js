@@ -1,5 +1,3 @@
-import { AiOutlineGithub, AiOutlineGlobal } from "react-icons/ai";
-
 export const projects_web_development = [
 	{
 		title: "Web Developer Portfolio",
@@ -10,12 +8,12 @@ export const projects_web_development = [
 		link: "/web-developer-portfolio",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/frontend-developer-portfolio",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/frontend-developer-portfolio",
 				description: "Strona www projektu",
 			},
@@ -34,12 +32,12 @@ export const projects_web_development = [
 		link: "/linky-notes",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/linky-notes",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/linky-notes",
 				description: "Strona www projektu",
 			},
@@ -74,12 +72,12 @@ export const projects_web_development = [
 		link: "/blogging-platform",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/blogging-platform",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/blogging-platform/",
 				description: "Strona www projektu",
 			},
@@ -107,12 +105,12 @@ export const projects_web_development = [
 		link: "/react-redux-router-firebase-auth-rtdb-crud-mui-app",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/react-redux-router-firebase-auth-rtdb-crud-mui-app",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/react-redux-router-firebase-auth-rtdb-crud-mui-app/",
 				description: "Strona www projektu",
 			},
@@ -138,12 +136,12 @@ export const projects_web_development = [
 		link: "/github-api-users-search-app",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/github-api-users-search-app",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/github-api-users-search-app/#/vadimgierko",
 				description: "Strona www projektu",
 			},
@@ -163,12 +161,12 @@ export const projects_web_development = [
 		link: "/mind-map-app",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/MIND-MAP-APP",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/MIND-MAP-APP/",
 				description: "Strona www projektu",
 			},
@@ -194,12 +192,12 @@ export const projects_web_development = [
 		link: "/old-school-2d-racing-game",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/old-school-2d-racing-game",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/old-school-2d-racing-game/",
 				description: "Strona www projektu",
 			},
@@ -224,12 +222,12 @@ export const projects_web_development = [
 		link: "/let-it-snow",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/let-it-snow",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/let-it-snow/",
 				description: "Strona www projektu",
 			},
@@ -253,12 +251,12 @@ export const projects_web_development = [
 		link: "/markdown-text-editor",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/markdown-text-editor",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/markdown-text-editor/",
 				description: "Strona www projektu",
 			},
@@ -278,12 +276,12 @@ export const projects_web_development = [
 		link: "pixel-draw-app",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/PixelDrawApp",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/PixelDrawApp/",
 				description: "Strona www projektu",
 			},
@@ -303,12 +301,12 @@ export const projects_web_development = [
 		link: "snake-game-clone",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/snake-game-react",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://vadimgierko.github.io/PixelDrawApp/",
 				description: "Strona www projektu",
 			},
@@ -325,12 +323,12 @@ export const projects_web_development = [
 		link: "sudoku-solver",
 		externalLinks: [
 			{
-				//Icon: AiOutlineGithub,
+				icon: "github",
 				link: "https://github.com/vadimgierko/sudoku-solver",
 				description: "Zobacz kod na GitHub",
 			},
 			{
-				//Icon: AiOutlineGlobal,
+				icon: "global",
 				link: "https://codesandbox.io/s/sudoku-solver-ip90ku",
 				description: "Strona www projektu",
 			},

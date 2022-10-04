@@ -4,18 +4,11 @@ import { projects_proces_twórczy } from "../projects/proces-twórczy";
 import { projects_web_development } from "../projects/web-development";
 import { projects_myślenie_wizualne } from "../projects/myślenie-wizualne";
 
-// react icons:
-import { AiOutlineBulb, AiOutlineLaptop } from "react-icons/ai";
-import { RiMindMap } from "react-icons/ri";
-import { MdDraw } from "react-icons/md";
-import { GiMusicalNotes } from "react-icons/gi";
-import { FaGraduationCap } from "react-icons/fa";
-
 export const fieldsOfInterests = [
 	{
 		title: "Programowanie stron i aplikacji internetowych",
 		link: "/web-development",
-		//Icon: AiOutlineLaptop,
+		icon: "laptop",
 		description: `
 Jestem programistą-samoukiem z ponad 1,5-rocznym doświadczeniem niekomercyjnym.
 Uwielbiam tworzyć i rozwijać aplikacje webowe, dzięki którym ludzie będą mogli rozwinąć skrzydła swojej kreatywności
@@ -53,7 +46,7 @@ Stworzyłem też kilka prostych gier, wizualizacji, symulacji i animacji oraz ap
 	{
 		title: "Zarządzanie Procesem Twórczym (ZPT)",
 		link: "/creative-process-management",
-		//Icon: AiOutlineBulb,
+		icon: "bulb",
 		description: `
 Od jesieni 2015 roku zacząłem badać prawidłowości zachodzące w procesie twórczym,
 początkowo opierając się na własnych doświadczeniach twórczych, a potem uzupełniając wiedzę
@@ -92,7 +85,7 @@ inspiracji, wskazówek i narzędzi, by dać z siebie w aspekcie twórczym
 	{
 		title: "Myślenie wizualne (notatki wizualne i mapy myśli)",
 		link: "/visual-thinking",
-		//Icon: MdDraw,
+		icon: "draw",
 		description: `
 Kolejną moją pasją jest notowanie wizualne.
 Cokolwiek czytam, cokolwiek planuję, cokolwiek rozwijam,
@@ -120,7 +113,7 @@ Warsztaty odbyły się w ramach festiwalu “Ukraina w centrum Lublina”.
 	{
 		title: "Muzyka",
 		link: "/music",
-		//Icon: GiMusicalNotes,
+		icon: "musicalNotes",
 		description: `
 Muzyka towarzyszy mi od najmłodszych lat.
 Jako nastolatek samodzielnie nauczyłem się grać na gitarze klasycznej,

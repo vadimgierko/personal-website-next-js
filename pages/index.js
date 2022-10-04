@@ -1,14 +1,17 @@
 import Head from "next/head";
 // content data:
 import { fieldsOfInterests } from "../content/fieldsOfInterests";
+import { icons } from "../content/icons";
 // custom components:
 import Section from "../layout/Section";
 import MarkdownRenderer from "../components/MarkdownRenderer";
+import Icon from "../components/Icon";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 // next.js:
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export async function getStaticProps() {
 	const bio = {
@@ -35,6 +38,7 @@ Scrolluj dalej i poznaj mnie lepiej!
 				title: field.title,
 				description: field.description,
 				link: field.link,
+				icon: field.icon,
 			})
 		);
 		return essentialData;
@@ -53,7 +57,12 @@ Scrolluj dalej i poznaj mnie lepiej!
 }
 
 export default function Home({ content }) {
-	console.log("passed content:", content);
+	const [windowHeight, setWindowHeight] = useState();
+
+	useEffect(() => {
+		setWindowHeight(globalThis.window.innerHeight - 70);
+	}, []);
+	//console.log("passed content:", content);
 	if (!content) return null;
 	return (
 		<div>
@@ -70,7 +79,9 @@ export default function Home({ content }) {
 			<header>
 				<Container
 					className="d-flex flex-column justify-content-center align-items-center text-center"
-					style={{ minHeight: globalThis.window?.innerHeight - 70 }}
+					style={{
+						minHeight: windowHeight,
+					}}
 				>
 					<Image
 						src={content.bio.img}
@@ -87,7 +98,7 @@ export default function Home({ content }) {
 			</header>
 			{content.fieldsOfInterests.map((field) => (
 				<Section key={field.link}>
-					{field.Icon && <field.Icon size={80} />}
+					{field.icon && <Icon IconType={icons[field.icon].Icon} size={80} />}
 					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
 					{field.description && (
 						<MarkdownRenderer markdown={field.description} />

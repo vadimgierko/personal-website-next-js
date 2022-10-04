@@ -6,8 +6,7 @@ import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 // react-icons:
 import { BsLinkedin, BsGithub, BsSunFill, BsMoonFill } from "react-icons/bs";
-// helper functions:
-import scrollToTop from "../helper-functions/scrollToTop";
+// next.js:
 import Link from "next/link";
 
 const NAV_LINKS = [

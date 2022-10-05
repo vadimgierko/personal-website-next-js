@@ -12,7 +12,7 @@ import Link from "next/link";
 const NAV_LINKS = [
 	{
 		name: "o mnie",
-		link: "/o-mnie",
+		link: "/",
 	},
 	{
 		name: "web development",

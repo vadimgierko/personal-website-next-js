@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
-// content data:
-import { fieldsOfInterests } from "../content/fieldsOfInterests";
+// icons bank:
 import { icons } from "../content/icons";
 // custom components:
 import Layout from "../layout";
@@ -13,45 +12,8 @@ import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 // next.js:
 import Link from "next/link";
-
-export async function getStaticProps() {
-	const bio = {
-		img: "vadim-gerko-zdjecie-cv.jpg",
-		title: "Cześć!",
-		description: `
-Nazywam się Vadim Gierko.
-
-Jestem osobą o wielu zainteresowaniach i kompetencjach twórczo-intelektualnych,
-którym poświęciłem dłuższe okresy mojego życia.
-
-W każdym z tych obszarów dążę do osiągnięcia najwyższego poziomu w zakresie
-wiedzy, umiejętności, kreatywności i wartości, którą mogę dać innym poprzez moje projekty.
-
-Scrolluj dalej i poznaj mnie lepiej!
-		`,
-	};
-
-	function getEssentialFieldsData(fields) {
-		if (!fields || !fields.length) return;
-		let essentialData = [];
-		fields.forEach((field) =>
-			essentialData.push({
-				title: field.title,
-				description: field.description,
-				link: field.link,
-				icon: field.icon,
-			})
-		);
-		return essentialData;
-	}
-
-	return {
-		props: {
-			bio,
-			fieldsOfInterests: getEssentialFieldsData(fieldsOfInterests),
-		},
-	};
-}
+// lib:
+import getEssentialFieldsData from "../lib/getEssentialFieldData";
 
 export default function Home({ bio, fieldsOfInterests }) {
 	const [windowHeight, setWindowHeight] = useState();
@@ -106,4 +68,29 @@ export default function Home({ bio, fieldsOfInterests }) {
 			</Layout>
 		</div>
 	);
+}
+
+export async function getStaticProps() {
+	const bio = {
+		img: "vadim-gerko-zdjecie-cv.jpg",
+		title: "Cześć!",
+		description: `
+Nazywam się Vadim Gierko.
+
+Jestem osobą o wielu zainteresowaniach i kompetencjach twórczo-intelektualnych,
+którym poświęciłem dłuższe okresy mojego życia.
+
+W każdym z tych obszarów dążę do osiągnięcia najwyższego poziomu w zakresie
+wiedzy, umiejętności, kreatywności i wartości, którą mogę dać innym poprzez moje projekty.
+
+Scrolluj dalej i poznaj mnie lepiej!
+		`,
+	};
+
+	return {
+		props: {
+			bio,
+			fieldsOfInterests: getEssentialFieldsData(),
+		},
+	};
 }

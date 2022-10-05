@@ -5,10 +5,10 @@ import MarkdownRenderer from "./MarkdownRenderer";
 export default function Article({ article }) {
 	return (
 		<Container className="article py-3" style={{ maxWidth: 900 }}>
-			<header>
-				<h1 className="text-center">{article.title}</h1>
+			<header className="text-center">
+				<h1>{article.title}</h1>
 				<hr />
-				<p className="text-center">{article.description}</p>
+				<p>{article.description}</p>
 				<Image src={article.img.src} alt={article.img.alt} fluid />
 			</header>
 			<MarkdownRenderer markdown={article.content} />

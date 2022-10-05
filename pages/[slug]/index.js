@@ -7,14 +7,19 @@ import FieldOfInterests from "../../components/FieldOfInterests";
 // lib:
 import getAllSlugs from "../../lib/getAllSlugs";
 import getPageContent from "../../lib/getPageContent";
+import Article from "../../components/Article";
 
 export default function Page({ pageContent }) {
+	console.log("pageContent:", pageContent);
 	const router = useRouter();
-	const { slug } = router.query;
+	//const { slug } = router.query;
 
 	return (
 		<Layout>
-			<FieldOfInterests field={pageContent} />
+			{pageContent.pageType === "field" && (
+				<FieldOfInterests field={pageContent} />
+			)}
+			{pageContent.pageType === "article" && <Article article={pageContent} />}
 		</Layout>
 	);
 }

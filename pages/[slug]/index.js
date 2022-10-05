@@ -1,20 +1,20 @@
 import { useRouter } from "next/router";
-import Layout from "../../layout";
-import Container from "react-bootstrap/Container";
+// content:
 import { fieldsOfInterests } from "../../content/fieldsOfInterests";
+// custom components:
+import Layout from "../../layout";
+import FieldOfInterests from "../../components/FieldOfInterests";
+// lib:
+import getAllSlugs from "../../lib/getAllSlugs";
+import getPageContent from "../../lib/getPageContent";
 
 export default function Page({ pageContent }) {
 	const router = useRouter();
 	const { slug } = router.query;
 
-	console.log("slugs:", getAllSlugs());
-	console.log("page content for", slug, getPageContent(slug));
-
 	return (
 		<Layout>
-			<Container className="article py-3" style={{ maxWidth: 900 }}>
-				<h1>{pageContent.title}</h1>
-			</Container>
+			<FieldOfInterests field={pageContent} />
 		</Layout>
 	);
 }
@@ -28,27 +28,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const pageContent = getPageContent(params.slug);
 	return {
 		props: {
-			pageContent,
+			pageContent: getPageContent(params.slug),
 		},
-	};
-}
-
-function getAllSlugs() {
-	let slugs = [];
-	fieldsOfInterests.forEach((field) =>
-		slugs.push({ params: { slug: field.link } })
-	);
-	return slugs;
-}
-
-function getPageContent(slug) {
-	const content = fieldsOfInterests.find((field) => field.link === "/" + slug);
-	console.log("content:", content);
-	return {
-		slug,
-		content,
 	};
 }

@@ -3,7 +3,6 @@ import Head from "next/head";
 // icons bank:
 import { icons } from "../content/icons";
 // custom components:
-import Layout from "../layout";
 import Section from "../layout/Section";
 import MarkdownRenderer from "../components/MarkdownRenderer";
 import Icon from "../components/Icon";
@@ -24,6 +23,13 @@ export default function Home({ bio, fieldsOfInterests }) {
 
 	return (
 		<>
+			<Head>
+				<title>Vadim Gierko</title>
+				<meta
+					name="description"
+					content="Vadim Gierko's personal website developed with Next.js"
+				/>
+			</Head>
 			<header>
 				<Container
 					className="d-flex flex-column justify-content-center align-items-center text-center"

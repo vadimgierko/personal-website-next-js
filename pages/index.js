@@ -24,16 +24,6 @@ export default function Home({ bio, fieldsOfInterests }) {
 
 	return (
 		<>
-			<Head>
-				<title>Vadim Gierko</title>
-				<meta name="author" content="Vadim Gierko" />
-				<meta
-					name="description"
-					content="Vadim Gierko's personal website developed with Next.js"
-				/>
-				<link rel="icon" href="vadim-gerko-zdjecie-cv.jpg" />
-			</Head>
-
 			<header>
 				<Container
 					className="d-flex flex-column justify-content-center align-items-center text-center"

@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../contexts/useTheme";
+// next.js:
+import Head from "next/head";
+// custom components:
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import ScrollToTop from "../components/ScrollToTop";
@@ -25,29 +28,42 @@ export default function Layout({ children }) {
 	}, [isDarkModePrefered, setTheme]);
 
 	return (
-		<div
-			className={theme === "light" ? "bg-light" : "bg-dark"}
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				minHeight: "100vh",
-			}}
-		>
-			<Navbar />
-			<main
-				className={
-					theme === "light" ? "bg-light text-dark" : "bg-dark text-light"
-				}
+		<>
+			<Head>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta name="author" content="Vadim Gierko" />
+				<title>Vadim Gierko</title>
+				<meta
+					name="description"
+					content="Vadim Gierko's personal website developed with Next.js"
+				/>
+				<link rel="icon" href="vadim-gerko-zdjecie-cv.jpg" />
+			</Head>
+			<div
+				className={theme === "light" ? "bg-light" : "bg-dark"}
 				style={{
-					paddingTop: 70,
-					flexGrow: 1,
-					color: theme === "light" ? "black" : "white",
+					display: "flex",
+					flexDirection: "column",
+					minHeight: "100vh",
 				}}
 			>
-				{children}
-			</main>
-			<ScrollToTop />
-			<Footer />
-		</div>
+				<Navbar />
+				<main
+					className={
+						theme === "light" ? "bg-light text-dark" : "bg-dark text-light"
+					}
+					style={{
+						paddingTop: 70,
+						flexGrow: 1,
+						color: theme === "light" ? "black" : "white",
+					}}
+				>
+					{children}
+				</main>
+				<ScrollToTop />
+				<Footer />
+			</div>
+		</>
 	);
 }

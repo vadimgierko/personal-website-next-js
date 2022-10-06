@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+// next.js:
+import Head from "next/head";
 // custom components:
 import Layout from "../../layout";
 import FieldOfInterests from "../../components/FieldOfInterests";
@@ -15,6 +17,10 @@ export default function Page({ pageContent }) {
 
 	return (
 		<>
+			<Head>
+				<title>Vadim Gierko | {pageContent.title}</title>
+				<meta name="description" content={pageContent.description} />
+			</Head>
 			{pageContent.pageType === "field" && (
 				<FieldOfInterests field={pageContent} />
 			)}

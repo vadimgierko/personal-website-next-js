@@ -23,7 +23,7 @@ export default function Home({ bio, fieldsOfInterests }) {
 	}, []);
 
 	return (
-		<div>
+		<>
 			<Head>
 				<title>Vadim Gierko</title>
 				<meta name="author" content="Vadim Gierko" />
@@ -34,39 +34,37 @@ export default function Home({ bio, fieldsOfInterests }) {
 				<link rel="icon" href="vadim-gerko-zdjecie-cv.jpg" />
 			</Head>
 
-			<Layout>
-				<header>
-					<Container
-						className="d-flex flex-column justify-content-center align-items-center text-center"
-						style={{
-							minHeight: windowHeight,
-						}}
-					>
-						<Image
-							src={bio.img}
-							roundedCircle
-							style={{ width: 200 }}
-							className="shadow"
-							alt="Vadim Gierko's avatar"
-						/>
-						<div style={{ maxWidth: 500 }}>
-							<h1 className="my-3">{bio.title}</h1>
-							<MarkdownRenderer markdown={bio.description} />
-						</div>
-					</Container>
-				</header>
-				{fieldsOfInterests.map((field) => (
-					<Section key={field.link}>
-						{field.icon && <Icon IconType={icons[field.icon].Icon} size={80} />}
-						{field.title && <h2 className="text-center my-3">{field.title}</h2>}
-						{field.description && (
-							<MarkdownRenderer markdown={field.description} />
-						)}
-						<Link href={field.link}>Więcej info</Link>
-					</Section>
-				))}
-			</Layout>
-		</div>
+			<header>
+				<Container
+					className="d-flex flex-column justify-content-center align-items-center text-center"
+					style={{
+						minHeight: windowHeight,
+					}}
+				>
+					<Image
+						src={bio.img}
+						roundedCircle
+						style={{ width: 200 }}
+						className="shadow"
+						alt="Vadim Gierko's avatar"
+					/>
+					<div style={{ maxWidth: 500 }}>
+						<h1 className="my-3">{bio.title}</h1>
+						<MarkdownRenderer markdown={bio.description} />
+					</div>
+				</Container>
+			</header>
+			{fieldsOfInterests.map((field) => (
+				<Section key={field.link}>
+					{field.icon && <Icon IconType={icons[field.icon].Icon} size={80} />}
+					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
+					{field.description && (
+						<MarkdownRenderer markdown={field.description} />
+					)}
+					<Link href={field.link}>Więcej info</Link>
+				</Section>
+			))}
+		</>
 	);
 }
 

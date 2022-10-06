@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 import { useEffect } from "react";
 import { ThemeProvider } from "../contexts/useTheme";
+import Layout from "../layout";
 
 function MyApp({ Component, pageProps }) {
 	// import bootstrap:
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<ThemeProvider>
-			<Component {...pageProps} />
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 		</ThemeProvider>
 	);
 }

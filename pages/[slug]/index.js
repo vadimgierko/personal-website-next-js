@@ -14,13 +14,13 @@ export default function Page({ pageContent }) {
 	//const { slug } = router.query;
 
 	return (
-		<Layout>
+		<>
 			{pageContent.pageType === "field" && (
 				<FieldOfInterests field={pageContent} />
 			)}
 			{pageContent.pageType === "article" && <Article article={pageContent} />}
 			{pageContent.pageType === "project" && <Project project={pageContent} />}
-		</Layout>
+		</>
 	);
 }
 

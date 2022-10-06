@@ -45,8 +45,8 @@ export default function Layout({ children }) {
 				}}
 			>
 				{children}
-				<ScrollToTop />
 			</main>
+			<ScrollToTop />
 			<Footer />
 		</div>
 	);

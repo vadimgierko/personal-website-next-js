@@ -1,15 +1,10 @@
-// react icons:
-import { AiOutlineBulb, AiOutlineLaptop } from "react-icons/ai";
-import { RiMindMap } from "react-icons/ri";
-import { MdDraw } from "react-icons/md";
-import { GiMusicalNotes } from "react-icons/gi";
-import { FaGraduationCap } from "react-icons/fa";
 import {
 	SiReact,
 	SiJavascript,
 	SiRedux,
 	SiFirebase,
 	SiBootstrap,
+	SiNextdotjs,
 	SiReactrouter,
 	SiHtml5,
 	SiCss3,
@@ -38,6 +33,10 @@ export const skills = {
 	bootstrap: {
 		Icon: SiBootstrap,
 		title: "Bootstrap 5",
+	},
+	next_js: {
+		Icon: SiNextdotjs,
+		title: "Next.js 12",
 	},
 	react_router: {
 		Icon: SiReactrouter,

@@ -1,27 +1,34 @@
 export const projects_web_development = [
 	{
-		title: "Web Developer Portfolio",
+		title: "vadimgierko.com",
 		img: {
-			src: "img/web-development/projects/dev-portfolio-react-bootstrap-screen-vadim-gierko.png",
+			src: "img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png",
 			alt: "",
 		},
-		link: "/web-developer-portfolio",
+		link: "/personal-website",
 		externalLinks: [
 			{
 				icon: "github",
-				link: "https://github.com/vadimgierko/frontend-developer-portfolio",
+				link: "https://github.com/vadimgierko/personal-website-next-js",
 				description: "Zobacz kod na GitHub",
 			},
 			{
 				icon: "global",
-				link: "https://vadimgierko.github.io/frontend-developer-portfolio",
+				link: "/",
 				description: "Strona www projektu",
 			},
 		],
-		skills: ["react", "bootstrap"],
+		skills: ["react", "bootstrap", "next_js", "markdown"],
 		features: ["rwd", "dark mode"],
 		description:
-			"Developer portfolio designed & developed by myself using React Bootstrap components for styling.",
+			"My personal static website designed & developed by myself from scratch using React, Next.js, React-Bootstrap, Bootstrap & Markdown.",
+		content: `
+Previously (from September 2020 to October 2022) my personal website was built with [Website System](https://github.com/PiotrWnuczek/WebsiteSystem) developed by [Piotr Wnuczek](https://github.com/piotrwnuczek).
+I was using *Website System*, because I didn't code at that time & my friend Piotr designed, developed & helped me to start my blog & website with his excellent solution.
+
+It worked fine, but I've started to learn web-development since then & decided to rebuild the site & develop it from scratch by myself.
+I've developed the website in React at first. Then I've learned basics of Next.js & rewrote the React code to Next.js.
+			`,
 	},
 	{
 		title: "Linky Notes",

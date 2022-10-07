@@ -32,6 +32,7 @@ Stworzyłem też kilka prostych gier, wizualizacji, symulacji i animacji oraz ap
 			"javascript",
 			"redux",
 			"react_router",
+			"next_js",
 			"firebase",
 			"bootstrap",
 			"mui",

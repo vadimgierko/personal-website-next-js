@@ -5,7 +5,7 @@ export const projects_proces_twórczy = [
 		title: 'Ebook "Zarządzanie Procesem Twórczym"',
 		link: "/ebook-zarzadzanie-procesem-tworczym",
 		img: {
-			src: "img/okładka-ebook-zarządzanie-procesem-twórczym-Vadim-Gierko-tablet-2048x1536.jpg",
+			src: "/img/okładka-ebook-zarządzanie-procesem-twórczym-Vadim-Gierko-tablet-2048x1536.jpg",
 			alt: "zdjęcie ebooka zarządzanie procesem twórczym na tablecie",
 		},
 		description:
@@ -16,7 +16,7 @@ export const projects_proces_twórczy = [
 		title: "Warsztaty Zarządzania Procesem Twórczym",
 		link: "/warsztaty-zarzadzania-procesem-tworczym",
 		img: {
-			src: "img/zarzadzanie-procesem-tworczym-wykres-warsztaty-szkolenie-vadim-gierko-uczestnicy.jpg",
+			src: "/img/zarzadzanie-procesem-tworczym-wykres-warsztaty-szkolenie-vadim-gierko-uczestnicy.jpg",
 			alt: "zdjęcie z warsztatów zarządzania procesem twórczym",
 		},
 		description:
@@ -26,7 +26,7 @@ export const projects_proces_twórczy = [
 		title: 'Blog nt. Zarządzania Procesem Twórczym "Łowca Pomysłów"',
 		link: "/blog-lowca-pomyslow",
 		img: {
-			src: "img/blog-łowca-pomysłów-vadim-gierko-proces-twórczy.jpg",
+			src: "/img/blog-łowca-pomysłów-vadim-gierko-proces-twórczy.jpg",
 			alt: 'screen nieistniejącego już bloga "Łowca Pomsyłów"',
 		},
 		description:

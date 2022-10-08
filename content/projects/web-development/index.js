@@ -2,7 +2,7 @@ export const projects_web_development = [
 	{
 		title: "vadimgierko.com",
 		img: {
-			src: "img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png",
+			src: "/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png",
 			alt: "",
 		},
 		link: "/personal-website",
@@ -33,7 +33,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "Linky Notes",
 		img: {
-			src: "img/web-development/projects/linky-notes-app-vadim-gierko.png",
+			src: "/img/web-development/projects/linky-notes-app-vadim-gierko.png",
 			alt: "",
 		},
 		link: "/linky-notes",
@@ -73,7 +73,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "Blogging Platform with Markdown Text Editor",
 		img: {
-			src: "img/web-development/projects/blogging-platform-vadim-gierko-screen.png",
+			src: "/img/web-development/projects/blogging-platform-vadim-gierko-screen.png",
 			alt: "",
 		},
 		link: "/blogging-platform",
@@ -106,7 +106,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "React Redux Firebase CRUD App template styled with MUI",
 		img: {
-			src: "img/web-development/projects/react-redux-firebase-mui-crud-app-screen-vadim-gierko.png",
+			src: "/img/web-development/projects/react-redux-firebase-mui-crud-app-screen-vadim-gierko.png",
 			alt: "",
 		},
 		link: "/react-redux-router-firebase-auth-rtdb-crud-mui-app",
@@ -137,7 +137,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "GitHub API Users Search App",
 		img: {
-			src: "img/web-development/projects/github-user-search-app-screen-vadim-gierko.png",
+			src: "/img/web-development/projects/github-user-search-app-screen-vadim-gierko.png",
 			alt: "",
 		},
 		link: "/github-api-users-search-app",
@@ -162,7 +162,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "Mind Maps App",
 		img: {
-			src: "img/web-development/projects/mind-maps-app-screen-vadim-gierko.png",
+			src: "/img/web-development/projects/mind-maps-app-screen-vadim-gierko.png",
 			alt: "",
 		},
 		link: "/mind-map-app",
@@ -193,7 +193,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "Old School 2D Racing Game",
 		img: {
-			src: "img/web-development/projects/old-school-racing-game-p5-js-vadim-gierko-2.png",
+			src: "/img/web-development/projects/old-school-racing-game-p5-js-vadim-gierko-2.png",
 			alt: "",
 		},
 		link: "/old-school-2d-racing-game",
@@ -223,7 +223,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "Let It Snow! Falling Snow Animation",
 		img: {
-			src: "img/web-development/projects/let-it-snow-p5-javascript-animation-vadim-gierko.png",
+			src: "/img/web-development/projects/let-it-snow-p5-javascript-animation-vadim-gierko.png",
 			alt: "",
 		},
 		link: "/let-it-snow",
@@ -252,7 +252,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "Live Markdown Text Editor",
 		img: {
-			src: "img/web-development/projects/markdown-text-editor-by-vadim-gierko.png",
+			src: "/img/web-development/projects/markdown-text-editor-by-vadim-gierko.png",
 			alt: "",
 		},
 		link: "/markdown-text-editor",
@@ -277,10 +277,10 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "Pixel Draw App",
 		img: {
-			src: "img/web-development/projects/pixel-draw-app-screen-vadim-gierko.png",
+			src: "/img/web-development/projects/pixel-draw-app-screen-vadim-gierko.png",
 			alt: "",
 		},
-		link: "pixel-draw-app",
+		link: "/pixel-draw-app",
 		externalLinks: [
 			{
 				icon: "github",
@@ -302,10 +302,10 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	{
 		title: "Snake Game Clone",
 		img: {
-			src: "img/web-development/projects/snake-game-clone-screen-vadim-gierko.png",
+			src: "/img/web-development/projects/snake-game-clone-screen-vadim-gierko.png",
 			alt: "",
 		},
-		link: "snake-game-clone",
+		link: "/snake-game-clone",
 		externalLinks: [
 			{
 				icon: "github",
@@ -326,8 +326,11 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 	},
 	{
 		title: "Sudoku Solver",
-		img: "img/web-development/projects/sudoku-solver-app-screen-vadim-gierko.png",
-		link: "sudoku-solver",
+		img: {
+			src: "/img/web-development/projects/sudoku-solver-app-screen-vadim-gierko.png",
+			alt: "",
+		},
+		link: "/sudoku-solver",
 		externalLinks: [
 			{
 				icon: "github",

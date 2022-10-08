@@ -5,7 +5,7 @@ export const projects_myślenie_wizualne = [
 		title: 'Profil "Kreatywne Notatki" na Instagramie i Facebooku',
 		link: "/profil-kreatywne-notatki-na-instagramie",
 		img: {
-			src: "img/screen-instagrama-Kreatywne-Notatki-2.jpg",
+			src: "/img/screen-instagrama-Kreatywne-Notatki-2.jpg",
 			alt: 'screen profilu "Kreatywnych Notatek" na Instagramie',
 		},
 		description:
@@ -15,7 +15,7 @@ export const projects_myślenie_wizualne = [
 		title: 'Blog "Kreatywne Notatki"',
 		link: "/blog-kreatywne-notatki",
 		img: {
-			src: "img/screen-blog-kreatywne-notatki.png",
+			src: "/img/screen-blog-kreatywne-notatki.png",
 			alt: 'screen nieistniejącego już bloga "Kreatywne Notatki"',
 		},
 		description:
@@ -25,7 +25,7 @@ export const projects_myślenie_wizualne = [
 		title: "Warsztaty Notowania Wizualnego oraz Tworzenia Map Myśli",
 		link: "/warsztaty-myslenia-wizualnego-notatki-wizualne-mapy-mysli",
 		img: {
-			src: "img/zarzadzanie-procesem-tworczym-wykres-warsztaty-szkolenie-vadim-gierko-uczestnicy.jpg",
+			src: "/img/zarzadzanie-procesem-tworczym-wykres-warsztaty-szkolenie-vadim-gierko-uczestnicy.jpg",
 			alt: "zdjęcie z warsztatów notowania wizualnego oraz tworzenia map myśli na umcs",
 		},
 		description: `

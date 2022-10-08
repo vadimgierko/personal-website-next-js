@@ -60,7 +60,7 @@ export default function NavigationBar({ maxWidth = "" }) {
 				<Container>
 					<Navbar.Brand>
 						<Image
-							src="vadim-gerko-zdjecie-cv.jpg"
+							src="/vadim-gerko-zdjecie-cv.jpg"
 							style={{ width: 20, paddingBottom: 4 }}
 							alt="vadim gierko profile picture"
 						/>{" "}

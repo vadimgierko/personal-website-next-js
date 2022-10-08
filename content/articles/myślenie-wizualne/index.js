@@ -14,7 +14,7 @@ Chcesz notować efektywnie? Poznaj wizualne notatki!
 Dowiesz się, jak je robić krok po kroku. Czytaj dalej!
 		`,
 		img: {
-			src: "img/notatki-wizualne-artykul-efektywna-nauka-notowanie-vadim-gierko-sketchnoting-887x1024.jpg",
+			src: "/img/notatki-wizualne-artykul-efektywna-nauka-notowanie-vadim-gierko-sketchnoting-887x1024.jpg",
 			alt: "notatka wizaulna dlaczego warto notować wizualnie",
 		},
 		content: article1,
@@ -30,7 +30,7 @@ dlaczego są potężnym i praktycznym narzędziem mentalnym,
 gdzie je można wykorzystać oraz jak je tworzyć krok po kroku!
 		`,
 		img: {
-			src: "img/mapa-mapy-mysli-vadim-gierko-notatki-wizualne-poradnik-artykul-nauka-zarzadzanie.jpg",
+			src: "/img/mapa-mapy-mysli-vadim-gierko-notatki-wizualne-poradnik-artykul-nauka-zarzadzanie.jpg",
 			alt: "mapa myśli nt. tworzenia map myśli",
 		},
 		content: article2,
@@ -42,7 +42,7 @@ gdzie je można wykorzystać oraz jak je tworzyć krok po kroku!
 		description:
 			'Zobacz, jaka jest różnica pomiędzy notatkami wizualnymi robionymi "na pokaz" - do mediów społecznościowych, a tymi na użytek własny. Widać to na przykładzie mojej notatki nt. platformy Patronite, na której założyłem profil, a szkicem docelowej notatki. Czytaj dalej, a pozbędziesz się wszelkich oporów przed notowaniem wizualnym!',
 		img: {
-			src: "img/patronite-vadim-gierko-kreatywne-wizualne-notatki-819x1024.jpg",
+			src: "/img/patronite-vadim-gierko-kreatywne-wizualne-notatki-819x1024.jpg",
 			alt: "notatka wizualna na temat patronite",
 		},
 		content: article3,
@@ -53,7 +53,7 @@ gdzie je można wykorzystać oraz jak je tworzyć krok po kroku!
 		description:
 			"Zachęcam Cię do zapoznania się z moją historią! Mam nadzieję, że to Cię zainspiruje do działania i pozbędziesz się wszelkich oporów, by zacząć notować wizualnie.",
 		img: {
-			src: "img/vadim-gierko-tablica-korkowa-praca-notatki-wizualne.jpg",
+			src: "/img/vadim-gierko-tablica-korkowa-praca-notatki-wizualne.jpg",
 			alt: "zdjęcie autora na tle tablicy korkowej z przypiętymi notatkami wizualnymi",
 		},
 		content: article4,

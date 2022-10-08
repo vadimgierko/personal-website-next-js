@@ -1,8 +1,6 @@
-import { useRouter } from "next/router";
 // next.js:
 import Head from "next/head";
 // custom components:
-import Layout from "../../layout";
 import FieldOfInterests from "../../components/FieldOfInterests";
 import Article from "../../components/Article";
 import Project from "../../components/Project";
@@ -11,10 +9,6 @@ import getAllSlugs from "../../lib/getAllSlugs";
 import getPageContent from "../../lib/getPageContent";
 
 export default function Page({ pageContent }) {
-	//console.log("pageContent:", pageContent);
-	const router = useRouter();
-	//const { slug } = router.query;
-
 	return (
 		<>
 			<Head>

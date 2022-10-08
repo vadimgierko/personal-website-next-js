@@ -17,7 +17,7 @@ import Link from "next/link";
 
 export default function FieldOfInterests({ field }) {
 	return (
-		<div>
+		<>
 			<header>
 				<Container className="py-3 text-center" style={{ maxWidth: 900 }}>
 					{field.icon && <Icon IconType={icons[field.icon].Icon} size={100} />}
@@ -62,6 +62,6 @@ export default function FieldOfInterests({ field }) {
 					</Section>
 				)}
 			</main>
-		</div>
+		</>
 	);
 }

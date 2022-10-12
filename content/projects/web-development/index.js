@@ -293,7 +293,7 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 				description: "Strona www projektu",
 			},
 		],
-		skills: ["react", "bootstrap", "bootstrap-icons"],
+		skills: ["react", "bootstrap"],
 		features: ["crud", "local storage", "rwd"],
 		description: "Create, save and edit your first pixel art!",
 		content:

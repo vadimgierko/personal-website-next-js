@@ -33,7 +33,7 @@ export default function Layout({ children }) {
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta name="author" content="Vadim Gierko" />
-				<link rel="icon" href="vadim-gerko-zdjecie-cv.jpg" />
+				<link rel="icon" href="/vadim-gerko-zdjecie-cv.jpg" />
 			</Head>
 			<div
 				className={theme === "light" ? "bg-light" : "bg-dark"}

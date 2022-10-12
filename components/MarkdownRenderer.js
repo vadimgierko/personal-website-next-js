@@ -1,10 +1,30 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import Link from "next/link";
+
+// convert all internal links into React Router link,
+// open external links in the new tab,
+// scroll to top after internal redirecting:
+function NextLink(props) {
+	return props.href.match(/^(https?:)?\/\//) ? (
+		<a href={props.href} target="_blank" rel="noreferrer">
+			{props.children}
+		</a>
+	) : (
+		<Link href={props.href}>
+			<a>{props.children}</a>
+		</Link>
+	);
+}
 
 export default function MarkdownRenderer({ markdown }) {
 	if (!markdown) return null;
 
-	return <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>;
+	return (
+		<ReactMarkdown remarkPlugins={[remarkGfm]} components={{ a: NextLink }}>
+			{markdown}
+		</ReactMarkdown>
+	);
 }
 
 // Component mentioned below can get & render a markdown from a md file:

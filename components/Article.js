@@ -9,7 +9,9 @@ export default function Article({ article }) {
 				<h1>{article.title}</h1>
 				<hr />
 				<p>{article.description}</p>
-				<Image src={article.img.src} alt={article.img.alt} fluid />
+				{article.img.src && (
+					<Image src={article.img.src} alt={article.img.alt} fluid />
+				)}
 			</header>
 			<MarkdownRenderer markdown={article.content} />
 		</Container>

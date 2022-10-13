@@ -1,5 +1,7 @@
 import { articles_proces_twórczy } from "../articles/proces-twórczy";
 import { articles_myślenie_wizualne } from "../articles/myślenie-wizualne";
+import { articles_web_development } from "../articles/web-development";
+
 import { projects_proces_twórczy } from "../projects/proces-twórczy";
 import { projects_web_development } from "../projects/web-development";
 import { projects_myślenie_wizualne } from "../projects/myślenie-wizualne";
@@ -27,6 +29,7 @@ W chwili obecnej potrafię stworzyć responsywne strony www (statyczne i dynamic
 Stworzyłem też kilka prostych gier, wizualizacji, symulacji i animacji oraz aplikacji m. in. z wykorzystaniem biblioteki p5.js
 		`,
 		projects: projects_web_development,
+		articles: articles_web_development,
 		skills: [
 			"react",
 			"javascript",

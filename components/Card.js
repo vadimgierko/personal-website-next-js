@@ -7,7 +7,6 @@ import Link from "next/link";
 
 export default function CustomCard({ item = {}, left = true, linkText = "" }) {
 	const { theme } = useTheme();
-	//console.log("item in card", item);
 
 	return (
 		<Card
@@ -15,32 +14,47 @@ export default function CustomCard({ item = {}, left = true, linkText = "" }) {
 				theme === "light" ? "dark" : "light"
 			}`}
 		>
-			<Row>
-				{left && (
-					<Col md={6} sm={7}>
-						<Card.Img src={item.img.src} />
+			{item.img.src ? (
+				<Row>
+					{left && (
+						<Col md={6} sm={7}>
+							<Card.Img src={item.img.src} />
+						</Col>
+					)}
+					<Col>
+						<Card.Body
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								justifyContent: "center",
+								height: "100%",
+							}}
+						>
+							<Card.Title>{item.title}</Card.Title>
+							<Card.Text>{item.description}</Card.Text>
+							<Link href={item.link}>{linkText}</Link>
+						</Card.Body>
 					</Col>
-				)}
-				<Col>
-					<Card.Body
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							height: "100%",
-						}}
-					>
-						<Card.Title>{item.title}</Card.Title>
-						<Card.Text>{item.description}</Card.Text>
-						<Link href={item.link}>{linkText}</Link>
-					</Card.Body>
-				</Col>
-				{!left && (
-					<Col md={6} sm={7}>
-						<Card.Img src={item.img.src} />
-					</Col>
-				)}
-			</Row>
+					{!left && (
+						<Col md={6} sm={7}>
+							<Card.Img src={item.img.src} />
+						</Col>
+					)}
+				</Row>
+			) : (
+				<Card.Body
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "center",
+						height: "100%",
+					}}
+				>
+					<Card.Title>{item.title}</Card.Title>
+					<Card.Text>{item.description}</Card.Text>
+					<Link href={item.link}>{linkText}</Link>
+				</Card.Body>
+			)}
 		</Card>
 	);
 }

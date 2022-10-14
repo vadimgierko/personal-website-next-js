@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal website https://vadimgierko.com developed by myself from scratch at first in React & then adapted/ rewritten in Next.js.
 
-*Note: the website is currently offline, because of hosting provider changes. But you can check out its working **React version** copy deployed via Github Pages [here](https://vadimgierko.github.io/personal-website-react) or try **Next.js** version copy deployed via Vercel by clicking the link in the About section (description) of the repository.*
+*Note: the website domain vadimgierko.com is currently offline, because of hosting provider changes. But you can check out its working **React version** copy deployed via Github Pages [here](https://vadimgierko.github.io/personal-website-react) or try **Next.js** version copy deployed via Vercel [here](https://personal-website-next-js-vadimgierko.vercel.app/).*
 
 ## History: From *Website System* through *React* to *Next.js*
 
@@ -20,3 +20,4 @@ Then I've learned basics of Next.js & rewrote the React website version using Ne
 - React Bootstrap
 - React Icons
 - Bootstrap 5
+- Vercel

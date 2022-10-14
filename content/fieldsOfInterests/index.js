@@ -6,6 +6,8 @@ import { projects_proces_twórczy } from "../projects/proces-twórczy";
 import { projects_web_development } from "../projects/web-development";
 import { projects_myślenie_wizualne } from "../projects/myślenie-wizualne";
 
+import { videos_myślenie_wizualne } from "../videos/myślenie-wizualne";
+
 export const fieldsOfInterests = [
 	{
 		title: "Programowanie stron i aplikacji internetowych",
@@ -113,6 +115,7 @@ Warsztaty odbyły się w ramach festiwalu “Ukraina w centrum Lublina”.
     `,
 		projects: projects_myślenie_wizualne,
 		articles: articles_myślenie_wizualne,
+		videos: videos_myślenie_wizualne,
 	},
 	{
 		title: "Muzyka",

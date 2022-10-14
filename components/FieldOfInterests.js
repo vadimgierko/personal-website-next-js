@@ -14,6 +14,7 @@ import { RiArticleLine } from "react-icons/ri";
 import { FaGraduationCap } from "react-icons/fa";
 // next.js:
 import Link from "next/link";
+import YouTubeVideo from "./YouTubeVideo";
 
 export default function FieldOfInterests({ field }) {
 	return (
@@ -59,6 +60,17 @@ export default function FieldOfInterests({ field }) {
 							linkText="Czytaj dalej"
 						/>
 						<Link href={field.link + "/articles"}>Więcej artykułów</Link>
+					</Section>
+				)}
+				{field.videos && (
+					<Section>
+						<h2 className="text-center my-3">Filmy</h2>
+						{field.videos.map((video) => (
+							<YouTubeVideo
+								key={video.videoProps.title}
+								videoProps={video.videoProps}
+							/>
+						))}
 					</Section>
 				)}
 			</main>

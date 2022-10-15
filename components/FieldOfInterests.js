@@ -9,11 +9,12 @@ import MarkdownRenderer from "./MarkdownRenderer";
 import IconsList from "./IconsList";
 import Icon from "./Icon";
 // react-icons:
-import { AiOutlineFolder } from "react-icons/ai";
+import { AiOutlineFolder, AiOutlineYoutube } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
 import { FaGraduationCap } from "react-icons/fa";
 // next.js:
 import Link from "next/link";
+import YouTubeVideo from "./YouTubeVideo";
 
 export default function FieldOfInterests({ field }) {
 	return (
@@ -59,6 +60,24 @@ export default function FieldOfInterests({ field }) {
 							linkText="Czytaj dalej"
 						/>
 						<Link href={field.link + "/articles"}>Więcej artykułów</Link>
+					</Section>
+				)}
+				{field.videos && (
+					<Section>
+						<AiOutlineYoutube size={80} />
+						<h2 className="text-center my-3">Filmy</h2>
+						{field.videos.slice(0, 3).map((video) => (
+							<YouTubeVideo
+								key={video.title}
+								className="mb-3"
+								width={video.width}
+								height={video.height}
+								id={video.id}
+								title={video.title}
+								description={video.description}
+							/>
+						))}
+						<Link href={field.link + "/videos"}>Więcej filmów</Link>
 					</Section>
 				)}
 			</main>

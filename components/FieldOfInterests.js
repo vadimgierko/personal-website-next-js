@@ -77,6 +77,7 @@ export default function FieldOfInterests({ field }) {
 								description={video.description}
 							/>
 						))}
+						<Link href={field.link + "/videos"}>Więcej filmów</Link>
 					</Section>
 				)}
 			</main>

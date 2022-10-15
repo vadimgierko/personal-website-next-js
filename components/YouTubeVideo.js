@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 export default function YouTubeVideo({
 	width,
@@ -12,12 +12,12 @@ export default function YouTubeVideo({
 	const [newHeight, setNewHeight] = useState();
 
 	// set new height when the component is mounted:
-	useEffect(() => {
+	useLayoutEffect(() => {
 		setNewHeight((ref.current.offsetWidth * height) / width);
 	}, [height, width]);
 
 	// set new height after every resize
-	useEffect(() => {
+	useLayoutEffect(() => {
 		window.addEventListener("resize", () =>
 			setNewHeight((ref.current.offsetWidth * height) / width)
 		);

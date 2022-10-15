@@ -9,7 +9,7 @@ import MarkdownRenderer from "./MarkdownRenderer";
 import IconsList from "./IconsList";
 import Icon from "./Icon";
 // react-icons:
-import { AiOutlineFolder } from "react-icons/ai";
+import { AiOutlineFolder, AiOutlineYoutube } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
 import { FaGraduationCap } from "react-icons/fa";
 // next.js:
@@ -64,11 +64,17 @@ export default function FieldOfInterests({ field }) {
 				)}
 				{field.videos && (
 					<Section>
+						<AiOutlineYoutube size={80} />
 						<h2 className="text-center my-3">Filmy</h2>
-						{field.videos.map((video) => (
+						{field.videos.slice(0, 3).map((video) => (
 							<YouTubeVideo
-								key={video.videoProps.title}
-								videoProps={video.videoProps}
+								key={video.title}
+								className="mb-3"
+								width={video.width}
+								height={video.height}
+								id={video.id}
+								title={video.title}
+								description={video.description}
 							/>
 						))}
 					</Section>

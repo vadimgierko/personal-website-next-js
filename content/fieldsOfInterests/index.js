@@ -139,6 +139,7 @@ ponad 70 utworów instrumentalnych (zarówno dla gitary klasycznej solo,
 jak i utwory na kilka instrumentów i zespół),
 z czego kilka z nich zostały wykorzystane w studenckich filmach animacyjnych,
 a także w spocie reklamowym Festiwalu oraz były wykonywane i nagradzane na konkursach i festiwalach.
+
 Komponuję w dalszym ciągu i mam dalekosiężne plany w tym zakresie, m. in. napisanie książki o komponowaniu muzyki.
 		`,
 	},

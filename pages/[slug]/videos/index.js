@@ -55,7 +55,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 	const pageContent = getPageContent(params.slug);
-	const { title, icon, videos } = pageContent;
+	const { title, icon } = pageContent;
+	const videos = pageContent.videos ? pageContent.videos : null;
 
 	return {
 		props: {

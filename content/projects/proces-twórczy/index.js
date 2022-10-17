@@ -32,6 +32,29 @@ export const projects_proces_twórczy = [
 		description:
 			'W latach 2018-2020 prowadziłem bloga nt. kreatywności, generowania pomysłów oraz organizacji i rozwoju projektów twórczych. Na "Łowcy Pomysłów" opublikowałem kilkanaście obszernych artykułów, które później wykorzystałem w wydanym ebooku "ZPT"',
 	},
+	{
+		title:
+			'Profil "Łowca Pomysłów" na Facebooku i imienny profil na Instagramie',
+		link: "/profil-lowca-pomyslow-na-facebooku-i-instagramie",
+		img: {
+			src: "/img/screen-instagram-vadim-gierko.png",
+			alt: 'screen profilu "Kreatywnych Notatek" na Instagramie',
+		},
+		externalLinks: [
+			{
+				icon: "instagram",
+				link: "https://www.instagram.com/vadim.gierko/",
+				description: "Odwiedź profil na Instagramie",
+			},
+			{
+				icon: "facebook",
+				link: "https://www.facebook.com/lowcapomyslow/",
+				description: "Odwiedź profil na Facebooku",
+			},
+		],
+		description:
+			"Od 2018 r. prowadzę profil na Instagramie i Facebooku, na którym dzielę się swoją wiedzą nt. Zarządzania Procesem Twórczym, generowania pomysłów i realizacji twórczych projektów (prawie 200 opublikowanych postów). Od grudnia 2020 roku moja aktywność na profilach została zamrożona w związku ze skupieniem się na nauce programowania.",
+	},
 	// {
 	// 	title: 'Ebook "Łowca Pomysłów"',
 	// 	link: "/ebook-lowca-pomyslow",

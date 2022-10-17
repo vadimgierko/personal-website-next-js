@@ -3,11 +3,23 @@ import { project3 } from "./project3";
 export const projects_myślenie_wizualne = [
 	{
 		title: 'Profil "Kreatywne Notatki" na Instagramie i Facebooku',
-		link: "/profil-kreatywne-notatki-na-instagramie",
+		link: "/profil-kreatywne-notatki-na-instagramie-i-facebooku",
 		img: {
 			src: "/img/screen-instagrama-Kreatywne-Notatki-2.jpg",
 			alt: 'screen profilu "Kreatywnych Notatek" na Instagramie',
 		},
+		externalLinks: [
+			{
+				icon: "instagram",
+				link: "https://www.instagram.com/kreatywnenotatki/",
+				description: "Odwiedź profil na Instagramie",
+			},
+			{
+				icon: "facebook",
+				link: "https://www.facebook.com/kreatywnenotatkipl/",
+				description: "Odwiedź profil na Facebooku",
+			},
+		],
 		description:
 			"Od 2018 r. prowadzę profil na Instagramie i Facebooku, na którym dzielę się swoimi notatkami wizualnymi oraz mapami myśli (ponad 100 opublikowanych postów). Profil obserwuje ponad 2300 osób!",
 	},

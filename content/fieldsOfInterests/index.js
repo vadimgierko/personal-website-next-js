@@ -7,6 +7,7 @@ import { projects_web_development } from "../projects/web-development";
 import { projects_myślenie_wizualne } from "../projects/myślenie-wizualne";
 
 import { videos_myślenie_wizualne } from "../videos/myślenie-wizualne";
+import { audios_music } from "../audios/music";
 
 export const fieldsOfInterests = [
 	{
@@ -142,5 +143,6 @@ a także w spocie reklamowym Festiwalu oraz były wykonywane i nagradzane na kon
 
 Komponuję w dalszym ciągu i mam dalekosiężne plany w tym zakresie, m. in. napisanie książki o komponowaniu muzyki.
 		`,
+		audios: audios_music,
 	},
 ];

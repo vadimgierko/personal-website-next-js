@@ -8,13 +8,15 @@ import CardsList from "./CardsList";
 import MarkdownRenderer from "./MarkdownRenderer";
 import IconsList from "./IconsList";
 import Icon from "./Icon";
+import YouTubeVideo from "./YouTubeVideo";
+import SoundCloudAudio from "./SoundCloudAudio";
 // react-icons:
 import { AiOutlineFolder, AiOutlineYoutube } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
 import { FaGraduationCap } from "react-icons/fa";
+import { GiMusicalNotes } from "react-icons/gi";
 // next.js:
 import Link from "next/link";
-import YouTubeVideo from "./YouTubeVideo";
 
 export default function FieldOfInterests({ field }) {
 	return (
@@ -78,6 +80,20 @@ export default function FieldOfInterests({ field }) {
 							/>
 						))}
 						<Link href={field.link + "/videos"}>Więcej filmów</Link>
+					</Section>
+				)}
+				{field.audios && (
+					<Section>
+						<GiMusicalNotes size={80} />
+						<h2 className="text-center my-3">Nagrania</h2>
+						{field.audios.slice(0, 3).map((audio) => (
+							<SoundCloudAudio
+								key={audio.src}
+								className="mb-3"
+								src={audio.src}
+							/>
+						))}
+						<Link href={field.link + "/audios"}>Więcej nagrań</Link>
 					</Section>
 				)}
 			</main>

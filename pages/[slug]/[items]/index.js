@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Icon from "../../../components/Icon";
 import Card from "../../../components/Card";
 import YouTubeVideo from "../../../components/YouTubeVideo";
+import SoundCloudAudio from "../../../components/SoundCloudAudio";
 // lib:
 import getPageContent from "../../../lib/getPageContent";
 // content:
@@ -18,13 +19,13 @@ export default function Items(props) {
 	const router = useRouter();
 	const { title, icon, itemsType, items } = props;
 
-	useEffect(() => {
-		console.log("router:", router.query);
-	}, [router.query]);
+	// useEffect(() => {
+	// 	console.log("router:", router.query);
+	// }, [router.query]);
 
-	useEffect(() => {
-		console.log("props:", props);
-	}, [props]);
+	// useEffect(() => {
+	// 	console.log("props:", props);
+	// }, [props]);
 
 	return (
 		<>
@@ -35,7 +36,9 @@ export default function Items(props) {
 						? "Projekty (Projects)"
 						: itemsType === "articles"
 						? "Artykuły (Articles)"
-						: "Filmy (Videos)"}
+						: itemsType === "videos"
+						? "Filmy (Videos)"
+						: "Nagrania (Audios)"}
 				</title>
 			</Head>
 			<Container className="py-3 text-center" style={{ maxWidth: 900 }}>
@@ -47,7 +50,9 @@ export default function Items(props) {
 						? "Projekty (Projects)"
 						: itemsType === "articles"
 						? "Artykuły (Articles)"
-						: "Filmy (Videos)"}
+						: itemsType === "videos"
+						? "Filmy (Videos)"
+						: "Nagrania (Audios)"}
 				</h2>
 				<main>
 					{items && items.length ? (
@@ -61,6 +66,12 @@ export default function Items(props) {
 									id={item.id}
 									title={item.title}
 									description={item.description}
+								/>
+							) : itemsType === "audios" ? (
+								<SoundCloudAudio
+									key={item.src}
+									src={item.src}
+									className="mb-3"
 								/>
 							) : (
 								<Card
@@ -85,7 +96,7 @@ export default function Items(props) {
 export async function getStaticPaths() {
 	const slugs = [];
 	fieldsOfInterests.forEach((field) => {
-		["projects", "articles", "videos"].forEach((itemsType) =>
+		["projects", "articles", "videos", "audios"].forEach((itemsType) =>
 			slugs.push({ params: { slug: field.link.slice(1), items: itemsType } })
 		);
 	});

@@ -85,12 +85,11 @@ export default function FieldOfInterests({ field }) {
 				{field.audios && (
 					<Section>
 						<GiMusicalNotes size={80} />
-						<h2 className="text-center my-3">Audio</h2>
+						<h2 className="text-center my-3">Nagrania</h2>
 						{field.audios.slice(0, 3).map((audio) => (
 							<SoundCloudAudio
-								key={audio.title}
+								key={audio.src}
 								className="mb-3"
-								title={audio.title}
 								src={audio.src}
 							/>
 						))}

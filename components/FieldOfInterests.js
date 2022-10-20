@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 // content:
@@ -15,10 +16,25 @@ import { AiOutlineFolder, AiOutlineYoutube } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
 import { FaGraduationCap } from "react-icons/fa";
 import { GiMusicalNotes } from "react-icons/gi";
+import { BsImages } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
+import Image from "next/image";
+// lib
+import { importAllImagesFromFolder } from "../lib/importAllImagesFromFolder";
+import { Col, Row } from "react-bootstrap";
 
 export default function FieldOfInterests({ field }) {
+	//======================================================== this is for gallery:
+	const [images, setImages] = useState();
+	useEffect(() => {
+		const imgs = importAllImagesFromFolder(
+			require.context("../public/visual-notes-gallery", false, /\.(png|jpe?g)$/)
+		);
+		setImages(imgs);
+		console.log("images:", imgs);
+	}, []);
+	//==============================================================================
 	return (
 		<>
 			<header>
@@ -94,6 +110,26 @@ export default function FieldOfInterests({ field }) {
 							/>
 						))}
 						<Link href={field.link + "/audios"}>Więcej nagrań</Link>
+					</Section>
+				)}
+				{field.link === "/visual-thinking" && (
+					<Section>
+						<BsImages size={80} />
+						<h2 className="text-center my-3">Galeria</h2>
+						<Row>
+							{images &&
+								Object.keys(images)
+									.slice(0, 4)
+									.map((key, i) => (
+										<Col md={6} key={key}>
+											<img
+												src={images[key].default.src}
+												width="100%"
+												className="mb-3"
+											/>
+										</Col>
+									))}
+						</Row>
 					</Section>
 				)}
 			</main>

@@ -11,6 +11,7 @@ import IconsList from "./IconsList";
 import Icon from "./Icon";
 import YouTubeVideo from "./YouTubeVideo";
 import SoundCloudAudio from "./SoundCloudAudio";
+import Gallery from "./Gallery";
 // react-icons:
 import { AiOutlineFolder, AiOutlineYoutube } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
@@ -22,7 +23,6 @@ import Link from "next/link";
 import Image from "next/image";
 // lib
 import { importAllImagesFromFolder } from "../lib/importAllImagesFromFolder";
-import { Col, Row } from "react-bootstrap";
 
 export default function FieldOfInterests({ field }) {
 	//======================================================== this is for gallery:
@@ -116,20 +116,7 @@ export default function FieldOfInterests({ field }) {
 					<Section>
 						<BsImages size={80} />
 						<h2 className="text-center my-3">Galeria</h2>
-						<Row>
-							{images &&
-								Object.keys(images)
-									.slice(0, 4)
-									.map((key, i) => (
-										<Col md={6} key={key}>
-											<img
-												src={images[key].default.src}
-												width="100%"
-												className="mb-3"
-											/>
-										</Col>
-									))}
-						</Row>
+						{images && <Gallery images={images} />}
 					</Section>
 				)}
 			</main>

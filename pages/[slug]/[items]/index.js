@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-// next.js:
-import { useRouter } from "next/router";
 import Head from "next/head";
 // react bootstrap:
 import Container from "react-bootstrap/Container";
@@ -14,18 +11,10 @@ import getPageContent from "../../../lib/getPageContent";
 // content:
 import { icons } from "../../../content/icons";
 import { fieldsOfInterests } from "../../../content/fieldsOfInterests";
+import Gallery from "../../../components/Gallery";
 
 export default function Items(props) {
-	const router = useRouter();
 	const { title, icon, itemsType, items } = props;
-
-	// useEffect(() => {
-	// 	console.log("router:", router.query);
-	// }, [router.query]);
-
-	// useEffect(() => {
-	// 	console.log("props:", props);
-	// }, [props]);
 
 	return (
 		<>
@@ -38,6 +27,8 @@ export default function Items(props) {
 						? "Artykuły (Articles)"
 						: itemsType === "videos"
 						? "Filmy (Videos)"
+						: itemsType === "images"
+						? "Galeria (Gallery)"
 						: "Nagrania (Audios)"}
 				</title>
 			</Head>
@@ -52,10 +43,12 @@ export default function Items(props) {
 						? "Artykuły (Articles)"
 						: itemsType === "videos"
 						? "Filmy (Videos)"
+						: itemsType === "images"
+						? "Galeria (Gallery)"
 						: "Nagrania (Audios)"}
 				</h2>
 				<main>
-					{items && items.length ? (
+					{items && items.length && itemsType !== "images" ? (
 						items.map((item, i) => {
 							return itemsType === "videos" ? (
 								<YouTubeVideo
@@ -84,9 +77,10 @@ export default function Items(props) {
 								/>
 							);
 						})
-					) : (
+					) : itemsType !== "images" ? (
 						<p>There are no {itemsType} yet...</p>
-					)}
+					) : null}
+					{items && itemsType === "images" ? <Gallery images={items} /> : null}
 				</main>
 			</Container>
 		</>
@@ -100,6 +94,8 @@ export async function getStaticPaths() {
 			slugs.push({ params: { slug: field.link.slice(1), items: itemsType } })
 		);
 	});
+	// add visual thinking gallery to slugs:
+	slugs.push({ params: { slug: "visual-thinking", items: "images" } });
 	const paths = slugs;
 
 	return {

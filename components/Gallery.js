@@ -13,32 +13,41 @@ export default function Gallery({ images }) {
 
 	const Img = ({ src }) => (
 		<img
-			src={src}
+			src={"/img/" + src}
 			width="100%"
 			className="mb-3"
-			alt=""
+			alt={src
+				.replaceAll("-", " ")
+				.replaceAll(".jpg", "")
+				.replaceAll(".png", "")}
 			onClick={() => {
-				setModalSrc(src);
+				setModalSrc("/img/" + src);
 				handleShow();
 			}}
+			style={{ cursor: "pointer" }}
 		/>
 	);
 
 	return (
 		<Row>
 			<Col>
-				{Object.keys(images)
-					.slice(0, Object.keys(images).length / 2 + 1)
-					.map((key, i) => (
-						<Img key={key} src={images[key].default.src} />
-					))}
+				{images
+					.slice(
+						0,
+						images.length % 2 === 0 ? images.length / 2 : images.length / 2 + 1
+					)
+					.map((key) => {
+						return <Img key={key} src={key} />;
+					})}
 			</Col>
 			<Col>
-				{Object.keys(images)
-					.slice(Object.keys(images).length / 2 + 1)
-					.map((key, i) => (
-						<Img key={key} src={images[key].default.src} />
-					))}
+				{images
+					.slice(
+						images.length % 2 === 0 ? images.length / 2 : images.length / 2 + 1
+					)
+					.map((key) => {
+						return <Img key={key} src={key} />;
+					})}
 			</Col>
 			<Modal show={show} onHide={handleClose} size="lg">
 				<Modal.Header closeButton></Modal.Header>

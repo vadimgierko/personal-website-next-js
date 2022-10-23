@@ -20,21 +20,8 @@ import { GiMusicalNotes } from "react-icons/gi";
 import { BsImages } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
-import Image from "next/image";
-// lib
-import { importAllImagesFromFolder } from "../lib/importAllImagesFromFolder";
 
 export default function FieldOfInterests({ field }) {
-	//======================================================== this is for gallery:
-	const [images, setImages] = useState();
-	useEffect(() => {
-		const imgs = importAllImagesFromFolder(
-			require.context("../public/visual-notes-gallery", false, /\.(png|jpe?g)$/)
-		);
-		setImages(imgs);
-		console.log("images:", imgs);
-	}, []);
-	//==============================================================================
 	return (
 		<>
 			<header>
@@ -116,7 +103,8 @@ export default function FieldOfInterests({ field }) {
 					<Section>
 						<BsImages size={80} />
 						<h2 className="text-center my-3">Galeria</h2>
-						{images && <Gallery images={images} />}
+						{field.images && <Gallery images={field.images.slice(0, 4)} />}
+						<Link href={field.link + "/images"}>Więcej zdjęć</Link>
 					</Section>
 				)}
 			</main>

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 // content:
@@ -10,11 +11,13 @@ import IconsList from "./IconsList";
 import Icon from "./Icon";
 import YouTubeVideo from "./YouTubeVideo";
 import SoundCloudAudio from "./SoundCloudAudio";
+import Gallery from "./Gallery";
 // react-icons:
 import { AiOutlineFolder, AiOutlineYoutube } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";
 import { FaGraduationCap } from "react-icons/fa";
 import { GiMusicalNotes } from "react-icons/gi";
+import { BsImages } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
 
@@ -94,6 +97,14 @@ export default function FieldOfInterests({ field }) {
 							/>
 						))}
 						<Link href={field.link + "/audios"}>Więcej nagrań</Link>
+					</Section>
+				)}
+				{field.link === "/visual-thinking" && (
+					<Section>
+						<BsImages size={80} />
+						<h2 className="text-center my-3">Galeria</h2>
+						{field.images && <Gallery images={field.images.slice(0, 4)} />}
+						<Link href={field.link + "/images"}>Więcej zdjęć</Link>
 					</Section>
 				)}
 			</main>

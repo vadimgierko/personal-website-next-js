@@ -49,7 +49,7 @@ export default function NavigationBar({ maxWidth = "" }) {
 	const { theme, switchTheme } = useTheme();
 
 	return (
-		<header>
+		<header id="navbar">
 			<Navbar
 				collapseOnSelect
 				expand="lg"

@@ -40,6 +40,27 @@ section.dark:nth-of-type(odd) {
   width: 100%;
 }
 
+@media print {
+  #navbar, .scroll-to-top {
+    display: none;
+  }
+
+  * {
+    /* font-family: serif !important;
+    font-size: 16pt !important;
+    line-height: 1.5 !important; */
+    color: black !important;
+    background-color: white !important;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+
+  img, svg {
+    break-inside: avoid;
+  }
+}
 
 /* @media (prefers-color-scheme: dark) {
   html {

@@ -40,6 +40,17 @@ section.dark:nth-of-type(odd) {
   width: 100%;
 }
 
+.article h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.article h2 {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
 @media print {
   #navbar, .scroll-to-top {
     display: none;

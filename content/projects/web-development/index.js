@@ -307,28 +307,28 @@ I've developed the website in React at first. Then I've learned basics of Next.j
 		description:
 			"Old School 2D Snake Game for desktop & mobile written in React. Enjoy!",
 	},
-	{
-		title: "Sudoku Solver",
-		img: {
-			src: "/img/web-development/projects/sudoku-solver-app-screen-vadim-gierko.png",
-			alt: "",
-		},
-		link: "/sudoku-solver",
-		externalLinks: [
-			{
-				icon: "github",
-				link: "https://github.com/vadimgierko/sudoku-solver",
-				description: "Zobacz kod na GitHub",
-			},
-			{
-				icon: "global",
-				link: "https://codesandbox.io/s/sudoku-solver-ip90ku",
-				description: "Strona www projektu",
-			},
-		],
-		skills: ["react", "javascript"],
-		features: ["sudoku-solver-algorithm"],
-		description:
-			"Input easy sudoku into the board & let the algorithm solve it!",
-	},
+	// {
+	// 	title: "Sudoku Solver",
+	// 	img: {
+	// 		src: "/img/web-development/projects/sudoku-solver-app-screen-vadim-gierko.png",
+	// 		alt: "",
+	// 	},
+	// 	link: "/sudoku-solver",
+	// 	externalLinks: [
+	// 		{
+	// 			icon: "github",
+	// 			link: "https://github.com/vadimgierko/sudoku-solver",
+	// 			description: "Zobacz kod na GitHub",
+	// 		},
+	// 		{
+	// 			icon: "global",
+	// 			link: "https://codesandbox.io/s/sudoku-solver-ip90ku",
+	// 			description: "Strona www projektu",
+	// 		},
+	// 	],
+	// 	skills: ["react", "javascript"],
+	// 	features: ["sudoku-solver-algorithm"],
+	// 	description:
+	// 		"Input easy sudoku into the board & let the algorithm solve it!",
+	// },
 ];

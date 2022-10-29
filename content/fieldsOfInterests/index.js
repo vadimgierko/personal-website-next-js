@@ -59,6 +59,7 @@ Stworzyłem też kilka prostych gier, wizualizacji, symulacji i animacji oraz ap
 			"html",
 			"markdown",
 			"github",
+			"vercel",
 			"vsc",
 		],
 	},

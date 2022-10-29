@@ -7,6 +7,7 @@ import Project from "../../components/Project";
 // lib:
 import getAllSlugs from "../../lib/getAllSlugs";
 import getPageContent from "../../lib/getPageContent";
+import getRepoReadmeFileContentFromGitHub from "../../lib/getRepoReadmeFileContentFromGitHub";
 
 export default function Page({ pageContent }) {
 	return (
@@ -20,6 +21,9 @@ export default function Page({ pageContent }) {
 			)}
 			{pageContent.pageType === "article" && <Article article={pageContent} />}
 			{pageContent.pageType === "project" && <Project project={pageContent} />}
+			{pageContent.pageType === "devProject" && (
+				<Project project={pageContent} />
+			)}
 		</>
 	);
 }
@@ -33,9 +37,20 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+	// get content as it is for all pages (including dev projects pages):
+	let pageContent = await getPageContent(params.slug);
+	// for dev projects pages get repo readme content & add it as a "content" prop:
+	if (pageContent.pageType === "devProject") {
+		const readmeMarkdown = await getRepoReadmeFileContentFromGitHub(
+			pageContent.externalLinks[0].link.slice(31)
+		);
+		// replace readme's h1 with h2:
+		const fixedMarkdown = readmeMarkdown.replace("#", "##");
+		pageContent = { ...pageContent, content: fixedMarkdown };
+	}
 	return {
 		props: {
-			pageContent: getPageContent(params.slug),
+			pageContent,
 		},
 	};
 }

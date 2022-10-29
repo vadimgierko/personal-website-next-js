@@ -47,7 +47,11 @@ section.dark:nth-of-type(odd) {
 
 .article h2 {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.article p {
   margin-bottom: 1em;
 }
 
@@ -72,13 +76,3 @@ section.dark:nth-of-type(odd) {
     break-inside: avoid;
   }
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */

@@ -15,6 +15,7 @@ import {
 	SiJquery,
 	SiVisualstudiocode,
 	SiGithub,
+	SiVercel,
 } from "react-icons/si";
 
 export const skills = {
@@ -81,5 +82,9 @@ export const skills = {
 	github: {
 		Icon: SiGithub,
 		title: "GitHub",
+	},
+	vercel: {
+		Icon: SiVercel,
+		title: "Vercel",
 	},
 };

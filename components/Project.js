@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "../contexts/useTheme";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
@@ -11,31 +11,14 @@ import Section from "../layout/Section";
 import Icon from "./Icon";
 // icons:
 import { icons } from "../content/icons";
-import getRepoReadmeFileContentFromGitHub from "../lib/getRepoReadmeFileContentFromGitHub";
 
 export default function Project({ project }) {
 	const { theme } = useTheme();
 	const [windowWidth, setWindowWidth] = useState();
 
-	const [loading, setLoading] = useState(false);
-	const [repoMarkdown, setRepoMarkdown] = useState();
-
-	const getReadmeMd = useCallback(async () => {
-		setLoading(true);
-		const md = await getRepoReadmeFileContentFromGitHub(
-			project.externalLinks[0].link.slice(31)
-		);
-		setRepoMarkdown(md);
-		setLoading(false);
-	}, [project]);
-
 	useEffect(() => {
 		setWindowWidth(globalThis.window.innerWidth);
 	}, []);
-
-	useEffect(() => {
-		getReadmeMd();
-	}, [getReadmeMd]);
 
 	return (
 		<>
@@ -77,17 +60,7 @@ export default function Project({ project }) {
 			)}
 			{project.content && (
 				<Container className="article py-3" style={{ maxWidth: 900 }}>
-					<MarkdownRenderer
-						markdown={
-							project.skills
-								? loading
-									? null
-									: repoMarkdown
-									? repoMarkdown
-									: null
-								: project.content
-						}
-					/>
+					<MarkdownRenderer markdown={project.content} />
 				</Container>
 			)}
 		</>

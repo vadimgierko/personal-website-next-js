@@ -8,6 +8,7 @@ import Project from "../../components/Project";
 import getAllSlugs from "../../lib/getAllSlugs";
 import getPageContent from "../../lib/getPageContent";
 import getRepoReadmeFileContentFromGitHub from "../../lib/getRepoReadmeFileContentFromGitHub";
+import getRepoDataFromGitHub from "../../lib/getRepoDataFromGitHub";
 
 export default function Page({ pageContent }) {
 	return (
@@ -39,14 +40,34 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
 	// get content as it is for all pages (including dev projects pages):
 	let pageContent = await getPageContent(params.slug);
-	// for dev projects pages get repo readme content & add it as a "content" prop:
+
+	//======================================== for dev projects:
 	if (pageContent.pageType === "devProject") {
+		const repoData = await getRepoDataFromGitHub(pageContent.repoName);
 		const readmeMarkdown = await getRepoReadmeFileContentFromGitHub(
-			pageContent.externalLinks[0].link.slice(31)
+			repoData.name
 		);
 		// replace readme's h1 with h2:
 		const fixedMarkdown = readmeMarkdown.replace("#", "##");
-		pageContent = { ...pageContent, content: fixedMarkdown };
+		pageContent = {
+			...pageContent,
+			content: fixedMarkdown,
+			description: repoData.description,
+			createdAt: repoData.created_at,
+			updatedAt: repoData.updated_at,
+			externalLinks: [
+				{
+					icon: "github",
+					link: "https://github.com/vadimgierko/" + repoData.name,
+					description: "Zobacz kod na GitHub",
+				},
+				{
+					icon: "global",
+					link: repoData.homepage,
+					description: "Strona www projektu",
+				},
+			],
+		};
 	}
 	return {
 		props: {

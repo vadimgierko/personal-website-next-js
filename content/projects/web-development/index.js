@@ -142,76 +142,43 @@ export const projects_web_development = [
 		description:
 			"Listen to the beautiful Let it snow song while watching animated falling snow!",
 	},
-	// {
-	// 	title: "Live Markdown Text Editor",
-	// 	img: {
-	// 		src: "/img/web-development/projects/markdown-text-editor-by-vadim-gierko.png",
-	// 		alt: "",
-	// 	},
-	// 	link: "/markdown-text-editor",
-	// 	externalLinks: [
-	// 		{
-	// 			icon: "github",
-	// 			link: "https://github.com/vadimgierko/markdown-text-editor",
-	// 			description: "Zobacz kod na GitHub",
-	// 		},
-	// 		{
-	// 			icon: "global",
-	// 			link: "https://vadimgierko.github.io/markdown-text-editor/",
-	// 			description: "Strona www projektu",
-	// 		},
-	// 	],
-	// 	skills: ["react", "react_router", "markdown", "bootstrap"],
-	// 	features: ["routing", "markdown editor", "local storage", "rwd"],
-	// 	description: "Check how your Markdown text will look like when rendered!",
-	// },
-	// {
-	// 	title: "Pixel Draw App",
-	// 	img: {
-	// 		src: "/img/web-development/projects/pixel-draw-app-screen-vadim-gierko.png",
-	// 		alt: "",
-	// 	},
-	// 	link: "/pixel-draw-app",
-	// 	externalLinks: [
-	// 		{
-	// 			icon: "github",
-	// 			link: "https://github.com/vadimgierko/PixelDrawApp",
-	// 			description: "Zobacz kod na GitHub",
-	// 		},
-	// 		{
-	// 			icon: "global",
-	// 			link: "https://vadimgierko.github.io/PixelDrawApp/",
-	// 			description: "Strona www projektu",
-	// 		},
-	// 	],
-	// 	skills: ["react", "bootstrap"],
-	// 	features: ["crud", "local storage", "rwd"],
-	// 	description: "Create, save and edit your first pixel art!",
-	// },
-	// {
-	// 	title: "Snake Game Clone",
-	// 	img: {
-	// 		src: "/img/web-development/projects/snake-game-clone-screen-vadim-gierko.png",
-	// 		alt: "",
-	// 	},
-	// 	link: "/snake-game-clone",
-	// 	externalLinks: [
-	// 		{
-	// 			icon: "github",
-	// 			link: "https://github.com/vadimgierko/snake-game-react",
-	// 			description: "Zobacz kod na GitHub",
-	// 		},
-	// 		{
-	// 			icon: "global",
-	// 			link: "https://vadimgierko.github.io/PixelDrawApp/",
-	// 			description: "Strona www projektu",
-	// 		},
-	// 	],
-	// 	skills: ["react", "javascript", "css"],
-	// 	features: ["game-loop", "rwd"],
-	// 	description:
-	// 		"Old School 2D Snake Game for desktop & mobile written in React. Enjoy!",
-	// },
+	{
+		title: "Live Markdown Text Editor",
+		repoName: "markdown-text-editor",
+		img: {
+			src: "/img/web-development/projects/markdown-text-editor-by-vadim-gierko.png",
+			alt: "",
+		},
+		link: "/markdown-text-editor",
+		skills: ["react", "react_router", "markdown", "bootstrap"],
+		features: ["routing", "markdown editor", "local storage", "rwd"],
+		description: "Check how your Markdown text will look like when rendered!",
+	},
+	{
+		title: "Pixel Draw App",
+		repoName: "PixelDrawApp",
+		img: {
+			src: "/img/web-development/projects/pixel-draw-app-screen-vadim-gierko.png",
+			alt: "",
+		},
+		link: "/pixel-draw-app",
+		skills: ["react", "bootstrap"],
+		features: ["crud", "local storage", "rwd"],
+		description: "Create, save and edit your first pixel art!",
+	},
+	{
+		title: "Snake Game Clone",
+		repoName: "snake-game-react",
+		img: {
+			src: "/img/web-development/projects/snake-game-clone-screen-vadim-gierko.png",
+			alt: "",
+		},
+		link: "/snake-game-clone",
+		skills: ["react", "javascript", "css"],
+		features: ["game-loop", "rwd"],
+		description:
+			"Old School 2D Snake Game for desktop & mobile written in React. Enjoy!",
+	},
 	//======================================================================================
 	// {
 	// 	title: "Sudoku Solver",

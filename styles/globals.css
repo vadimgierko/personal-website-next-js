@@ -38,6 +38,7 @@ section.dark:nth-of-type(odd) {
 
 .article img {
   width: 100%;
+  margin-bottom: 1em;
 }
 
 .article h1 {

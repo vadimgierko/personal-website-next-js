@@ -6,10 +6,10 @@ export default function About({ bio, fieldsOfInterests }) {
 	return (
 		<>
 			<Head>
-				<title>Vadim Gierko | O mnie</title>
+				<title>O mnie | Vadim Gierko</title>
 				<meta
 					name="description"
-					content="Dowiedz się więcej o moich zainteresowaniach i obszarach, w których działam!"
+					content="Dowiedz się więcej o moich zainteresowaniach, obszarach, w których działam, projektach i co mogę dla Ciebie zrobić!"
 				/>
 			</Head>
 			<Home bio={bio} fieldsOfInterests={fieldsOfInterests} />

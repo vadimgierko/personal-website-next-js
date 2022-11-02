@@ -81,10 +81,12 @@ Scrolluj dalej i poznaj mnie lepiej!
 		`,
 	};
 
+	const fieldsOfInterests = getEssentialFieldsData();
+
 	return {
 		props: {
 			bio,
-			fieldsOfInterests: getEssentialFieldsData(),
+			fieldsOfInterests,
 		},
 	};
 }

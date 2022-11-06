@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import { useTheme } from "../contexts/useTheme";
+import { useTheme } from "../../contexts/useTheme";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 // custom components:
-import MarkdownRenderer from "./MarkdownRenderer";
-import IconsList from "./IconsList";
-import Section from "../layout/Section";
-import Icon from "./Icon";
+// layout:
+import Section from "../../layout/Section";
+// atoms:
+import Icon from "../atoms/Icon";
+import MarkdownRenderer from "../atoms/MarkdownRenderer";
+// molecules:
+import IconsList from "../molecules/IconsList";
 // icons:
-import { icons } from "../content/icons";
+import { icons } from "../../content/icons";
 
 export default function Project({ project }) {
 	const { theme } = useTheme();

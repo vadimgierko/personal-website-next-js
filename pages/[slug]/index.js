@@ -1,9 +1,9 @@
 // next.js:
 import Head from "next/head";
 // custom components:
-import FieldOfInterests from "../../components/FieldOfInterests";
-import Article from "../../components/Article";
-import Project from "../../components/Project";
+import FieldOfInterests from "../../components/organisms/FieldOfInterests";
+import Article from "../../components/organisms/Article";
+import Project from "../../components/organisms/Project";
 // lib:
 import getAllSlugs from "../../lib/getAllSlugs";
 import getPageContent from "../../lib/getPageContent";

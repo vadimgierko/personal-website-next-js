@@ -2,16 +2,18 @@ import Head from "next/head";
 // react bootstrap:
 import Container from "react-bootstrap/Container";
 // custom components:
-import Icon from "../../../components/Icon";
-import Card from "../../../components/Card";
-import YouTubeVideo from "../../../components/YouTubeVideo";
-import SoundCloudAudio from "../../../components/SoundCloudAudio";
+// atoms:
+import Icon from "../../../components/atoms/Icon";
+import Card from "../../../components/atoms/Card";
+import YouTubeVideo from "../../../components/atoms/YouTubeVideo";
+import SoundCloudAudio from "../../../components/atoms/SoundCloudAudio";
+// molecules:
+import Gallery from "../../../components/molecules/Gallery";
 // lib:
 import getPageContent from "../../../lib/getPageContent";
 // content:
 import { icons } from "../../../content/icons";
 import { fieldsOfInterests } from "../../../content/fieldsOfInterests";
-import Gallery from "../../../components/Gallery";
 
 export default function Items(props) {
 	const { title, icon, itemsType, items } = props;

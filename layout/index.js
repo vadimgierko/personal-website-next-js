@@ -51,6 +51,8 @@ export default function Layout({ children }) {
 						theme === "light" ? "bg-light text-dark" : "bg-dark text-light"
 					}
 					style={{
+						display: "flex",
+						flexDirection: "column",
 						paddingTop: 70,
 						flexGrow: 1,
 						color: theme === "light" ? "black" : "white",

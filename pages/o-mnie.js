@@ -1,43 +1,10 @@
-import Head from "next/head";
-import Home from ".";
-import getEssentialFieldsData from "../lib/getEssentialFieldData";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-export default function About({ bio, fieldsOfInterests }) {
-	return (
-		<>
-			<Head>
-				<title>O mnie | Vadim Gierko</title>
-				<meta
-					name="description"
-					content="Dowiedz się więcej o moich zainteresowaniach, obszarach, w których działam, projektach i co mogę dla Ciebie zrobić!"
-				/>
-			</Head>
-			<Home bio={bio} fieldsOfInterests={fieldsOfInterests} />
-		</>
-	);
-}
+export default function About() {
+	const router = useRouter();
 
-export async function getStaticProps() {
-	const bio = {
-		img: "vadim-gerko-zdjecie-cv.jpg",
-		title: "Cześć!",
-		description: `
-Nazywam się Vadim Gierko.
-
-Jestem osobą o wielu zainteresowaniach i kompetencjach twórczo-intelektualnych,
-którym poświęciłem dłuższe okresy mojego życia.
-
-W każdym z tych obszarów dążę do osiągnięcia najwyższego poziomu w zakresie
-wiedzy, umiejętności, kreatywności i wartości, którą mogę dać innym poprzez moje projekty.
-
-Scrolluj dalej i poznaj mnie lepiej!
-		`,
-	};
-
-	return {
-		props: {
-			bio,
-			fieldsOfInterests: getEssentialFieldsData(),
-		},
-	};
+	useEffect(() => {
+		router.push("/");
+	}, [router]);
 }

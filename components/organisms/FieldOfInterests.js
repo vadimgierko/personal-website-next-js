@@ -2,16 +2,19 @@ import { useEffect, useState } from "react";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 // content:
-import { icons } from "../content/icons";
+import { icons } from "../../content/icons";
 // custom components:
-import Section from "../layout/Section";
-import CardsList from "./CardsList";
-import MarkdownRenderer from "./MarkdownRenderer";
-import IconsList from "./IconsList";
-import Icon from "./Icon";
-import YouTubeVideo from "./YouTubeVideo";
-import SoundCloudAudio from "./SoundCloudAudio";
-import Gallery from "./Gallery";
+// layout:
+import Section from "../../layout/Section";
+// atoms:
+import MarkdownRenderer from "../atoms/MarkdownRenderer";
+import Icon from "../atoms/Icon";
+import YouTubeVideo from "../atoms/YouTubeVideo";
+import SoundCloudAudio from "../atoms/SoundCloudAudio";
+// molecules:
+import CardsList from "../molecules/CardsList";
+import IconsList from "../molecules/IconsList";
+import Gallery from "../molecules/Gallery";
 // react-icons:
 import { AiOutlineFolder, AiOutlineYoutube } from "react-icons/ai";
 import { RiArticleLine } from "react-icons/ri";

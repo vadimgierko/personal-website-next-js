@@ -3,9 +3,11 @@ import Head from "next/head";
 // icons bank:
 import { icons } from "../content/icons";
 // custom components:
+// layout:
 import Section from "../layout/Section";
-import MarkdownRenderer from "../components/MarkdownRenderer";
-import Icon from "../components/Icon";
+// atoms:
+import MarkdownRenderer from "../components/atoms/MarkdownRenderer";
+import Icon from "../components/atoms/Icon";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";

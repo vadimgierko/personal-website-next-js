@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { skills as SKILLS } from "../content/skills";
+import { skills as SKILLS } from "../../content/skills";
+import Icon from "../atoms/Icon";
 
 export default function IconsList({ skills = [], size }) {
 	const [windowSize, setWindowSize] = useState();
@@ -33,7 +34,7 @@ export default function IconsList({ skills = [], size }) {
 		>
 			{getIcons(skills).map((item) => (
 				<div key={item.title} className="text-center m-2 m-md-3">
-					<item.Icon size={windowSize > 576 ? 80 : 60} />
+					<Icon IconType={item.Icon} size={windowSize > 576 ? 80 : 60} />
 					<p>
 						<strong>{item.title}</strong>
 					</p>

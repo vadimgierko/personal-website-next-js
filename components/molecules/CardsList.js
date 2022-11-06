@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "../atoms/Card";
 
 export default function CardsList({ items = [], linkText }) {
 	//console.log("items in cardslist:", items);

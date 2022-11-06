@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
-import MarkdownRenderer from "./MarkdownRenderer";
+import MarkdownRenderer from "../atoms/MarkdownRenderer";
 
 export default function Article({ article }) {
 	return (

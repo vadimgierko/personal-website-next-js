@@ -3,9 +3,11 @@ import { useTheme } from "../contexts/useTheme";
 // next.js:
 import Head from "next/head";
 // custom components:
+// layout:
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import ScrollToTop from "../components/ScrollToTop";
+// atoms:
+import ScrollToTop from "../components/atoms/ScrollToTop";
 
 export default function Layout({ children }) {
 	const { theme, setTheme } = useTheme();

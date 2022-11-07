@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Head from "next/head";
 // icons bank:
 import { icons } from "../content/icons";
 // custom components:
@@ -12,6 +11,7 @@ import Icon from "../components/atoms/Icon";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 // next.js:
+import Head from "next/head";
 import Link from "next/link";
 // lib:
 import getEssentialFieldsData from "../lib/getEssentialFieldData";
@@ -30,6 +30,15 @@ export default function Home({ bio, fieldsOfInterests }) {
 				<meta
 					name="description"
 					content="Vadim Gierko's personal website developed with Next.js"
+				/>
+				<meta property="og:title" content="Vadim Gierko" />
+				<meta
+					property="og:description"
+					content="Visit my personal website and get to know me better!"
+				/>
+				<meta
+					property="og:image"
+					content="https://vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png"
 				/>
 			</Head>
 			<header>

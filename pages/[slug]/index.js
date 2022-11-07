@@ -14,8 +14,32 @@ export default function Page({ pageContent }) {
 	return (
 		<>
 			<Head>
-				<title>Vadim Gierko | {pageContent.title}</title>
+				<title>{pageContent.title} | Vadim Gierko</title>
 				<meta name="description" content={pageContent.description} />
+				<meta
+					property="og:title"
+					content={
+						pageContent.ogTitle ? pageContent.ogTitle : pageContent.title
+					}
+				/>
+				<meta
+					property="og:description"
+					content={
+						pageContent.ogDescription
+							? pageContent.ogDescription
+							: pageContent.description
+					}
+				/>
+				<meta
+					property="og:image"
+					content={
+						pageContent.ogImage
+							? pageContent.ogImage
+							: pageContent.img
+							? pageContent.img.src
+							: "https://vadimgierko.com/vadim-gerko-zdjecie-cv.jpg"
+					}
+				/>
 			</Head>
 			{pageContent.pageType === "field" && (
 				<FieldOfInterests field={pageContent} />

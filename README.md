@@ -127,11 +127,10 @@ Copyright &copy; 2022 [Vadim Gierko](https://github.com/vadimgierko)
 
 ### SEO:
 
-- [ ] add dynamic rich cards ([Open Graph metadata](https://nextjs.org/learn/seo/rendering-and-ranking/metadata)) for every page (title, description, image)
+- [X] add dynamic rich cards ([Open Graph metadata](https://nextjs.org/learn/seo/rendering-and-ranking/metadata)) for every page (title, description, image)
 - [ ] index my website in Google
 - [ ] add [robots.txt](https://nextjs.org/learn/seo/crawling-and-indexing/robots-txt)
 - [ ] add [sitemap](https://nextjs.org/learn/seo/crawling-and-indexing/xml-sitemaps)
-- [ ] add [canonical tag](https://nextjs.org/learn/seo/crawling-and-indexing/canonical) for / (index page) or /o-mnie page
 - [ ] add html lang
 - [ ] do [further reading how to improve SEO](https://nextjs.org/learn/seo/improve)
 

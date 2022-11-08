@@ -37,8 +37,16 @@ export default function Page({ pageContent }) {
 							? pageContent.ogImage
 							: pageContent.img
 							? pageContent.img.src
-							: "https://vadimgierko.com/vadim-gerko-zdjecie-cv.jpg"
+							: "https://www.vadimgierko.com/vadim-gerko-zdjecie-cv.jpg"
 					}
+				/>
+				<meta
+					property="og:type"
+					content={pageContent.pageType === "article" ? "article" : "website"}
+				/>
+				<meta
+					property="og:url"
+					content={"https://www.vadimgierko.com" + pageContent.link}
 				/>
 			</Head>
 			{pageContent.pageType === "field" && (

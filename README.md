@@ -127,7 +127,9 @@ Copyright &copy; 2022 [Vadim Gierko](https://github.com/vadimgierko)
 
 ### SEO:
 
-- [X] add dynamic rich cards ([Open Graph metadata](https://nextjs.org/learn/seo/rendering-and-ranking/metadata)) for every page (title, description, image)
+- [ ] check how many chars title & descritpion should have & fix it
+- [ ] add conditional dynamic og:type property (article, book, website, etc. => find more)
+- [ ] add keywords prop
 - [ ] index my website in Google
 - [ ] add [robots.txt](https://nextjs.org/learn/seo/crawling-and-indexing/robots-txt)
 - [ ] add [sitemap](https://nextjs.org/learn/seo/crawling-and-indexing/xml-sitemaps)
@@ -176,4 +178,6 @@ Copyright &copy; 2022 [Vadim Gierko](https://github.com/vadimgierko)
 
 ### CMS
 
-- [ ] consider building custom CMS using Firebase as BaaS
+- [ ] add/ create CMS before start editing, updating or adding a new content
+  - [ ] build custom CMS using Firebase as BaaS ?
+  - [ ] use Sanity ?

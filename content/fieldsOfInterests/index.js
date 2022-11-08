@@ -26,7 +26,7 @@ export const fieldsOfInterests = [
 		ogTitle: "Vadim Gierko | Web Developer",
 		ogDescription: "Programowanie stron i aplikacji internetowych | Portfolio",
 		ogImage:
-			"https://vadimgierko.com/img/web-development/projects/vadim-gierko-web-developer-skills-screenshot.png",
+			"https://www.vadimgierko.com/img/web-development/projects/vadim-gierko-web-developer-skills-screenshot.png",
 		title: "Programowanie stron i aplikacji internetowych",
 		link: "/web-development",
 		icon: "laptop",

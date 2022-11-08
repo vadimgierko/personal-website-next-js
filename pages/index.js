@@ -38,7 +38,7 @@ export default function Home({ bio, fieldsOfInterests }) {
 				/>
 				<meta
 					property="og:image"
-					content="https://vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png"
+					content="https://www.vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png"
 				/>
 			</Head>
 			<header>

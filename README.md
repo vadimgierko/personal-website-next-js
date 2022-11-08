@@ -127,6 +127,7 @@ Copyright &copy; 2022 [Vadim Gierko](https://github.com/vadimgierko)
 
 ### SEO:
 
+- [ ] add og metadata also to /\[items\] page
 - [ ] check how many chars title & descritpion should have & fix it
 - [ ] add conditional dynamic og:type property (article, book, website, etc. => find more)
 - [ ] add keywords prop

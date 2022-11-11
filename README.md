@@ -1,5 +1,17 @@
 # My Static Personal Website https://vadimgierko.com
 
+## (no Sanity CMS backup - Nov 10, 2022 - SSG using local files & GitHub API)
+
+## Version/ Backup Note
+
+*This is the backup of my personal website developed with Next.js SSG using local content & files (without CMS) & fetching data from GitHub API. Backup was made on November 10, 2022 just before implementing Sanity into the [root project](https://github.com/vadimgierko/personal-website-next-js) to extend the website with headless CMS.*
+
+*This branch/ backup is also stored as a private repository here: https://github.com/vadimgierko/personal-website-next-js-without-cms.*
+
+*When Sanity CMS will be integrated with the app, all the local content & images will go to CMS, so some images may not be rendered correctly & other errors may appear, when run this backup app locally. Don't know if I will update this backup app because of those errors...*
+
+## General description
+
 The project contains the source code, textual, visual & multimedia content of my personal website written from scratch in **React** at first, then rewritten in **Next.js**, deployed to **Vercel** & published at https://vadimgierko.com.
 
 ![vadimgierko.com personal website index root screenshot](https://vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png)
@@ -93,6 +105,17 @@ My personal website contains:
   - allows to style markdown content using passed custom components or additional styles
 - auto fetching my code repositories data (descriptions, urls, README files content) from GitHub to hydrate the website with the current data during the build
 
+## Setup
+
+- clone or fork this repository from/on GitHub
+- open the project in your code editor
+- start a New Terminal
+- run `npm install` command in your terminal to install all dependencies
+- when dependencies are installed (you'll see 2 new folders created: ".next" & "node_modules"), run `npm run dev` command in your terminal to run the app on your local host
+- go to http://localhost:3000 to see the working app
+
+
+
 ## Technologies used in the project
 
 - Next.js 12.3.1
@@ -109,7 +132,10 @@ My personal website contains:
 
 The website is deployed, published & available at https://vadimgierko.com.
 
-But...
+But... this is the backup of the website from November 10, 2022, so:
+- the content on the current website might be different,
+- the source code (especially the features) of the [root project](https://github.com/vadimgierko/personal-website-next-js) also be different,
+- and also some images may not be rendered correctly & other errors may appear, when Sanity CMS will be integrated with the app (see [note](#version-backup-note))
 
 I'm constantly working on improving the website, refactoring the code, adding new content, components, pages & features. Each commit (to main branch) & pull request causes redeploying & changes in the appearance & functioning of the website.
 

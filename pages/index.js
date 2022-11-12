@@ -14,33 +14,24 @@ import Image from "react-bootstrap/Image";
 import Head from "next/head";
 import Link from "next/link";
 // lib:
-import { client } from "../lib/sanity/client";
+import { client, urlFor } from "../lib/sanity/client";
 
-export default function Home({ bio, fieldsOfInterests }) {
+export default function Home({ home, fieldsOfInterests }) {
 	const [windowHeight, setWindowHeight] = useState();
 
 	useEffect(() => {
 		setWindowHeight(globalThis.window.innerHeight - 70);
-		console.log("fields from sanity & other props:", bio, fieldsOfInterests);
-	}, [bio, fieldsOfInterests]);
+		console.log("fields from sanity & other props:", home, fieldsOfInterests);
+	}, [fieldsOfInterests, home]);
 
 	return (
 		<>
 			<Head>
-				<title>Vadim Gierko</title>
-				<meta
-					name="description"
-					content="Vadim Gierko's personal website developed with Next.js"
-				/>
-				<meta property="og:title" content="Vadim Gierko" />
-				<meta
-					property="og:description"
-					content="Visit my personal website and get to know me better!"
-				/>
-				<meta
-					property="og:image"
-					content="https://www.vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png"
-				/>
+				<title>{home.metaTitle}</title>
+				<meta name="description" content={home.metaDescription} />
+				<meta property="og:title" content={home.ogTitle} />
+				<meta property="og:description" content={home.ogDescription} />
+				<meta property="og:image" content={urlFor(home.ogImage)} />
 			</Head>
 			<header>
 				<Container
@@ -50,15 +41,15 @@ export default function Home({ bio, fieldsOfInterests }) {
 					}}
 				>
 					<Image
-						src={bio.img}
+						src={urlFor(home.avatar)}
 						roundedCircle
 						style={{ width: 200 }}
 						className="shadow"
 						alt="Vadim Gierko's avatar"
 					/>
 					<div style={{ maxWidth: 500 }}>
-						<h1 className="my-3">{bio.title}</h1>
-						<MarkdownRenderer markdown={bio.description} />
+						<h1 className="my-3">{home.title}</h1>
+						<MarkdownRenderer markdown={home.description} />
 					</div>
 				</Container>
 			</header>
@@ -77,28 +68,15 @@ export default function Home({ bio, fieldsOfInterests }) {
 }
 
 export async function getStaticProps() {
-	const bio = {
-		img: "vadim-gerko-zdjecie-cv.jpg",
-		title: "Cześć!",
-		description: `
-Nazywam się Vadim Gierko.
+	const homeQuery = '*[_type == "home"][0]';
+	const home = await client.fetch(homeQuery);
 
-Jestem osobą o wielu zainteresowaniach i kompetencjach twórczo-intelektualnych,
-którym poświęciłem dłuższe okresy mojego życia.
-
-W każdym z tych obszarów dążę do osiągnięcia najwyższego poziomu w zakresie
-wiedzy, umiejętności, kreatywności i wartości, którą mogę dać innym poprzez moje projekty.
-
-Scrolluj dalej i poznaj mnie lepiej!
-		`,
-	};
-
-	const query = '*[_type == "fieldOfInterests"] | order(order asc)'; // TODO: fetch only title, description, slug, icon
-	const fieldsOfInterests = await client.fetch(query);
+	const fieldsQuery = '*[_type == "fieldOfInterests"] | order(order asc)'; // TODO: fetch only title, description, slug, icon
+	const fieldsOfInterests = await client.fetch(fieldsQuery);
 
 	return {
 		props: {
-			bio,
+			home,
 			fieldsOfInterests,
 		},
 	};

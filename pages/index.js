@@ -14,14 +14,15 @@ import Image from "react-bootstrap/Image";
 import Head from "next/head";
 import Link from "next/link";
 // lib:
-import getEssentialFieldsData from "../lib/getEssentialFieldData";
+import { client } from "../lib/sanity/client";
 
 export default function Home({ bio, fieldsOfInterests }) {
 	const [windowHeight, setWindowHeight] = useState();
 
 	useEffect(() => {
 		setWindowHeight(globalThis.window.innerHeight - 70);
-	}, []);
+		console.log("fields from sanity & other props:", bio, fieldsOfInterests);
+	}, [bio, fieldsOfInterests]);
 
 	return (
 		<>
@@ -62,13 +63,13 @@ export default function Home({ bio, fieldsOfInterests }) {
 				</Container>
 			</header>
 			{fieldsOfInterests.map((field) => (
-				<Section key={field.link}>
+				<Section key={field.slug.current}>
 					{field.icon && <Icon IconType={icons[field.icon].Icon} size={80} />}
 					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
 					{field.description && (
 						<MarkdownRenderer markdown={field.description} />
 					)}
-					<Link href={field.link}>Więcej info</Link>
+					<Link href={field.slug.current}>Więcej info</Link>
 				</Section>
 			))}
 		</>
@@ -92,7 +93,8 @@ Scrolluj dalej i poznaj mnie lepiej!
 		`,
 	};
 
-	const fieldsOfInterests = getEssentialFieldsData();
+	const query = '*[_type == "fieldOfInterests"] | order(order asc)'; // TODO: fetch only title, description, slug, icon
+	const fieldsOfInterests = await client.fetch(query);
 
 	return {
 		props: {

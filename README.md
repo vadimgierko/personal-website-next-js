@@ -1,6 +1,8 @@
 # My Static Personal Website https://vadimgierko.com
 
-The project contains the source code, textual, visual & multimedia content of my personal website written from scratch in **React** at first, then rewritten in **Next.js**, deployed to **Vercel** & published at https://vadimgierko.com.
+The project contains the source code, textual, visual & multimedia content of my personal website written from scratch in **React** at first, then rewritten in **Next.js**, deployed to **Vercel** & published at https://vadimgierko.com. Sanity headless CMS is partially integrated with the website (see the note below).
+
+*NOTE: recently (Nov 13 2022) I've added a Sanity headless CMS app to the website. At the moment this CMS is technically fully integrated with the website, but it can control only the Home page content. All other pages fetch content from the local files. I'm planning to extend CMS's access to the entire website pages & content, but at the moment I'm working on the another project.*
 
 ![vadimgierko.com personal website index root screenshot](https://vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png)
 
@@ -75,6 +77,7 @@ My personal website contains:
 - adding embed videos from YouTube & embed audios from SoundCloud
 - deploying a project to Vercel with a custom domain
 - take care of basic proper SEO for the website
+- integrate Sanity headless CMS
 
 ## Features & Custom Components
 
@@ -93,6 +96,15 @@ My personal website contains:
   - allows to style markdown content using passed custom components or additional styles
 - auto fetching my code repositories data (descriptions, urls, README files content) from GitHub to hydrate the website with the current data during the build
 
+## Setup
+
+- clone or fork this repository from/on GitHub
+- open the project in your code editor
+- start a New Terminal
+- run `npm install` command in your terminal to install all dependencies
+- when dependencies are installed (you'll see 2 new folders created: ".next" & "node_modules"), run `npm run dev` command in your terminal to run the app on your local host
+- go to http://localhost:3000 to see the working app
+
 ## Technologies used in the project
 
 - Next.js 12.3.1
@@ -104,6 +116,7 @@ My personal website contains:
 - Bootstrap 5.2.1
 - GitHub API (for fetching repositories data & pass it to getStaticProps())
 - Vercel (deployment)
+- Sanity (headless CMS)
 
 ## Status
 
@@ -114,6 +127,8 @@ But...
 I'm constantly working on improving the website, refactoring the code, adding new content, components, pages & features. Each commit (to main branch) & pull request causes redeploying & changes in the appearance & functioning of the website.
 
 So the site you see today might me different from the site available yesterday or tomorrow. Even if I add all the features I want & there will be no changes in the code, I'll still be adding new textual & visual content.
+
+Also Sanity's headless CMS is partially integrated with the website (only Home page).
 
 ## Licence
 
@@ -176,9 +191,3 @@ Copyright &copy; 2022 [Vadim Gierko](https://github.com/vadimgierko)
 
 - [ ] enable adding tags to content
 - [ ] enable filtering content by tags
-
-### CMS
-
-- [ ] add/ create CMS before start editing, updating or adding a new content
-  - [ ] build custom CMS using Firebase as BaaS ?
-  - [ ] use Sanity ?

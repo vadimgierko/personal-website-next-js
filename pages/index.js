@@ -14,32 +14,24 @@ import Image from "react-bootstrap/Image";
 import Head from "next/head";
 import Link from "next/link";
 // lib:
-import getEssentialFieldsData from "../lib/getEssentialFieldData";
+import { client, urlFor } from "../lib/sanity/client";
 
-export default function Home({ bio, fieldsOfInterests }) {
+export default function Home({ home }) {
 	const [windowHeight, setWindowHeight] = useState();
 
 	useEffect(() => {
 		setWindowHeight(globalThis.window.innerHeight - 70);
-	}, []);
+		console.log("home page data from sanity:", home);
+	}, [home]);
 
 	return (
 		<>
 			<Head>
-				<title>Vadim Gierko</title>
-				<meta
-					name="description"
-					content="Vadim Gierko's personal website developed with Next.js"
-				/>
-				<meta property="og:title" content="Vadim Gierko" />
-				<meta
-					property="og:description"
-					content="Visit my personal website and get to know me better!"
-				/>
-				<meta
-					property="og:image"
-					content="https://www.vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png"
-				/>
+				<title>{home.metaTitle}</title>
+				<meta name="description" content={home.metaDescription} />
+				<meta property="og:title" content={home.ogTitle} />
+				<meta property="og:description" content={home.ogDescription} />
+				<meta property="og:image" content={urlFor(home.ogImage)} />
 			</Head>
 			<header>
 				<Container
@@ -49,26 +41,26 @@ export default function Home({ bio, fieldsOfInterests }) {
 					}}
 				>
 					<Image
-						src={bio.img}
+						src={urlFor(home.avatar)}
 						roundedCircle
 						style={{ width: 200 }}
 						className="shadow"
 						alt="Vadim Gierko's avatar"
 					/>
 					<div style={{ maxWidth: 500 }}>
-						<h1 className="my-3">{bio.title}</h1>
-						<MarkdownRenderer markdown={bio.description} />
+						<h1 className="my-3">{home.title}</h1>
+						<MarkdownRenderer markdown={home.description} />
 					</div>
 				</Container>
 			</header>
-			{fieldsOfInterests.map((field) => (
-				<Section key={field.link}>
+			{home.fieldsOfInterests?.map((field) => (
+				<Section key={field.slug.current}>
 					{field.icon && <Icon IconType={icons[field.icon].Icon} size={80} />}
 					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
 					{field.description && (
 						<MarkdownRenderer markdown={field.description} />
 					)}
-					<Link href={field.link}>Więcej info</Link>
+					<Link href={field.slug.current}>Więcej info</Link>
 				</Section>
 			))}
 		</>
@@ -76,28 +68,15 @@ export default function Home({ bio, fieldsOfInterests }) {
 }
 
 export async function getStaticProps() {
-	const bio = {
-		img: "vadim-gerko-zdjecie-cv.jpg",
-		title: "Cześć!",
-		description: `
-Nazywam się Vadim Gierko.
-
-Jestem osobą o wielu zainteresowaniach i kompetencjach twórczo-intelektualnych,
-którym poświęciłem dłuższe okresy mojego życia.
-
-W każdym z tych obszarów dążę do osiągnięcia najwyższego poziomu w zakresie
-wiedzy, umiejętności, kreatywności i wartości, którą mogę dać innym poprzez moje projekty.
-
-Scrolluj dalej i poznaj mnie lepiej!
-		`,
-	};
-
-	const fieldsOfInterests = getEssentialFieldsData();
+	const homeQuery = `*[_type == "home"][0]{
+		...,
+		fieldsOfInterests[]->
+	}`;
+	const home = await client.fetch(homeQuery);
 
 	return {
 		props: {
-			bio,
-			fieldsOfInterests,
+			home,
 		},
 	};
 }

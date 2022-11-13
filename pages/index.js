@@ -16,13 +16,13 @@ import Link from "next/link";
 // lib:
 import { client, urlFor } from "../lib/sanity/client";
 
-export default function Home({ home, fieldsOfInterests }) {
+export default function Home({ home }) {
 	const [windowHeight, setWindowHeight] = useState();
 
 	useEffect(() => {
 		setWindowHeight(globalThis.window.innerHeight - 70);
-		console.log("fields from sanity & other props:", home, fieldsOfInterests);
-	}, [fieldsOfInterests, home]);
+		console.log("home page data from sanity:", home);
+	}, [home]);
 
 	return (
 		<>
@@ -53,7 +53,7 @@ export default function Home({ home, fieldsOfInterests }) {
 					</div>
 				</Container>
 			</header>
-			{fieldsOfInterests.map((field) => (
+			{home.fieldsOfInterests?.map((field) => (
 				<Section key={field.slug.current}>
 					{field.icon && <Icon IconType={icons[field.icon].Icon} size={80} />}
 					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
@@ -68,16 +68,15 @@ export default function Home({ home, fieldsOfInterests }) {
 }
 
 export async function getStaticProps() {
-	const homeQuery = '*[_type == "home"][0]';
+	const homeQuery = `*[_type == "home"][0]{
+		...,
+		fieldsOfInterests[]->
+	}`;
 	const home = await client.fetch(homeQuery);
-
-	const fieldsQuery = '*[_type == "fieldOfInterests"] | order(order asc)'; // TODO: fetch only title, description, slug, icon
-	const fieldsOfInterests = await client.fetch(fieldsQuery);
 
 	return {
 		props: {
 			home,
-			fieldsOfInterests,
 		},
 	};
 }

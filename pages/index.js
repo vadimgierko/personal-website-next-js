@@ -82,11 +82,9 @@ export async function getStaticProps() {
 		description: `
 Nazywam się Vadim Gierko.
 
-Jestem osobą o wielu zainteresowaniach i kompetencjach twórczo-intelektualnych,
-którym poświęciłem dłuższe okresy mojego życia.
-
-W każdym z tych obszarów dążę do osiągnięcia najwyższego poziomu w zakresie
-wiedzy, umiejętności, kreatywności i wartości, którą mogę dać innym poprzez moje projekty.
+Programuję, komponuję, tworzę notatki wizualne i mapy myśli, uczę się czegoś nowego każdego dnia oraz jestem ekspertem od Zarządzania Procesem Twórczym.
+		
+Mimo że mam dużo zainteresowań, od 2 lat skupiam się praktycznie wyłącznie na programowaniu, gdyż ostatecznie chciałbym się przebranżowić i zostać zawodowym web developerem.		
 
 Scrolluj dalej i poznaj mnie lepiej!
 		`,

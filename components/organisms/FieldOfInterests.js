@@ -32,7 +32,7 @@ export default function FieldOfInterests({ field }) {
 					{field.icon && <Icon IconType={icons[field.icon].Icon} size={100} />}
 					<h1>{field.title}</h1>
 					<hr />
-					<p>{field.description}</p>
+					<MarkdownRenderer markdown={field.description} />
 				</Container>
 			</header>
 			<main>

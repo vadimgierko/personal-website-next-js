@@ -31,22 +31,11 @@ export const fieldsOfInterests = [
 		link: "/web-development",
 		icon: "laptop",
 		description: `
-Jestem programistą-samoukiem z ponad 1,5-rocznym doświadczeniem niekomercyjnym.
-Uwielbiam tworzyć i rozwijać aplikacje webowe, dzięki którym ludzie będą mogli rozwinąć skrzydła swojej kreatywności
-oraz odciążą swój umysł od zadań, których wykonanie można optymalizować za pomocą oprogramowania. 
-    `,
-		content: `
-Od 17 grudnia 2020 r. zacząłem samodzielnie uczyć się programowania stron i aplikacji internetowych.
-W chwili obecnej potrafię stworzyć responsywne strony www (statyczne i dynamiczne) oraz aplikacje webowe typu Single Page App:
-- zintegrowane z bazą danych (Firebase)
-- z opcją rejestracji i logowania użytkowników (Firebase)
-- z możliwością przesyłania/ pobierania/ edycji danych i plików (CRUD)
-- pobieraniem danych z API
-- z dynamicznym routingiem (React Router)
-- reużywalnymi komponentami UI wykonanymi za pomocą bibliotek i frameworków React-Bootstrap, Bootstrap lub MUI.
+Jestem niezwykle zdeterminowanym web developerem z 2-letnim doświadczeniem niekomercyjnym, który potrafi stworzyć **statyczne (SSG) i dynamiczne (SSR) strony internetowe**, **aplikacje webowe** typu SPA i PWA oraz **podstawowe sklepy internetowe** za pomocą takich technologii, jak: *React, React Router, Next.js, JavaScript, Redux Toolkit, Sanity, Bootstrap, Firebase i Stripe*.
 
-Stworzyłem też kilka prostych gier, wizualizacji, symulacji i animacji oraz aplikacji m. in. z wykorzystaniem biblioteki p5.js
-		`,
+**Szukam pierwszej programistycznej pracy bądź płatnego stażu na stanowisku Junior Front-end/ React/ JavaScript/ Next.js Developer stacjonarnie w Lublinie lub zdalnie w Polsce**.
+    `,
+		content: ``,
 		projects: projects_web_development,
 		articles: articles_web_development,
 		skills: [
@@ -59,7 +48,7 @@ Stworzyłem też kilka prostych gier, wizualizacji, symulacji i animacji oraz ap
 			"bootstrap",
 			"mui",
 			"css",
-			"styled_components",
+			//"styled_components",
 			"html",
 			"markdown",
 			"github",
@@ -72,37 +61,13 @@ Stworzyłem też kilka prostych gier, wizualizacji, symulacji i animacji oraz ap
 		link: "/creative-process-management",
 		icon: "bulb",
 		description: `
-Od jesieni 2015 roku zacząłem badać prawidłowości zachodzące w procesie twórczym,
-początkowo opierając się na własnych doświadczeniach twórczych, a potem uzupełniając wiedzę
-i testując swoje teorie za pomocą literatury przedmiotu.
+Od 2015 roku badam prawidłowości zachodzące w procesie twórczym, opierając się na własnych doświadczeniach oraz na podstawie literatury przedmiotu.
 
-Wnioskami, do których doszedłem, oraz autorską koncepcją i systemem Zarządzania Procesem Twórczym
-podzieliłem się na swoim blogu, profilach na Facebooku i Instagramie, w ebooku oraz podczas warsztatów.
-
-Uważam, że każdy/a jest kreatywny/a,
-talent i kreatywność można odkrywać i rozwijać,
-twórczością może być każdy rodzaj działalności,
-a twórczością i Procesem Twórczym można zarządzać.
+Wnioskami, do których doszedłem, oraz autorską koncepcją i systemem Zarządzania Procesem Twórczym podzieliłem się na swoim blogu, profilach na Facebooku i Instagramie, w ebooku oraz podczas warsztatów.
+		
+Uważam, że każdy/a jest kreatywny/a, talent i kreatywność można odkrywać i rozwijać, twórczością może być każdy rodzaj działalności, a twórczością i Procesem Twórczym można zarządzać.
     `,
-		content: `
-Jestem autorem bloga „Łowca Pomysłów”,
-na którym opublikowałem kilkanaście obszernych artykułów
-oraz ponad 200 postów na profilu Łowcy Pomysłów na Instagramie i Facebooku,
-gdzie na chwilę obecną (kwiecień 2020 r.)
-łącznie obserwuje mnie prawie 1000 osób.
-
-Prowadziłem kilkukrotnie warsztaty i wykłady
-nt. Zarządzania Procesem Twórczym dla nauczycieli i studentów na UMCS w Lublinie.
-
-Jestem autorem dwóch ebooków:
-- „Łowca pomysłów” (na daną chwilę wycofanego ze sprzedaży ze względu na zbliżającą się publikację drugiego ebooka) oraz
-- “Zarządzanie Procesem Twórczym” (który ukaże się na początku maja 2020 r.).
-
-W tej kategorii znajdziesz artykuły nt. Zarządzania Procesem Twórczym,
-kreatywności, twórczości i tworzenia, rozwoju twórczego i mnóstwo
-inspiracji, wskazówek i narzędzi, by dać z siebie w aspekcie twórczym
-100%.
-		`,
+		content: ``,
 		projects: projects_proces_twórczy,
 		articles: articles_proces_twórczy,
 	},

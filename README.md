@@ -77,6 +77,7 @@ My personal website contains:
 - adding embed videos from YouTube & embed audios from SoundCloud
 - deploying a project to Vercel with a custom domain
 - take care of basic proper SEO for the website
+- integrate Sanity headless CMS
 
 ## Features & Custom Components
 
@@ -115,6 +116,7 @@ My personal website contains:
 - Bootstrap 5.2.1
 - GitHub API (for fetching repositories data & pass it to getStaticProps())
 - Vercel (deployment)
+- Sanity (headless CMS)
 
 ## Status
 
@@ -125,6 +127,8 @@ But...
 I'm constantly working on improving the website, refactoring the code, adding new content, components, pages & features. Each commit (to main branch) & pull request causes redeploying & changes in the appearance & functioning of the website.
 
 So the site you see today might me different from the site available yesterday or tomorrow. Even if I add all the features I want & there will be no changes in the code, I'll still be adding new textual & visual content.
+
+Also Sanity's headless CMS is partially integrated with the website (only Home page).
 
 ## Licence
 
@@ -187,9 +191,3 @@ Copyright &copy; 2022 [Vadim Gierko](https://github.com/vadimgierko)
 
 - [ ] enable adding tags to content
 - [ ] enable filtering content by tags
-
-### CMS
-
-- [ ] add/ create CMS before start editing, updating or adding a new content
-  - [ ] build custom CMS using Firebase as BaaS ?
-  - [ ] use Sanity ?

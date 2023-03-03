@@ -57,7 +57,7 @@ export default function NavigationBar({ maxWidth = "" }) {
 				variant={theme}
 				className="fixed-top shadow"
 			>
-				<Container>
+				<Container style={{ maxWidth: 900 }}>
 					<Navbar.Brand>
 						<Image
 							src="/vadim-gerko-zdjecie-cv.jpg"
@@ -71,7 +71,12 @@ export default function NavigationBar({ maxWidth = "" }) {
 					<Navbar.Collapse id="responsive-navbar-nav">
 						<Nav className="me-auto">
 							{NAV_LINKS.map((navLink) => (
-								<Link key={navLink.name} href={navLink.link} passHref>
+								<Link
+									key={navLink.name}
+									href={navLink.link}
+									passHref
+									legacyBehavior
+								>
 									<Nav.Link>{navLink.name}</Nav.Link>
 								</Link>
 							))}

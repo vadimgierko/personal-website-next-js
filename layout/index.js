@@ -11,23 +11,24 @@ import ScrollToTop from "../components/atoms/ScrollToTop";
 
 export default function Layout({ children }) {
 	const { theme, setTheme } = useTheme();
-	const [isDarkModePrefered, setIsDarkModePrefered] = useState();
 
-	// DARK MODE:
-	useEffect(() => {
-		const userPrefersDarkMode = () =>
-			window.matchMedia &&
-			window.matchMedia("(prefers-color-scheme: dark)").matches;
-		console.log("Does user prefer dark mode?", userPrefersDarkMode());
-		setIsDarkModePrefered(userPrefersDarkMode());
-	}, []);
+	// uncomment the code below to enable detecting dark mode preferences::
+	//const [isDarkModePrefered, setIsDarkModePrefered] = useState();
 
-	useEffect(() => {
-		if (isDarkModePrefered) {
-			setTheme("dark");
-			console.log("App: switched to the dark mode.");
-		}
-	}, [isDarkModePrefered, setTheme]);
+	// useEffect(() => {
+	// 	const userPrefersDarkMode = () =>
+	// 		window.matchMedia &&
+	// 		window.matchMedia("(prefers-color-scheme: dark)").matches;
+	// 	console.log("Does user prefer dark mode?", userPrefersDarkMode());
+	// 	setIsDarkModePrefered(userPrefersDarkMode());
+	// }, []);
+
+	// useEffect(() => {
+	// 	if (isDarkModePrefered) {
+	// 		setTheme("dark");
+	// 		console.log("App: switched to the dark mode.");
+	// 	}
+	// }, [isDarkModePrefered, setTheme]);
 
 	return (
 		<>

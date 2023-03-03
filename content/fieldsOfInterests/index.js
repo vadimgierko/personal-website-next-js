@@ -36,6 +36,7 @@ Jestem niezwykle zdeterminowanym web developerem z 2-letnim doświadczeniem niek
 **Szukam pierwszej programistycznej pracy bądź płatnego stażu na stanowisku Junior Front-end/ React/ JavaScript/ Next.js Developer stacjonarnie w Lublinie lub zdalnie w Polsce**.
     `,
 		content: ``,
+
 		projects: projects_web_development,
 		articles: articles_web_development,
 		skills: [
@@ -76,25 +77,11 @@ Uważam, że każdy/a jest kreatywny/a, talent i kreatywność można odkrywać 
 		link: "/visual-thinking",
 		icon: "draw",
 		description: `
-Kolejną moją pasją jest notowanie wizualne.
-Cokolwiek czytam, cokolwiek planuję, cokolwiek rozwijam,
-czegokolwiek się uczę – robię notatki wizualne i mapy myśli.
-    `,
-		content: `
-W tej kategorii znajdziesz artykuły nt. notowania wizualnego, map myśli,
-notowania metodą Cornella, ale także wykorzystaniu w praktyce (w pracy,
-w nauce i własnych projektach) mocy narzędzi myślenia wizualnego oraz
-mnóstwo inspiracji, wskazówek i narzędzi, by zacząć notować wizualnie i
-robić to coraz lepiej.
+Cokolwiek czytam, cokolwiek planuję, cokolwiek rozwijam, czegokolwiek się uczę – robię notatki wizualne i mapy myśli.
 
-Stworzyłem ponad 150 ręcznie rysowanych notatek wizualnych i infografik,
-znaczną część których można obejrzeć na profilu Kreatywnych Notatek na Instagramie i Facebooku.
-Notatki powstają regularnie, zostały zapisane przez użytkowników ok. 2000 razy
-i przyciągają codziennie nowych obserwujących
-(ponad 1700 obserwujących na Instagramie i ponad 1100 na Facebooku (stanem na kwiecień 2020 r.).
-
-Także pod koniec 2019 r. zorganizowałem warsztaty notowania wizualnego według autorskiego programu.
-Warsztaty odbyły się w ramach festiwalu “Ukraina w centrum Lublina”.
+Swoimi notatkami (ok. 100 postów) dzielę się Facebooku (>2500 obserwujących) oraz na Instagramie (>2300 obserwujących), gdzie zostały zapisane przez użytkowników kilka tysięcy razy! Można je zobaczyć także w galerii na niniejszej stronie.
+		
+Prowadziłem też warsztaty, zarówno online, jak i stacjonarne, z notowania wizualnego oraz tworzenia map myśli.
     `,
 		projects: projects_myślenie_wizualne,
 		articles: articles_myślenie_wizualne,
@@ -106,26 +93,12 @@ Warsztaty odbyły się w ramach festiwalu “Ukraina w centrum Lublina”.
 		link: "/music",
 		icon: "musicalNotes",
 		description: `
-Muzyka towarzyszy mi od najmłodszych lat.
-Jako nastolatek samodzielnie nauczyłem się grać na gitarze klasycznej,
-potem ukończyłem szkołę muzyczną I i II stopnia.
-Bardzo szybko zacząłem też komponować muzykę instrumentalną i piosenki.
+Muzyka towarzyszy mi od najmłodszych lat. Jako nastolatek samodzielnie nauczyłem się grać na gitarze klasycznej, potem ukończyłem szkołę muzyczną I i II stopnia.
+
+Bardzo szybko zacząłem też komponować muzykę instrumentalną (ok. 100 utworów) m. in. za pomocą programu Guitar Pro oraz piosenki (ponad 100). Stworzyłem także muzykę do kilku animowanych filmów studenckich oraz do spotu reklamowego festiwalu.
+		
+Uczyłem także gry na gitarze w ogniskach muzycznych opierając się o autorski program nauki.
     `,
-		content: `
-Jednym z moich hobby (obecnie odsuniętym na dalszy plan) jest muzyka.
-Ukończyłem Szkołę Muzyczną I i II st. im. W. Lutosławskiego w Lublinie.
-Pracowałem niegdyś jako instruktor nauki gry na gitarze klasycznej w ogniskach muzycznych,
-prowadząc zajęcia w oparciu o autorski program nauczania gry na gitarze
-(który, mam nadzieję, także zostanie opublikowany).
-
-Ponadto skomponowałem ponad 100 piosenek (melodia + teksty w 4 językach) oraz
-ponad 70 utworów instrumentalnych (zarówno dla gitary klasycznej solo,
-jak i utwory na kilka instrumentów i zespół),
-z czego kilka z nich zostały wykorzystane w studenckich filmach animacyjnych,
-a także w spocie reklamowym Festiwalu oraz były wykonywane i nagradzane na konkursach i festiwalach.
-
-Komponuję w dalszym ciągu i mam dalekosiężne plany w tym zakresie, m. in. napisanie książki o komponowaniu muzyki.
-		`,
 		audios: audios_music,
 	},
 ];

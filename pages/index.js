@@ -13,25 +13,32 @@ import Image from "react-bootstrap/Image";
 // next.js:
 import Head from "next/head";
 import Link from "next/link";
-// lib:
-import { client, urlFor } from "../lib/sanity/client";
+import getEssentialFieldsData from "../lib/getEssentialFieldData";
 
-export default function Home({ home }) {
+export default function Home({ bio, fieldsOfInterests }) {
 	const [windowHeight, setWindowHeight] = useState();
 
 	useEffect(() => {
 		setWindowHeight(globalThis.window.innerHeight - 70);
-		console.log("home page data from sanity:", home);
-	}, [home]);
+	}, []);
 
 	return (
 		<>
 			<Head>
-				<title>{home.metaTitle}</title>
-				<meta name="description" content={home.metaDescription} />
-				<meta property="og:title" content={home.ogTitle} />
-				<meta property="og:description" content={home.ogDescription} />
-				<meta property="og:image" content={urlFor(home.ogImage)} />
+				<title>Vadim Gierko</title>
+				<meta
+					name="description"
+					content="Vadim Gierko's personal website developed with Next.js"
+				/>
+				<meta property="og:title" content="Vadim Gierko" />
+				<meta
+					property="og:description"
+					content="Visit my personal website and get to know me better!"
+				/>
+				<meta
+					property="og:image"
+					content="https://www.vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png"
+				/>
 			</Head>
 			<header>
 				<Container
@@ -41,26 +48,26 @@ export default function Home({ home }) {
 					}}
 				>
 					<Image
-						src={urlFor(home.avatar)}
+						src={bio.img}
 						roundedCircle
 						style={{ width: 200 }}
 						className="shadow"
 						alt="Vadim Gierko's avatar"
 					/>
 					<div style={{ maxWidth: 500 }}>
-						<h1 className="my-3">{home.title}</h1>
-						<MarkdownRenderer markdown={home.description} />
+						<h1 className="my-3">{bio.title}</h1>
+						<MarkdownRenderer markdown={bio.description} />
 					</div>
 				</Container>
 			</header>
-			{home.fieldsOfInterests?.map((field) => (
-				<Section key={field.slug.current}>
+			{fieldsOfInterests?.map((field) => (
+				<Section key={field.link}>
 					{field.icon && <Icon IconType={icons[field.icon].Icon} size={80} />}
 					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
 					{field.description && (
 						<MarkdownRenderer markdown={field.description} />
 					)}
-					<Link href={field.slug.current}>Więcej info</Link>
+					<Link href={field.link}>Więcej info</Link>
 				</Section>
 			))}
 		</>
@@ -86,7 +93,8 @@ Scrolluj dalej i poznaj mnie lepiej!
 
 	return {
 		props: {
-			home,
+			bio,
+			fieldsOfInterests,
 		},
 	};
 }

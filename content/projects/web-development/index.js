@@ -60,13 +60,13 @@ export const projects_web_development = [
 			"Run your blog for free & edit your articles via Markdown Editor!",
 	},
 	{
-		title: "React Redux Firebase CRUD App template styled with MUI",
-		repoName: "react-redux-router-firebase-auth-rtdb-crud-mui-app",
+		title: "React Firebase MUI Todo App",
+		repoName: "todo-app",
 		img: {
 			src: "/img/web-development/projects/react-redux-firebase-mui-crud-app-screen-vadim-gierko.png",
 			alt: "",
 		},
-		link: "/react-redux-router-firebase-auth-rtdb-crud-mui-app",
+		link: "/react-firebase-mui-todo-app",
 		skills: ["react", "react_router", "redux", "firebase", "mui"],
 		features: [
 			"crud",
@@ -77,7 +77,7 @@ export const projects_web_development = [
 			"dark mode",
 		],
 		description:
-			"The template starter for quickly start a new fullstack app with Redux Toolkit & MUI!",
+			"Manage your tasks & todo lists using this Installable Todo App built with React, Redux, React Router, MUI, Firebase & deployed with GitHub Pages.",
 	},
 	{
 		title: "GitHub API Users Search App",

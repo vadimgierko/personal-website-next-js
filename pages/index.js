@@ -68,11 +68,21 @@ export default function Home({ home }) {
 }
 
 export async function getStaticProps() {
-	const homeQuery = `*[_type == "home"][0]{
-		...,
-		fieldsOfInterests[]->
-	}`;
-	const home = await client.fetch(homeQuery);
+	const bio = {
+		img: "vadim-gerko-zdjecie-cv.jpg",
+		title: "Cześć!",
+		description: `
+Nazywam się Vadim Gierko.
+
+Programuję, komponuję, tworzę notatki wizualne i mapy myśli, uczę się czegoś nowego każdego dnia oraz jestem ekspertem od Zarządzania Procesem Twórczym.
+		
+Mimo że mam dużo zainteresowań, od 2 lat skupiam się praktycznie wyłącznie na programowaniu, gdyż ostatecznie chciałbym się przebranżowić i zostać zawodowym web developerem.		
+
+Scrolluj dalej i poznaj mnie lepiej!
+		`,
+	};
+
+	const fieldsOfInterests = getEssentialFieldsData();
 
 	return {
 		props: {

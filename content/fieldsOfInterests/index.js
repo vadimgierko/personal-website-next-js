@@ -31,28 +31,12 @@ export const fieldsOfInterests = [
 		link: "/web-development",
 		icon: "laptop",
 		description: `
-Jestem niezwykle zdeterminowanym web developerem z 2-letnim doświadczeniem niekomercyjnym, który potrafi stworzyć statyczne (SSG) i dynamiczne (SSR) strony internetowe oraz aplikacje typu SPA i PWA za pomocą takich technologii, jak: React, React Router, Next.js, JavaScript, Redux Toolkit, Sanity, Bootstrap, MaterialUI, Firebase i Stripe.
+Jestem niezwykle zdeterminowanym web developerem z 2-letnim doświadczeniem niekomercyjnym, który potrafi stworzyć **statyczne (SSG) i dynamiczne (SSR) strony internetowe**, **aplikacje webowe** typu SPA i PWA oraz **podstawowe sklepy internetowe** za pomocą takich technologii, jak: *React, React Router, Next.js, JavaScript, Redux Toolkit, Sanity, Bootstrap, Firebase i Stripe*.
 
-Szukam pierwszej pracy bądź płatnego stażu na stanowisku Junior Front-end/ React/ JavaScript/ Next.js Developer stacjonarnie w Lublinie lub zdalnie w Polsce.
+**Szukam pierwszej programistycznej pracy bądź płatnego stażu na stanowisku Junior Front-end/ React/ JavaScript/ Next.js Developer stacjonarnie w Lublinie lub zdalnie w Polsce**.
     `,
-		content: `
-## Co potrafię stworzyć?
+		content: ``,
 
-- **responsywne aplikacje webowe typu SPA lub PWA wykorzystując ekosystem Reacta**
-  - zintegrowane z bazą danych (Firebase)
-  - z opcją rejestracji i logowania użytkowników (Firebase)
-  - z możliwością przesyłania/ pobierania/ edycji danych i plików (CRUD)
-  - pobieraniem danych z API
-  - z dynamicznym routingiem (React Router)
-  - reużywalnymi komponentami UI wykonanymi za pomocą React-Bootstrap, Bootstrap lub MUI
-- **statyczne (SSG) i dynamiczne (SSR) strony internetowe wykorzystując Next.js**
-  - z headless CMS (Sanity) lub/oraz zintegrowane z bazą danych (Firebase)
-  - z możliwością przesyłania/ pobierania/ edycji danych i plików (CRUD)
-  - pobieraniem danych z API
-  - z wbudowanym dynamicznym routingiem Next.js
-  - reużywalnymi komponentami UI
-- **proste gry, wizualizacje, symulacje i aplikacje z wykorzystaniem biblioteki p5.js**
-		`,
 		projects: projects_web_development,
 		articles: articles_web_development,
 		skills: [
@@ -65,7 +49,7 @@ Szukam pierwszej pracy bądź płatnego stażu na stanowisku Junior Front-end/ R
 			"bootstrap",
 			"mui",
 			"css",
-			"styled_components",
+			//"styled_components",
 			"html",
 			"markdown",
 			"github",
@@ -84,6 +68,7 @@ Wnioskami, do których doszedłem, oraz autorską koncepcją i systemem Zarządz
 		
 Uważam, że każdy/a jest kreatywny/a, talent i kreatywność można odkrywać i rozwijać, twórczością może być każdy rodzaj działalności, a twórczością i Procesem Twórczym można zarządzać.
     `,
+		content: ``,
 		projects: projects_proces_twórczy,
 		articles: articles_proces_twórczy,
 	},

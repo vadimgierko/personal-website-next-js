@@ -1,6 +1,8 @@
 import { Container } from "react-bootstrap";
 
 export default function Footer() {
+	const currentYear = new Date().getFullYear();
+
 	return (
 		<Container
 			as="footer"
@@ -10,7 +12,7 @@ export default function Footer() {
 		>
 			<hr />
 			<p className="text-center mb-0 pb-3">
-				&copy; 2022{" "}
+				development, content & images &copy; {"2022-" + currentYear.toString()}{" "}
 				<a
 					href="https://github.com/vadimgierko"
 					target="_blank"

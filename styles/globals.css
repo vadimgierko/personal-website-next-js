@@ -3,6 +3,8 @@ body {
   padding: 0;
 }
 
+/* css for scroll to top arrow button */
+
 .scroll-to-top {
   z-index: 1;
   color: grey;

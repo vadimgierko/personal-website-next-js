@@ -81,11 +81,9 @@ export async function getStaticProps() {
 		description: `
 Nazywam się Vadim Gierko.
 
-Programuję, komponuję, tworzę notatki wizualne i mapy myśli, uczę się czegoś nowego każdego dnia oraz jestem ekspertem od Zarządzania Procesem Twórczym.
+Programuję, komponuję, tworzę notatki wizualne i mapy myśli, zgłębiam tajniki Zarządzania Procesem Twórczym oraz uczę się czegoś nowego każdego dnia.
 		
-Mimo że mam dużo zainteresowań, od 2 lat skupiam się praktycznie wyłącznie na programowaniu, gdyż ostatecznie chciałbym się przebranżowić i zostać zawodowym web developerem.		
-
-Scrolluj dalej i poznaj mnie lepiej!
+Od ponad 2 lat skupiam się praktycznie wyłącznie na programowaniu webowym. Uwielbiam programowanie za to, że pozwala urzeczywistnić każdy szalony pomysł oraz rozwiązać każdy praktyczny problem.		
 		`,
 	};
 

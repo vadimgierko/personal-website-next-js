@@ -16,16 +16,22 @@ import {
 	SiVisualstudiocode,
 	SiGithub,
 	SiVercel,
+	SiTypescript,
+	SiStripe,
 } from "react-icons/si";
 
 export const skills = {
 	react: {
 		Icon: SiReact,
-		title: "React 18",
+		title: "React",
 	},
 	javascript: {
 		Icon: SiJavascript,
 		title: "JavaScript (ES6+)",
+	},
+	typescript: {
+		Icon: SiTypescript,
+		title: "TypeScript",
 	},
 	redux: {
 		Icon: SiRedux,
@@ -33,19 +39,23 @@ export const skills = {
 	},
 	bootstrap: {
 		Icon: SiBootstrap,
-		title: "Bootstrap 5",
+		title: "Bootstrap",
 	},
 	next_js: {
 		Icon: SiNextdotjs,
-		title: "Next.js 12",
+		title: "Next.js",
 	},
 	react_router: {
 		Icon: SiReactrouter,
-		title: "React Router 6",
+		title: "React Router",
 	},
 	firebase: {
 		Icon: SiFirebase,
-		title: "Firebase 9",
+		title: "Firebase",
+	},
+	stripe: {
+		Icon: SiStripe,
+		title: "Stripe",
 	},
 	mui: {
 		Icon: SiMaterialui,
@@ -53,11 +63,11 @@ export const skills = {
 	},
 	css: {
 		Icon: SiCss3,
-		title: "CSS3",
+		title: "CSS",
 	},
 	html: {
 		Icon: SiHtml5,
-		title: "HTML5",
+		title: "HTML",
 	},
 	styled_components: {
 		Icon: SiStyledcomponents,

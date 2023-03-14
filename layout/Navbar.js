@@ -15,7 +15,7 @@ const NAV_LINKS = [
 		link: "/o-mnie",
 	},
 	{
-		name: "web development",
+		name: "programowanie",
 		link: "/web-development",
 	},
 	{

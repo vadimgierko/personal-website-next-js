@@ -1,19 +1,88 @@
 export const projects_web_development = [
 	{
 		title: "vadimgierko.com",
+		public: true,
 		repoName: "personal-website-next-js",
 		img: {
 			src: "/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png",
 			alt: "",
 		},
 		link: "/personal-website-next-js",
-		skills: ["react", "bootstrap", "next_js", "markdown", "vercel", "github"],
+		skills: [
+			"next_js",
+			"react",
+			"bootstrap",
+			"markdown",
+			"css",
+			"vercel",
+			"github",
+		],
 		features: ["rwd", "dark mode"],
 		description:
 			"My personal static website designed & developed by myself from scratch using React, Next.js, React-Bootstrap, Bootstrap & Markdown.",
 	},
 	{
+		title: "Sklep Ceramika MAKI",
+		public: false,
+		repoName: "ecommerce-website-next-js-sanity-stripe-firebase",
+		img: {
+			src: "/img/web-development/projects/ceramika-maki-ecommerce-website-shop-vadim-gierko-next-js-stripe-sanity.png",
+			alt: "",
+		},
+		//=====================THIS REPO IS PRIVATE, SO I ADD THIS BELOW MANUALLY =================
+		externalLinks: [
+			{
+				icon: "github",
+				link: "https://github.com/vadimgierko/ecommerce-website-next-js-sanity-stripe-firebase",
+				description: "Zobacz kod na GitHub",
+			},
+			{
+				icon: "global",
+				link: "https://ecommerce-website-next-js-sanity-stripe-firebase.vercel.app/",
+				description: "Strona www projektu",
+			},
+		],
+		content: `
+This is a fullstack hybrid (SSG + Client-side data fetching) e-commerce website for local shop producing handcrafted ceramic products.
+
+- written from scratch with Next.js/ React (the website is almost fully static (SSG), except products available amount, which is Client-side data fetching to get the most current data),
+- integrated with headless CMS/ database (Sanity)
+	- where the owner/editor can store & edit products & website content,
+	- where products are reserved during checkout & unreserved after checkout cancel or session expiration
+- integrated with Stripe payments
+	- built-in Stripe checkout,
+	- blik, przelewy24 & card payments available,
+	- integrated with Stripe webhook to notify if checkout session is expired & trigger unreserving products in database (Sanity)
+- Bootswatch theme "lux" used
+- deployed on Vercel (the website is serverless, so no need to have hosting set up & it's free)
+
+## Notable Features
+
+- blik, przelewy24 & card payments available
+- custom inventory management with products reservation & dealing with abandoned carts
+- CMS (separate app) for the owner/editor to edit page info & manage products data
+
+## Tech Stack
+
+- Next.js 13
+- React 18
+- Stripe 11
+- Sanity
+- React Bootstrap 2.6
+- React Icons
+- Bootstrap 5.2
+- Bootswatch 5.2
+		`,
+		//=======================================================================================//
+		link: "/sklep-ceramika-maki",
+		skills: ["next_js", "react", "stripe", "bootstrap", "css", "vercel"],
+		features: ["rwd", "dark mode"],
+		description:
+			"Fullstack hybrid (SSG + Client-side data fetching) e-commerce website for local shop producing handcrafted ceramic products with Stripe payments & Sanity headless CMS integrated.",
+	},
+	{
 		title: "Linky Notes",
+		public: true,
 		repoName: "linky-notes",
 		img: {
 			src: "/img/web-development/projects/linky-notes-app-vadim-gierko.png",
@@ -37,17 +106,18 @@ export const projects_web_development = [
 			"dark mode",
 		],
 		description:
-			"Organize & filter your notes with tags & create your own knowledge base!",
+			"Organize & filter your notes with one or more tags, format your notes using Markdown syntax & create your own unstructured knowledge base!",
 	},
 	{
 		title: "Blogging Platform with Markdown Text Editor",
+		public: true,
 		repoName: "blogging-platform",
 		img: {
 			src: "/img/web-development/projects/blogging-platform-vadim-gierko-screen.png",
 			alt: "",
 		},
 		link: "/blogging-platform",
-		skills: ["react", "react_router", "markdown", "firebase", "bootstrap"],
+		skills: ["react", "react_router", "bootstrap", "markdown", "firebase"],
 		features: [
 			"crud",
 			"database",
@@ -57,16 +127,17 @@ export const projects_web_development = [
 			"markdown editor",
 		],
 		description:
-			"Run your blog for free & edit your articles via Markdown Editor!",
+			"Run your blog for free & edit your articles via Markdown Text Editor!",
 	},
 	{
 		title: "React Firebase MUI Todo App",
+		public: true,
 		repoName: "todo-app",
 		img: {
 			src: "/img/web-development/projects/react-redux-firebase-mui-crud-app-screen-vadim-gierko.png",
 			alt: "",
 		},
-		link: "/react-firebase-mui-todo-app",
+		link: "/todo-app",
 		skills: ["react", "react_router", "redux", "firebase", "mui"],
 		features: [
 			"crud",
@@ -81,6 +152,7 @@ export const projects_web_development = [
 	},
 	{
 		title: "GitHub API Users Search App",
+		public: true,
 		repoName: "github-api-users-search-app",
 		img: {
 			src: "/img/web-development/projects/github-user-search-app-screen-vadim-gierko.png",
@@ -93,6 +165,7 @@ export const projects_web_development = [
 	},
 	{
 		title: "Mind Maps App",
+		public: true,
 		repoName: "MIND-MAP-APP",
 		img: {
 			src: "/img/web-development/projects/mind-maps-app-screen-vadim-gierko.png",
@@ -111,6 +184,7 @@ export const projects_web_development = [
 	},
 	{
 		title: "Old School 2D Racing Game",
+		public: true,
 		repoName: "old-school-2d-racing-game",
 		img: {
 			src: "/img/web-development/projects/old-school-racing-game-p5-js-vadim-gierko-2.png",
@@ -128,6 +202,7 @@ export const projects_web_development = [
 	},
 	{
 		title: "Let It Snow! Falling Snow Animation",
+		public: true,
 		repoName: "let-it-snow",
 		img: {
 			src: "/img/web-development/projects/let-it-snow-p5-javascript-animation-vadim-gierko.png",
@@ -144,6 +219,7 @@ export const projects_web_development = [
 	},
 	{
 		title: "Live Markdown Text Editor",
+		public: true,
 		repoName: "markdown-text-editor",
 		img: {
 			src: "/img/web-development/projects/markdown-text-editor-by-vadim-gierko.png",
@@ -154,20 +230,22 @@ export const projects_web_development = [
 		features: ["routing", "markdown editor", "local storage", "rwd"],
 		description: "Check how your Markdown text will look like when rendered!",
 	},
-	{
-		title: "Pixel Draw App",
-		repoName: "PixelDrawApp",
-		img: {
-			src: "/img/web-development/projects/pixel-draw-app-screen-vadim-gierko.png",
-			alt: "",
-		},
-		link: "/pixel-draw-app",
-		skills: ["react", "bootstrap"],
-		features: ["crud", "local storage", "rwd"],
-		description: "Create, save and edit your first pixel art!",
-	},
+	// {
+	// 	title: "Pixel Draw App",
+	//  public: true,
+	// 	repoName: "PixelDrawApp",
+	// 	img: {
+	// 		src: "/img/web-development/projects/pixel-draw-app-screen-vadim-gierko.png",
+	// 		alt: "",
+	// 	},
+	// 	link: "/pixel-draw-app",
+	// 	skills: ["react", "bootstrap"],
+	// 	features: ["crud", "local storage", "rwd"],
+	// 	description: "Create, save and edit your first pixel art!",
+	// },
 	{
 		title: "Snake Game Clone",
+		public: true,
 		repoName: "snake-game-react",
 		img: {
 			src: "/img/web-development/projects/snake-game-clone-screen-vadim-gierko.png",

@@ -116,7 +116,6 @@ My personal website contains:
 - Bootstrap 5.2.1
 - GitHub API (for fetching repositories data & pass it to getStaticProps())
 - Vercel (deployment)
-- Sanity (headless CMS)
 
 ## Status
 
@@ -128,66 +127,10 @@ I'm constantly working on improving the website, refactoring the code, adding ne
 
 So the site you see today might me different from the site available yesterday or tomorrow. Even if I add all the features I want & there will be no changes in the code, I'll still be adding new textual & visual content.
 
-Also Sanity's headless CMS is partially integrated with the website (only Home page).
-
 ## Licence
 
 The source code & all the textual & visual content of the current project is created & owned by [me](https://github.com/vadimgierko).
 
 You can view, fork & try the code on your local machine for private & non-commercial use only.
 
-Copyright &copy; 2022 [Vadim Gierko](https://github.com/vadimgierko)
-
-## Future improvements & additions
-
-### SEO:
-
-- [ ] add og metadata also to /\[items\] page
-- [ ] check how many chars title & descritpion should have & fix it
-- [ ] add conditional dynamic og:type property (article, book, website, etc. => find more)
-- [ ] add keywords prop
-- [ ] index my website in Google
-- [ ] add [robots.txt](https://nextjs.org/learn/seo/crawling-and-indexing/robots-txt)
-- [ ] add [sitemap](https://nextjs.org/learn/seo/crawling-and-indexing/xml-sitemaps)
-- [ ] add html lang
-- [ ] do [further reading how to improve SEO](https://nextjs.org/learn/seo/improve)
-
-### GitHub API
-
-- [ ] use special repo vadimgierko for content in /web-development
-- [ ] use GitHub API more efficiently to fetch projects repo data
-- [ ] fix all mentioned in portfolio dev projects' repos readme files
-
-### Fields of interests/ Sections/ Pages
-
-- [ ] add _Services_ (What can I do for you) section to each field of interest page
-- [ ] complete _Music_ section with content
-- [ ] add /[items] page for all articles, projects, videos, audios etc.
-  - [ ] organize by fields?
-  - [ ] enable search/ filter features for each particular /[items] page
-
-### Articles/ Projects
-
-- [ ] add created/updatedAt for
-  - [ ] articles
-  - [ ] projects
-
-### Print layout
-
-- [ ] improve print layout
-  - [ ] hide bootstrap layouts (cols, cards) or manage that with css
-  - [ ] manage big images
-
-### Search/ Filter features
-
-- [ ] add search box in
-  - [ ] navbar
-  - [ ] /[items] page
-- [ ] add search page for search results
-  - [ ] /search?field= itemType= title= ??
-  - [ ] /search?value= keywords= ??
-
-### Tags
-
-- [ ] enable adding tags to content
-- [ ] enable filtering content by tags
+Copyright &copy; 2022-2023 [Vadim Gierko](https://github.com/vadimgierko)

@@ -72,6 +72,16 @@ This is a fullstack hybrid (SSG + Client-side data fetching) e-commerce website 
 - React Icons
 - Bootstrap 5.2
 - Bootswatch 5.2
+
+## WARNING
+
+The **e-commerce website is currently in test mode**, what means, that it's fully functional
+(there are real products, you can add them to the cart & even order them),
+but you can order products only in test mode:
+
+- [here is an information, how to make a test payment using **card**](https://stripe.com/docs/testing#testing-interactively)
+- [here is an information, how to make a test payment using **przelewy24**](https://stripe.com/docs/payments/p24/accept-a-payment?platform=web&ui=checkout#test-integration)
+- [here is an information, how to make a test payment using **blik**](https://stripe.com/docs/payments/blik/accept-a-payment?platform=web&ui=checkout#test-integration)
 		`,
 		//=======================================================================================//
 		link: "/sklep-ceramika-maki",

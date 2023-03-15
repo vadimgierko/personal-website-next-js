@@ -5,7 +5,13 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 // react-icons:
-import { BsLinkedin, BsGithub, BsSunFill, BsMoonFill } from "react-icons/bs";
+import {
+	BsLinkedin,
+	BsGithub,
+	BsInstagram,
+	BsSunFill,
+	BsMoonFill,
+} from "react-icons/bs";
 // next.js:
 import Link from "next/link";
 
@@ -42,6 +48,11 @@ const SOCIAL_LINKS = [
 		name: "linkedin",
 		link: "https://pl.linkedin.com/in/vadimgierko",
 		Icon: BsLinkedin,
+	},
+	{
+		name: "instagram",
+		link: "https://www.instagram.com/vadim.gierko/",
+		Icon: BsInstagram,
 	},
 ];
 

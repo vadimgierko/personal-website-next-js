@@ -42,7 +42,7 @@ export default function Layout({ children }) {
 				/>
 			</Head>
 			<div
-				className={theme === "light" ? "bg-light" : "bg-dark"}
+				className={`bg-${theme}`}
 				style={{
 					display: "flex",
 					flexDirection: "column",
@@ -59,7 +59,7 @@ export default function Layout({ children }) {
 						flexDirection: "column",
 						paddingTop: 70,
 						flexGrow: 1,
-						color: theme === "light" ? "black" : "white",
+						color: theme === "light" ? "dark" : "light",
 					}}
 				>
 					{children}

@@ -11,6 +11,7 @@ import {
 	BsInstagram,
 	BsSunFill,
 	BsMoonFill,
+	BsEnvelope,
 } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
@@ -100,11 +101,18 @@ export default function NavigationBar({ maxWidth = "" }) {
 									<BsSunFill onClick={switchTheme} />
 								)}
 							</Nav.Link>
+
 							{SOCIAL_LINKS.map((social) => (
 								<Nav.Link key={social.link} href={social.link} target="_blank">
 									<social.Icon />
 								</Nav.Link>
 							))}
+
+							<Link href="/contact" passHref legacyBehavior>
+								<Nav.Link>
+									<BsEnvelope />
+								</Nav.Link>
+							</Link>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

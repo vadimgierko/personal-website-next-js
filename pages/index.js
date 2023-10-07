@@ -83,7 +83,7 @@ Nazywam się Vadim Gierko.
 
 Programuję, komponuję, tworzę notatki wizualne i mapy myśli, zgłębiam tajniki Zarządzania Procesem Twórczym oraz uczę się czegoś nowego każdego dnia.
 		
-Od ponad 2 lat skupiam się praktycznie wyłącznie na programowaniu webowym. Uwielbiam programowanie za to, że pozwala urzeczywistnić każdy szalony pomysł oraz rozwiązać każdy praktyczny problem.		
+Od ponad 2,5 lat skupiam się praktycznie wyłącznie na programowaniu webowym. Uwielbiam programowanie za to, że pozwala urzeczywistnić każdy szalony pomysł oraz rozwiązać każdy praktyczny problem.		
 		`,
 	};
 

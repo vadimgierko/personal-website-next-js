@@ -18,9 +18,14 @@ import {
 	SiVercel,
 	SiTypescript,
 	SiStripe,
+	SiSvelte,
 } from "react-icons/si";
 
 export const skills = {
+	svelte: {
+		Icon: SiSvelte,
+		title: "Svelte",
+	},
 	react: {
 		Icon: SiReact,
 		title: "React",

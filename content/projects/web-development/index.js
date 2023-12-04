@@ -125,27 +125,20 @@ but you can order products only in test mode:
 		description:
 			"Track, manage, filter, sort, rank, nest and mix ordered & unordered issues in your dev projects & have an overview of all issues regardless of the project in 1 table.",
 	},
-	// {
-	// 	title: "Chat App",
-	// 	public: true,
-	// 	repoName: "issue-tracker",
-	// 	img: {
-	// 		src: "/img/web-development/projects/issue-tracker-app-vadim-gierko-screenshot.png",
-	// 		alt: "",
-	// 	},
-	// 	link: "/issue-tracker",
-	// 	skills: [
-	// 		"react",
-	// 		"react_router",
-	// 		"firebase",
-	// 		"typescript",
-	// 		"bootstrap",
-	// 		"markdown",
-	// 	],
-	// 	features: ["rwd", "dark mode"],
-	// 	description:
-	// 		"Track, manage, filter, sort, rank, nest and mix ordered & unordered issues in your dev projects & have an overview of all issues regardless of the project in 1 table.",
-	// },
+	{
+		title: "Realtime Chat App React",
+		public: true,
+		repoName: "chat-app-react",
+		img: {
+			src: "/img/web-development/projects/react-chat-app-vadim-gierko-screenshot.png",
+			alt: "",
+		},
+		link: "/chat-app-react",
+		skills: ["react", "react_router", "typescript", "firebase", "bootstrap"],
+		features: ["rwd", "dark mode"],
+		description:
+			"Realtime PWA chat app built with React, TypeScript, Bootstrap, Firebase Authentication & Firestore. Deployed on Vercel.",
+	},
 	{
 		title: "Linky Notes",
 		public: true,

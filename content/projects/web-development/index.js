@@ -22,6 +22,20 @@ export const projects_web_development = [
 			"My personal static website designed & developed by myself from scratch using React, Next.js, React-Bootstrap, Bootstrap & Markdown.",
 	},
 	{
+		title: "kodujemywbiurze.pl",
+		public: true,
+		repoName: "kodujemywbiurze.pl",
+		img: {
+			src: "/img/web-development/projects/kodujemy-w-biurze-pl-strona-internetowa-screenshot.jpg",
+			alt: "",
+		},
+		link: "/kodujemywbiurze.pl",
+		skills: ["svelte", "typescript", "markdown", "css", "vercel"],
+		features: ["rwd", "dark mode"],
+		description:
+			"Darmowy kurs programowania webowego dla pracowników biurowych.",
+	},
+	{
 		title: "Sklep Ceramika MAKI",
 		public: false,
 		repoName: "ecommerce-website-next-js-sanity-stripe-firebase",
@@ -90,6 +104,48 @@ but you can order products only in test mode:
 		description:
 			"Fullstack hybrid (SSG + Client-side data fetching) e-commerce website for local shop producing handcrafted ceramic products with Stripe payments & Sanity headless CMS integrated.",
 	},
+	{
+		title: "Issue Tracker",
+		public: true,
+		repoName: "issue-tracker",
+		img: {
+			src: "/img/web-development/projects/issue-tracker-app-vadim-gierko-screenshot.png",
+			alt: "",
+		},
+		link: "/issue-tracker",
+		skills: [
+			"react",
+			"react_router",
+			"firebase",
+			"typescript",
+			"bootstrap",
+			"markdown",
+		],
+		features: ["rwd", "dark mode"],
+		description:
+			"Track, manage, filter, sort, rank, nest and mix ordered & unordered issues in your dev projects & have an overview of all issues regardless of the project in 1 table.",
+	},
+	// {
+	// 	title: "Chat App",
+	// 	public: true,
+	// 	repoName: "issue-tracker",
+	// 	img: {
+	// 		src: "/img/web-development/projects/issue-tracker-app-vadim-gierko-screenshot.png",
+	// 		alt: "",
+	// 	},
+	// 	link: "/issue-tracker",
+	// 	skills: [
+	// 		"react",
+	// 		"react_router",
+	// 		"firebase",
+	// 		"typescript",
+	// 		"bootstrap",
+	// 		"markdown",
+	// 	],
+	// 	features: ["rwd", "dark mode"],
+	// 	description:
+	// 		"Track, manage, filter, sort, rank, nest and mix ordered & unordered issues in your dev projects & have an overview of all issues regardless of the project in 1 table.",
+	// },
 	{
 		title: "Linky Notes",
 		public: true,
@@ -173,25 +229,25 @@ but you can order products only in test mode:
 		features: ["api", "routing", "rwd"],
 		description: "Find any user on GitHub & see his/her public repositories!",
 	},
-	{
-		title: "Mind Maps App",
-		public: true,
-		repoName: "MIND-MAP-APP",
-		img: {
-			src: "/img/web-development/projects/mind-maps-app-screen-vadim-gierko.png",
-			alt: "",
-		},
-		link: "/mind-map-app",
-		skills: [
-			"javascript",
-			//"p5.js",
-			"jquery",
-			"bootstrap",
-			"firebase",
-		],
-		features: ["crud", "database", "users authentication", "rwd"],
-		description: "Create, save & edit your mind maps online with this app!",
-	},
+	// {
+	// 	title: "Mind Maps App",
+	// 	public: true,
+	// 	repoName: "MIND-MAP-APP",
+	// 	img: {
+	// 		src: "/img/web-development/projects/mind-maps-app-screen-vadim-gierko.png",
+	// 		alt: "",
+	// 	},
+	// 	link: "/mind-map-app",
+	// 	skills: [
+	// 		"javascript",
+	// 		//"p5.js",
+	// 		"jquery",
+	// 		"bootstrap",
+	// 		"firebase",
+	// 	],
+	// 	features: ["crud", "database", "users authentication", "rwd"],
+	// 	description: "Create, save & edit your mind maps online with this app!",
+	// },
 	{
 		title: "Old School 2D Racing Game",
 		public: true,
@@ -210,36 +266,36 @@ but you can order products only in test mode:
 		features: ["animation", "rwd"],
 		description: "Play the old school 2D racing game!",
 	},
-	{
-		title: "Let It Snow! Falling Snow Animation",
-		public: true,
-		repoName: "let-it-snow",
-		img: {
-			src: "/img/web-development/projects/let-it-snow-p5-javascript-animation-vadim-gierko.png",
-			alt: "",
-		},
-		link: "/let-it-snow",
-		skills: [
-			"javascript",
-			//"p5.js"
-		],
-		features: ["animation", "rwd"],
-		description:
-			"Listen to the beautiful Let it snow song while watching animated falling snow!",
-	},
-	{
-		title: "Live Markdown Text Editor",
-		public: true,
-		repoName: "markdown-text-editor",
-		img: {
-			src: "/img/web-development/projects/markdown-text-editor-by-vadim-gierko.png",
-			alt: "",
-		},
-		link: "/markdown-text-editor",
-		skills: ["react", "react_router", "markdown", "bootstrap"],
-		features: ["routing", "markdown editor", "local storage", "rwd"],
-		description: "Check how your Markdown text will look like when rendered!",
-	},
+	// {
+	// 	title: "Let It Snow! Falling Snow Animation",
+	// 	public: true,
+	// 	repoName: "let-it-snow",
+	// 	img: {
+	// 		src: "/img/web-development/projects/let-it-snow-p5-javascript-animation-vadim-gierko.png",
+	// 		alt: "",
+	// 	},
+	// 	link: "/let-it-snow",
+	// 	skills: [
+	// 		"javascript",
+	// 		//"p5.js"
+	// 	],
+	// 	features: ["animation", "rwd"],
+	// 	description:
+	// 		"Listen to the beautiful Let it snow song while watching animated falling snow!",
+	// },
+	// {
+	// 	title: "Live Markdown Text Editor",
+	// 	public: true,
+	// 	repoName: "markdown-text-editor",
+	// 	img: {
+	// 		src: "/img/web-development/projects/markdown-text-editor-by-vadim-gierko.png",
+	// 		alt: "",
+	// 	},
+	// 	link: "/markdown-text-editor",
+	// 	skills: ["react", "react_router", "markdown", "bootstrap"],
+	// 	features: ["routing", "markdown editor", "local storage", "rwd"],
+	// 	description: "Check how your Markdown text will look like when rendered!",
+	// },
 	// {
 	// 	title: "Pixel Draw App",
 	//  public: true,
@@ -253,20 +309,20 @@ but you can order products only in test mode:
 	// 	features: ["crud", "local storage", "rwd"],
 	// 	description: "Create, save and edit your first pixel art!",
 	// },
-	{
-		title: "Snake Game Clone",
-		public: true,
-		repoName: "snake-game-react",
-		img: {
-			src: "/img/web-development/projects/snake-game-clone-screen-vadim-gierko.png",
-			alt: "",
-		},
-		link: "/snake-game-clone",
-		skills: ["react", "javascript", "css"],
-		features: ["game-loop", "rwd"],
-		description:
-			"Old School 2D Snake Game for desktop & mobile written in React. Enjoy!",
-	},
+	// {
+	// 	title: "Snake Game Clone",
+	// 	public: true,
+	// 	repoName: "snake-game-react",
+	// 	img: {
+	// 		src: "/img/web-development/projects/snake-game-clone-screen-vadim-gierko.png",
+	// 		alt: "",
+	// 	},
+	// 	link: "/snake-game-clone",
+	// 	skills: ["react", "javascript", "css"],
+	// 	features: ["game-loop", "rwd"],
+	// 	description:
+	// 		"Old School 2D Snake Game for desktop & mobile written in React. Enjoy!",
+	// },
 	//======================================================================================
 	// {
 	// 	title: "Sudoku Solver",

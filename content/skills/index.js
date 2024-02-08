@@ -19,6 +19,7 @@ import {
 	SiTypescript,
 	SiStripe,
 	SiSvelte,
+	SiAstro,
 } from "react-icons/si";
 
 export const skills = {
@@ -101,5 +102,9 @@ export const skills = {
 	vercel: {
 		Icon: SiVercel,
 		title: "Vercel",
+	},
+	astro: {
+		Icon: SiAstro,
+		title: "Astro",
 	},
 };

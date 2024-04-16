@@ -96,15 +96,6 @@ My personal website contains:
   - allows to style markdown content using passed custom components or additional styles
 - auto fetching my code repositories data (descriptions, urls, README files content) from GitHub to hydrate the website with the current data during the build
 
-## Setup
-
-- clone or fork this repository from/on GitHub
-- open the project in your code editor
-- start a New Terminal
-- run `npm install` command in your terminal to install all dependencies
-- when dependencies are installed (you'll see 2 new folders created: ".next" & "node_modules"), run `npm run dev` command in your terminal to run the app on your local host
-- go to http://localhost:3000 to see the working app
-
 ## Technologies used in the project
 
 - Next.js 12.3.1
@@ -121,8 +112,6 @@ My personal website contains:
 
 The website is deployed, published & available at https://vadimgierko.com.
 
-But...
-
 I'm constantly working on improving the website, refactoring the code, adding new content, components, pages & features. Each commit (to main branch) & pull request causes redeploying & changes in the appearance & functioning of the website.
 
 So the site you see today might me different from the site available yesterday or tomorrow. Even if I add all the features I want & there will be no changes in the code, I'll still be adding new textual & visual content.
@@ -133,4 +122,4 @@ The source code & all the textual & visual content of the current project is cre
 
 You can view, fork & try the code on your local machine for private & non-commercial use only.
 
-Copyright &copy; 2022-2023 [Vadim Gierko](https://github.com/vadimgierko)
+Copyright &copy; 2022-2024 [Vadim Gierko](https://github.com/vadimgierko)

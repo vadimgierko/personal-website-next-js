@@ -9,7 +9,7 @@ import {
 	SiHtml5,
 	SiCss3,
 	SiStyledcomponents,
-	SiMaterialui,
+	SiMui,
 	SiMarkdown,
 	SiSass,
 	SiJquery,
@@ -64,7 +64,7 @@ export const skills = {
 		title: "Stripe",
 	},
 	mui: {
-		Icon: SiMaterialui,
+		Icon: SiMui,
 		title: "MUI",
 	},
 	css: {

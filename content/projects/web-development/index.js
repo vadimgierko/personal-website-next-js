@@ -35,75 +35,75 @@ export const projects_web_development = [
 		description:
 			"Darmowy kurs programowania webowego dla pracowników biurowych.",
 	},
-	{
-		title: "Sklep Ceramika MAKI",
-		public: false,
-		repoName: "ecommerce-website-next-js-sanity-stripe-firebase",
-		img: {
-			src: "/img/web-development/projects/ceramika-maki-ecommerce-website-shop-vadim-gierko-next-js-stripe-sanity.png",
-			alt: "",
-		},
-		//=====================THIS REPO IS PRIVATE, SO I ADD THIS BELOW MANUALLY =================
-		externalLinks: [
-			{
-				icon: "github",
-				link: "https://github.com/vadimgierko/ecommerce-website-next-js-sanity-stripe-firebase",
-				description: "Zobacz kod na GitHub",
-			},
-			{
-				icon: "global",
-				link: "https://ecommerce-website-next-js-sanity-stripe-firebase.vercel.app/",
-				description: "Strona www projektu",
-			},
-		],
-		content: `
-This is a fullstack hybrid (SSG + Client-side data fetching) e-commerce website for local shop producing handcrafted ceramic products.
+	// 	{
+	// 		title: "Sklep Ceramika MAKI",
+	// 		public: false,
+	// 		repoName: "ecommerce-website-next-js-sanity-stripe-firebase",
+	// 		img: {
+	// 			src: "/img/web-development/projects/ceramika-maki-ecommerce-website-shop-vadim-gierko-next-js-stripe-sanity.png",
+	// 			alt: "",
+	// 		},
+	// 		//=====================THIS REPO IS PRIVATE, SO I ADD THIS BELOW MANUALLY =================
+	// 		externalLinks: [
+	// 			{
+	// 				icon: "github",
+	// 				link: "https://github.com/vadimgierko/ecommerce-website-next-js-sanity-stripe-firebase",
+	// 				description: "Zobacz kod na GitHub",
+	// 			},
+	// 			{
+	// 				icon: "global",
+	// 				link: "https://ecommerce-website-next-js-sanity-stripe-firebase.vercel.app/",
+	// 				description: "Strona www projektu",
+	// 			},
+	// 		],
+	// 		content: `
+	// This is a fullstack hybrid (SSG + Client-side data fetching) e-commerce website for local shop producing handcrafted ceramic products.
 
-- written from scratch with Next.js/ React (the website is almost fully static (SSG), except products available amount, which is Client-side data fetching to get the most current data),
-- integrated with headless CMS/ database (Sanity)
-	- where the owner/editor can store & edit products & website content,
-	- where products are reserved during checkout & unreserved after checkout cancel or session expiration
-- integrated with Stripe payments
-	- built-in Stripe checkout,
-	- blik, przelewy24 & card payments available,
-	- integrated with Stripe webhook to notify if checkout session is expired & trigger unreserving products in database (Sanity)
-- Bootswatch theme "lux" used
-- deployed on Vercel (the website is serverless, so no need to have hosting set up & it's free)
+	// - written from scratch with Next.js/ React (the website is almost fully static (SSG), except products available amount, which is Client-side data fetching to get the most current data),
+	// - integrated with headless CMS/ database (Sanity)
+	// 	- where the owner/editor can store & edit products & website content,
+	// 	- where products are reserved during checkout & unreserved after checkout cancel or session expiration
+	// - integrated with Stripe payments
+	// 	- built-in Stripe checkout,
+	// 	- blik, przelewy24 & card payments available,
+	// 	- integrated with Stripe webhook to notify if checkout session is expired & trigger unreserving products in database (Sanity)
+	// - Bootswatch theme "lux" used
+	// - deployed on Vercel (the website is serverless, so no need to have hosting set up & it's free)
 
-## Notable Features
+	// ## Notable Features
 
-- blik, przelewy24 & card payments available
-- custom inventory management with products reservation & dealing with abandoned carts
-- CMS (separate app) for the owner/editor to edit page info & manage products data
+	// - blik, przelewy24 & card payments available
+	// - custom inventory management with products reservation & dealing with abandoned carts
+	// - CMS (separate app) for the owner/editor to edit page info & manage products data
 
-## Tech Stack
+	// ## Tech Stack
 
-- Next.js 13
-- React 18
-- Stripe 11
-- Sanity
-- React Bootstrap 2.6
-- React Icons
-- Bootstrap 5.2
-- Bootswatch 5.2
+	// - Next.js 13
+	// - React 18
+	// - Stripe 11
+	// - Sanity
+	// - React Bootstrap 2.6
+	// - React Icons
+	// - Bootstrap 5.2
+	// - Bootswatch 5.2
 
-## WARNING
+	// ## WARNING
 
-The **e-commerce website is currently in test mode**, what means, that it's fully functional
-(there are real products, you can add them to the cart & even order them),
-but you can order products only in test mode:
+	// The **e-commerce website is currently in test mode**, what means, that it's fully functional
+	// (there are real products, you can add them to the cart & even order them),
+	// but you can order products only in test mode:
 
-- [here is an information, how to make a test payment using **card**](https://stripe.com/docs/testing#testing-interactively)
-- [here is an information, how to make a test payment using **przelewy24**](https://stripe.com/docs/payments/p24/accept-a-payment?platform=web&ui=checkout#test-integration)
-- [here is an information, how to make a test payment using **blik**](https://stripe.com/docs/payments/blik/accept-a-payment?platform=web&ui=checkout#test-integration)
-		`,
-		//=======================================================================================//
-		link: "/sklep-ceramika-maki",
-		skills: ["next_js", "react", "stripe", "bootstrap", "css", "vercel"],
-		features: ["rwd", "dark mode"],
-		description:
-			"Fullstack hybrid (SSG + Client-side data fetching) e-commerce website for local shop producing handcrafted ceramic products with Stripe payments & Sanity headless CMS integrated.",
-	},
+	// - [here is an information, how to make a test payment using **card**](https://stripe.com/docs/testing#testing-interactively)
+	// - [here is an information, how to make a test payment using **przelewy24**](https://stripe.com/docs/payments/p24/accept-a-payment?platform=web&ui=checkout#test-integration)
+	// - [here is an information, how to make a test payment using **blik**](https://stripe.com/docs/payments/blik/accept-a-payment?platform=web&ui=checkout#test-integration)
+	// 		`,
+	// 		//=======================================================================================//
+	// 		link: "/sklep-ceramika-maki",
+	// 		skills: ["next_js", "react", "stripe", "bootstrap", "css", "vercel"],
+	// 		features: ["rwd", "dark mode"],
+	// 		description:
+	// 			"Fullstack hybrid (SSG + Client-side data fetching) e-commerce website for local shop producing handcrafted ceramic products with Stripe payments & Sanity headless CMS integrated.",
+	// 	},
 	{
 		title: "Issue Tracker",
 		public: true,

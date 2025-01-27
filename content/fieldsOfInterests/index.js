@@ -31,9 +31,9 @@ export const fieldsOfInterests = [
 		link: "/web-development",
 		icon: "laptop",
 		description: `
-Jestem web developerem z 3-letnim doświadczeniem programistycznym, który potrafi stworzyć **statyczne (SSG) i dynamiczne (SSR) strony internetowe**, **aplikacje webowe** typu SPA i PWA oraz **podstawowe sklepy internetowe** za pomocą takich technologii, jak: *React, React Router, Next.js, Svelte & SvelteKit, JavaScript, TypeScript, Bootstrap, Firebase i Stripe*.
+Jestem web developerem z 4-letnim doświadczeniem programistycznym, który potrafi stworzyć **statyczne (SSG) i dynamiczne (SSR) strony internetowe**, **aplikacje webowe** oraz **podstawowe sklepy internetowe** za pomocą takich technologii, jak m. in.: *React, Next.js, JavaScript, TypeScript, Bootstrap, Firebase i Stripe*.
 
-**Jestem otwarty na oferty pracy na stanowiska Junior/ Mid Front-end/ React/ JavaScript/ TypeScript/ Next.js/ Svelte Developer stacjonarnie w Lublinie lub zdalnie w Polsce**.
+**Jestem otwarty na oferty pracy na stanowiska Front-end/ Full-stack React/ JavaScript/ TypeScript/ Next.js Developer stacjonarnie w Lublinie lub zdalnie w Polsce**.
     `,
 		content: ``,
 
@@ -45,8 +45,8 @@ Jestem web developerem z 3-letnim doświadczeniem programistycznym, który potra
 			"next_js",
 			"react",
 			"react_router",
-			"svelte",
-			"astro",
+			// "svelte",
+			// "astro",
 			"firebase",
 			"bootstrap",
 			"stripe",

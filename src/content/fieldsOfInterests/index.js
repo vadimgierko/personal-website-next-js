@@ -14,7 +14,7 @@ import { importAllImagesFromFolder } from "../../lib/importAllImagesFromFolder";
 const visual_thinking_gallery = Object.keys(
 	importAllImagesFromFolder(
 		require.context(
-			"../../public/visual-notes-gallery",
+			"../../../public/visual-notes-gallery",
 			false,
 			/\.(png|jpe?g)$/
 		)

@@ -1,4 +1,6 @@
-import { useTheme } from "../contexts/useTheme";
+"use client";
+
+import { useTheme } from "../context/useTheme";
 import { Container } from "react-bootstrap";
 
 export default function Section({ children = "" }) {

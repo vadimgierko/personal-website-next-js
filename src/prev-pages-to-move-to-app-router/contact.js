@@ -1,5 +1,5 @@
 import { Button, Container, Form } from "react-bootstrap";
-import { useTheme } from "../contexts/useTheme";
+import { useTheme } from "../context/useTheme";
 
 export default function Contact() {
 	const { theme } = useTheme();

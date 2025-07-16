@@ -7,8 +7,6 @@ import Project from "../../components/organisms/Project";
 // lib:
 import getAllSlugs from "../../lib/getAllSlugs";
 import getPageContent from "../../lib/getPageContent";
-import getRepoReadmeFileContentFromGitHub from "../../lib/getRepoReadmeFileContentFromGitHub";
-import getRepoDataFromGitHub from "../../lib/getRepoDataFromGitHub";
 
 export default function Page({ pageContent }) {
 	return (
@@ -74,36 +72,36 @@ export async function getStaticProps({ params }) {
 	let pageContent = await getPageContent(params.slug);
 
 	//======================================== for dev projects:
-	if (pageContent.pageType === "devProject") {
-		// FETCH REPO DATA FROM GITHUB ONLY IF PROJECT IS PUBLIC:
-		if (pageContent.public) {
-			const repoData = await getRepoDataFromGitHub(pageContent.repoName);
-			const readmeMarkdown = await getRepoReadmeFileContentFromGitHub(
-				repoData.name
-			);
-			// replace readme's h1 with h2:
-			const fixedMarkdown = readmeMarkdown.replace("#", "##");
-			pageContent = {
-				...pageContent,
-				content: fixedMarkdown,
-				description: repoData.description,
-				createdAt: repoData.created_at,
-				updatedAt: repoData.updated_at,
-				externalLinks: [
-					{
-						icon: "github",
-						link: "https://github.com/vadimgierko/" + repoData.name,
-						description: "Zobacz kod na GitHub",
-					},
-					{
-						icon: "global",
-						link: repoData.homepage,
-						description: "Strona www projektu",
-					},
-				],
-			};
-		}
-	}
+	// if (pageContent.pageType === "devProject") {
+	// 	// FETCH REPO DATA FROM GITHUB ONLY IF PROJECT IS PUBLIC:
+	// 	if (pageContent.public) {
+	// 		const repoData = await getRepoDataFromGitHub(pageContent.repoName);
+	// 		const readmeMarkdown = await getRepoReadmeFileContentFromGitHub(
+	// 			repoData.name
+	// 		);
+	// 		// replace readme's h1 with h2:
+	// 		const fixedMarkdown = readmeMarkdown.replace("#", "##");
+	// 		pageContent = {
+	// 			...pageContent,
+	// 			content: fixedMarkdown,
+	// 			description: repoData.description,
+	// 			createdAt: repoData.created_at,
+	// 			updatedAt: repoData.updated_at,
+	// 			externalLinks: [
+	// 				{
+	// 					icon: "github",
+	// 					link: "https://github.com/vadimgierko/" + repoData.name,
+	// 					description: "Zobacz kod na GitHub",
+	// 				},
+	// 				{
+	// 					icon: "global",
+	// 					link: repoData.homepage,
+	// 					description: "Strona www projektu",
+	// 				},
+	// 			],
+	// 		};
+	// 	}
+	// }
 	return {
 		props: {
 			pageContent,

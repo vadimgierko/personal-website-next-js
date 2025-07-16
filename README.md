@@ -122,4 +122,4 @@ The source code & all the textual & visual content of the current project is cre
 
 You can view, fork & try the code on your local machine for private & non-commercial use only.
 
-Copyright &copy; 2022-2024 [Vadim Gierko](https://github.com/vadimgierko)
+Copyright &copy; 2022-2025 [Vadim Gierko](https://github.com/vadimgierko)

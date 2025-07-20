@@ -1,0 +1,4 @@
+- move to data-dark/light in head & then get rid of "use client" in conmponents using useTheme
+- check & update metadata
+- google tag
+- check why formsubmit throws server error 500 or that this is spam, but the mail is in formsubmit dashboard anyway

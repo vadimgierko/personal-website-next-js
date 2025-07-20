@@ -1,5 +1,7 @@
+"use client";
+
 import { Button, Container, Form } from "react-bootstrap";
-import { useTheme } from "../context/useTheme";
+import { useTheme } from "@/context/useTheme";
 
 export default function Contact() {
 	const { theme } = useTheme();
@@ -63,12 +65,12 @@ export default function Contact() {
 					type="text"
 					style={{ display: "none" }}
 				></input>
-				<input
+				{/* <input
 					name="_redirect"
 					type="hidden"
 					id="name"
 					value="https://www.vadimgierko.com/email-sent-successfully"
-				></input>
+				></input> */}
 
 				<div className="d-grid">
 					<Button variant="success" type="submit">

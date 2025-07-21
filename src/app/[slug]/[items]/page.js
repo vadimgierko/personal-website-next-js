@@ -12,26 +12,36 @@ import Gallery from "@/components/molecules/Gallery";
 import getPageContent from "@/lib/getPageContent";
 // content:
 import { icons } from "@/content/icons";
-import { fieldsOfInterests } from "@/content/fieldsOfInterests";
 
-// Vadim Gierko | {title} |{" "}
-//           {itemsType === "projects"
-//             ? "Projekty (Projects)"
-//             : itemsType === "articles"
-//             ? "Artykuły (Articles)"
-//             : itemsType === "videos"
-//             ? "Filmy (Videos)"
-//             : itemsType === "images"
-//             ? "Galeria (Gallery)"
-//             : "Nagrania (Audios)"}
+export async function generateMetadata({ params }) {
+	const slug = (await params).slug;
+	const pageContent = getPageContent(slug);
+	const { title } = pageContent;
+	const itemsType = (await params).items;
 
-export default async function ItemsPage({ params }) // {
-// 	params: Promise<{
-// 		slug: string;
-// 		items: string; // "projects" | "articles" | "videos" | "audios";
-// 	}>;
-// }
-{
+	return {
+		title: `Vadim Gierko | ${title} |{" "}
+          ${
+						itemsType === "projects"
+							? "Projekty (Projects)"
+							: itemsType === "articles"
+							? "Artykuły (Articles)"
+							: itemsType === "videos"
+							? "Filmy (Videos)"
+							: itemsType === "images"
+							? "Galeria (Gallery)"
+							: "Nagrania (Audios)"
+					}`,
+	};
+}
+
+export default async function ItemsPage({ params }) {
+	// {
+	// 	params: Promise<{
+	// 		slug: string;
+	// 		items: string; // "projects" | "articles" | "videos" | "audios";
+	// 	}>;
+	// }
 	const slug = (await params).slug; // ❗❗❗
 	const pageContent = getPageContent(slug);
 	const { title, icon } = pageContent;

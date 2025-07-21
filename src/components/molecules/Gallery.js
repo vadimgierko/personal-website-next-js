@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 // react-bootstrap:
 import { Col, Row } from "react-bootstrap";

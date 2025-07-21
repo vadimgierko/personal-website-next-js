@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { skills as SKILLS } from "../../content/skills";
 import Icon from "../atoms/Icon";

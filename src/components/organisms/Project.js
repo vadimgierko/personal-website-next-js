@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { useTheme } from "../../contexts/useTheme";
+import { useTheme } from "../../context/useTheme";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";

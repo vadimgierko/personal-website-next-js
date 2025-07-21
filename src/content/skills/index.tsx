@@ -13,7 +13,6 @@ import {
 	SiMarkdown,
 	SiSass,
 	SiJquery,
-	SiVisualstudiocode,
 	SiGithub,
 	SiVercel,
 	SiTypescript,
@@ -91,10 +90,10 @@ export const skills = {
 		Icon: SiJquery,
 		title: "jQuery",
 	},
-	vsc: {
-		Icon: SiVisualstudiocode,
-		title: "Visual Studio Code",
-	},
+	// vsc: {
+	// 	Icon: SiVisualstudiocode,
+	// 	title: "Visual Studio Code",
+	// },
 	github: {
 		Icon: SiGithub,
 		title: "GitHub",

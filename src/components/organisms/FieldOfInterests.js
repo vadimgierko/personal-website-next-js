@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 // react-bootstrap:
 import Container from "react-bootstrap/Container";
 // content:

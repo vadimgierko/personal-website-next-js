@@ -1,4 +1,6 @@
-import { useTheme } from "../../contexts/useTheme";
+"use client";
+
+import { useTheme } from "../../context/useTheme";
 // react-bootstrap:
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";

@@ -38,6 +38,7 @@ export default async function Page({
 }) {
 	const slug = (await params).slug; // ❗❗❗
 	const pageContent = getPageContent(slug);
+	console.log(pageContent.pageType);
 
 	return (
 		<>

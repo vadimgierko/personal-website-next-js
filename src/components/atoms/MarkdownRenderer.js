@@ -13,9 +13,7 @@ function NextLink(props) {
 			{props.children}
 		</a>
 	) : (
-		<Link href={props.href}>
-			<a>{props.children}</a>
-		</Link>
+		<Link href={props.href}>{props.children}</Link>
 	);
 }
 

@@ -1,24 +1,44 @@
-# My Static Personal Website https://vadimgierko.com
-
-## General description
-
-The project contains the source code, textual, visual & multimedia content of my personal website written from scratch in **React** at first, then rewritten in **Next.js**, deployed to **Vercel** & published at https://vadimgierko.com.
+# Personal Website [vadimgierko.com](https://vadimgierko.com)
+  The project contains the source code, textual, visual & multimedia content (*I like to share my knowledge & creative works with others*) of my personal website written (re)written in **Next.js**.
 
 ![vadimgierko.com personal website index root screenshot](https://vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png)
 
+## Technologies used in the project
+
+| Technology / Tool         | before July 2025    | since July 2025 |
+|---------------------------|---------------------|-----------------|
+| Next.js                   | 12.3.1              | 15.4.2  |
+| React                     | 18.2.0              | 19.1.0  |
+| TypeScript                | ❌                  | 5+     |
+| JavaScript                | ✅                  | ✅      |
+| React Bootstrap           | 2.5.0               | 2.10.10 |
+| React Icons               | 4.4.0               | 5.5.0   |
+| Bootstrap                 | 5.2.1               | 5.3.7   |
+| React Markdown            | 8.0.3               | 10.1.0  |
+| GitHub API (to fetch dev repos) | ✅           | ✅      |
+| Vercel (Deployment)       | ✅                 | ✅      |
+| remark-gfm                | 3.0.1               | 4.0.1   |
+| rehype-raw                | 3.0.1               | 7.0.0   |
+| react-icons               | 5.0.1               | 5.5.0   |
+| rehype-highlight          | 7.0.1               | 7.0.2   |
+
+## Status
+
+The website is deployed, published & available at https://vadimgierko.com.
+
+I'm constantly working on improving the website, refactoring the code, adding new content, components, pages & features. Each commit (to main branch) & pull request causes redeploying & changes in the appearance & functioning of the website.
+
+So the site you see today might me different from the site available yesterday or tomorrow. Even if I add all the features I want & there will be no changes in the code, I'll still be adding new textual & visual content.
+
+## License
+
+The source code & all the textual & visual content of the current project is created & owned by [me](https://github.com/vadimgierko).
+
+You can view, fork & try the code on your local machine for private & non-commercial use only.
+
+Copyright &copy; 2022-2025 [Vadim Gierko](https://github.com/vadimgierko)
+
 ## Project details
-
-### Motivation
-
-I'm a creative person & like to share my knowledge & creative work with others, so I started a website (actually, there was a few websites along the way from 2018 to 2022) with my friend's help in 2018.
-
-Previously (from September 2020 to October 2022) my personal website was built with [Website System](https://github.com/PiotrWnuczek/WebsiteSystem) developed by [Piotr Wnuczek](https://github.com/piotrwnuczek). I was using _Website System_, because I didn't code at that time, so I couldn't develop the website by myself & my friend Piotr designed, developed & helped me to start my blog & website with his excellent solution.
-
-It worked fine, I was sharing my content with the world. But I've started to learn web-development from December 2020 & that became my new hobby and addiction, so the website & previous creative activities were frozen, because I wanted to dedicate my time & energy fully to learning programming.
-
-Recently (at September 2022) I decided to rebuild the website & develop it from scratch by myself. I wanted to extend its features & start sharing new content again!
-
-So I've developed the basic website in React at first (the repo of the project is private, because it's not up to date in comparison to current Next.js version). Then I've learned basics of Next.js & rewrote the React website version using Next.js to serve the site statically & provide best SEO.
 
 ### Sitemap
 
@@ -68,17 +88,6 @@ My personal website contains:
   - ebook
   - social media projects/ accounts
 
-## What I learned
-
-- building static sites in Next.js from scratch
-- migrating from React app/site to Next.js
-- migrating fror React Router to Next.js routing system
-- using Bootstrap & React Bootstrap with Next.js
-- adding embed videos from YouTube & embed audios from SoundCloud
-- deploying a project to Vercel with a custom domain
-- take care of basic proper SEO for the website
-- integrate Sanity headless CMS
-
 ## Features & Custom Components
 
 - custom dark/ light mode theme switcher with additional auto detecting if the user prefers dark theme on its device
@@ -95,31 +104,3 @@ My personal website contains:
   - used to write articles, fields of interests' & projects' descriptions etc.
   - allows to style markdown content using passed custom components or additional styles
 - auto fetching my code repositories data (descriptions, urls, README files content) from GitHub to hydrate the website with the current data during the build
-
-## Technologies used in the project
-
-- Next.js 12.3.1
-- React 18.2.0
-- React Markdown 8.0.3
-- remark-gfm 3.0.1
-- React Bootstrap 2.5.0
-- React Icons 4.4.0
-- Bootstrap 5.2.1
-- GitHub API (for fetching repositories data & pass it to getStaticProps())
-- Vercel (deployment)
-
-## Status
-
-The website is deployed, published & available at https://vadimgierko.com.
-
-I'm constantly working on improving the website, refactoring the code, adding new content, components, pages & features. Each commit (to main branch) & pull request causes redeploying & changes in the appearance & functioning of the website.
-
-So the site you see today might me different from the site available yesterday or tomorrow. Even if I add all the features I want & there will be no changes in the code, I'll still be adding new textual & visual content.
-
-## Licence
-
-The source code & all the textual & visual content of the current project is created & owned by [me](https://github.com/vadimgierko).
-
-You can view, fork & try the code on your local machine for private & non-commercial use only.
-
-Copyright &copy; 2022-2024 [Vadim Gierko](https://github.com/vadimgierko)

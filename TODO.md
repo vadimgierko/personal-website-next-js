@@ -6,7 +6,6 @@
 - [ ] check how many chars title & descritpion should have & fix it
 - [ ] add conditional dynamic og:type property (article, book, website, etc. => find more)
 - [ ] add keywords prop
-- [ ] index my website in Google
 - [ ] add [robots.txt](https://nextjs.org/learn/seo/crawling-and-indexing/robots-txt)
 - [ ] add [sitemap](https://nextjs.org/learn/seo/crawling-and-indexing/xml-sitemaps)
 - [ ] add html lang

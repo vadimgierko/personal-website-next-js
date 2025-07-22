@@ -1,0 +1,1 @@
+export type PageType = "article" | "project" | "field" | "devProject" | "field"

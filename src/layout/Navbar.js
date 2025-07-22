@@ -74,8 +74,8 @@ export default function NavigationBar() {
 			<Container style={{ maxWidth: 900 }}>
 				<Navbar.Brand>
 					<Image
-						src="/vadim-gerko-zdjecie-cv.jpg"
-						style={{ width: 20, paddingBottom: 4 }}
+						src="/vadim-gierko-avatar.jpg"
+						style={{ width: 20, paddingBottom: 4, borderRadius: "50%" }}
 						alt="vadim gierko profile picture"
 					/>{" "}
 					Vadim Gierko

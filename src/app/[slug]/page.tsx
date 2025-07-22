@@ -5,6 +5,8 @@ import Project from "@/components/organisms/Project";
 // lib:
 import getPageContent from "@/lib/getPageContent";
 import { Metadata } from "next";
+import getRepoReadmeFileContentFromGitHub from "@/lib/getRepoReadmeFileContentFromGitHub";
+import getRepoDataFromGitHub from "@/lib/getRepoDataFromGitHub";
 
 export async function generateMetadata({
 	params,
@@ -23,8 +25,8 @@ export async function generateMetadata({
 			images: pageContent.ogImage
 				? pageContent.ogImage
 				: pageContent.img
-				? pageContent.img.src
-				: "https://www.vadimgierko.com/vadim-gerko-zdjecie-cv.jpg",
+					? pageContent.img.src
+					: "https://www.vadimgierko.com/vadim-gerko-zdjecie-cv.jpg",
 			type: pageContent.pageType === "article" ? "article" : "website",
 			url: "https://www.vadimgierko.com" + pageContent.link,
 		},
@@ -38,7 +40,45 @@ export default async function Page({
 }) {
 	const slug = (await params).slug; // ❗❗❗
 	const pageContent = getPageContent(slug);
-	console.log(pageContent.pageType);
+	// console.log(pageContent);
+
+	//================= FOR DEV PROJECTS ==================:
+	// const isDevProject: boolean = pageContent.pageType === "devProject";
+	// console.log("isDevProject:", isDevProject);
+
+	async function getDevProjectData() {
+		if (pageContent.pageType !== "devProject") return pageContent;
+		if (!pageContent.public) return pageContent; // update additional data in projects
+
+		// FETCH REPO DATA FROM GITHUB ONLY IF PROJECT IS PUBLIC:
+		const repoData = await getRepoDataFromGitHub(pageContent.repoName);
+		const readmeMarkdown = await getRepoReadmeFileContentFromGitHub(
+			repoData.name
+		);
+
+		// replace readme's h1 with h2:
+		const fixedMarkdown = readmeMarkdown.replace("#", "##");
+
+		return {
+			...pageContent,
+			content: fixedMarkdown,
+			description: repoData.description,
+			createdAt: repoData.created_at,
+			updatedAt: repoData.updated_at,
+			externalLinks: [
+				{
+					icon: "github",
+					link: "https://github.com/vadimgierko/" + repoData.name,
+					description: "Zobacz kod na GitHub",
+				},
+				{
+					icon: "global",
+					link: repoData.homepage,
+					description: "Strona www projektu",
+				},
+			],
+		};
+	}
 
 	return (
 		<>
@@ -48,7 +88,7 @@ export default async function Page({
 			{pageContent.pageType === "article" && <Article article={pageContent} />}
 			{pageContent.pageType === "project" && <Project project={pageContent} />}
 			{pageContent.pageType === "devProject" && (
-				<Project project={pageContent} />
+				<Project project={await getDevProjectData()} />
 			)}
 		</>
 	);

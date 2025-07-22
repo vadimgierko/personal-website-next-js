@@ -1,4 +1,4 @@
-export default async function getRepoDataFromGitHub(repoName) {
+export default async function getRepoDataFromGitHub(repoName: string) {
 	const data = await fetch(
 		"https://api.github.com/repos/vadimgierko/" + repoName
 	)

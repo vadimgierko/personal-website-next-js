@@ -1,4 +1,4 @@
-export default async function getRepoReadmeFileContentFromGitHub(repoName) {
+export default async function getRepoReadmeFileContentFromGitHub(repoName: string) {
 	const { download_url } = await fetch(
 		`https://api.github.com/repos/vadimgierko/${repoName}/readme`
 	).then((res) => res.json());

@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^15.4.2",
     "bootstrap": "^5.3.7",
-    "gfm": "^0.0.1",
-    "next": "15.4.1",
+    "next": "^15.4.2",
     "react": "19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "19.1.0",
@@ -20,7 +20,8 @@
     "rehype-highlight": "^7.0.2",
     "rehype-raw": "^7.0.0",
     "remark": "^15.0.1",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

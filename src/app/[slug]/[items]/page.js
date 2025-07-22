@@ -20,18 +20,17 @@ export async function generateMetadata({ params }) {
 	const itemsType = (await params).items;
 
 	return {
-		title: `Vadim Gierko | ${title} |{" "}
-          ${
-						itemsType === "projects"
-							? "Projekty (Projects)"
-							: itemsType === "articles"
-							? "Artykuły (Articles)"
-							: itemsType === "videos"
-							? "Filmy (Videos)"
-							: itemsType === "images"
+		title: `Vadim Gierko | ${title} |
+          ${itemsType === "projects"
+				? "Projekty (Projects)"
+				: itemsType === "articles"
+					? "Artykuły (Articles)"
+					: itemsType === "videos"
+						? "Filmy (Videos)"
+						: itemsType === "images"
 							? "Galeria (Gallery)"
 							: "Nagrania (Audios)"
-					}`,
+			}`,
 	};
 }
 
@@ -59,12 +58,12 @@ export default async function ItemsPage({ params }) {
 				{itemsType === "projects"
 					? "Projekty (Projects)"
 					: itemsType === "articles"
-					? "Artykuły (Articles)"
-					: itemsType === "videos"
-					? "Filmy (Videos)"
-					: itemsType === "images"
-					? "Galeria (Gallery)"
-					: "Nagrania (Audios)"}
+						? "Artykuły (Articles)"
+						: itemsType === "videos"
+							? "Filmy (Videos)"
+							: itemsType === "images"
+								? "Galeria (Gallery)"
+								: "Nagrania (Audios)"}
 			</h2>
 			<main>
 				{items && items.length && itemsType !== "images" ? (

@@ -7,9 +7,9 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
 	title: "Vadim Gierko",
-	description: "Vadim Gierko's personal website",
+	description: "Strona internetowa Vadima Gierko",
 	authors: { name: "Vadim Gierko" },
-	icons: "https://vadimgierko.com/vadim-gerko-zdjecie-cv.jpg",
+	icons: "https://vadimgierko.com/vadim-gierko-avatar.jpg",
 	openGraph: {
 		title: "Vadim Gierko",
 		description: "Vadim Gierko's personal website",

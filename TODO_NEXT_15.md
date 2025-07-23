@@ -3,8 +3,8 @@
   - see [TODO](/TODO.md#seo)
   - canonical where needed
 - check why formsubmit throws server error 500 or that this is spam, but the mail is in formsubmit dashboard anyway
-- change favicon to `vadim-gierko-avatar.jpg`
+- ~~change favicon to `vadim-gierko-avatar.jpg`~~
 - migrate to TS completely + refactor everything (structure, folders, components)
-- change README screenshot
-- check Github API limits (becuase data is fetched on the request, so it can hit limits when big traffic)
+- ~~change README screenshot~~
+- ~~check Github API limits (becuase data is fetched on the request, so it can hit limits when big traffic)~~ => generated token => 50k/h
 - check how to build all SSR pages static & is it better then SSR?

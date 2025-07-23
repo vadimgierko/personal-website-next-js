@@ -5,7 +5,7 @@
 
 ## Technologies used in the project
 
-| Technology / Tool         | before July 2025    | since July 2025 |
+| Technology / Tool         | 2022-July 2025      | since July 2025 |
 |---------------------------|---------------------|-----------------|
 | Next.js                   | 12.3.1              | 15.4.2  |
 | React                     | 18.2.0              | 19.1.0  |

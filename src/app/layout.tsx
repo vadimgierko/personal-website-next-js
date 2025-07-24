@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import Layout from "@/layout/index";
-import { ThemeProvider } from "@/context/useTheme";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
@@ -23,11 +22,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="pl">
+		<html lang="pl" data-bs-theme="dark">
 			<body>
-				<ThemeProvider>
-					<Layout>{children}</Layout>
-				</ThemeProvider>
+				<Layout>{children}</Layout>
 			</body>
 			<GoogleAnalytics gaId="G-SDYR1XY35B" />
 		</html>

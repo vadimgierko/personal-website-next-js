@@ -32,11 +32,12 @@ section ul {
   text-align: left;
 }
 
-section.light:nth-of-type(odd) {
+/* Global styles (e.g. styles/globals.css) */
+html[data-bs-theme='light'] section:nth-of-type(odd) {
   background-color: rgb(241, 241, 241);
 }
 
-section.dark:nth-of-type(odd) {
+html[data-bs-theme='dark'] section:nth-of-type(odd) {
   background-color: rgb(36, 40, 53);
 }
 

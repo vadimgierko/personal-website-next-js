@@ -1,6 +1,5 @@
 "use client";
 
-import { useTheme } from "../context/useTheme";
 // react-bootstrap components:
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -17,6 +16,10 @@ import {
 } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
+import { Theme } from "@/types";
+import { useEffect, useState } from "react";
+
+export const LOCAL_STORAGE_THEME_KEY = "vadimgierko.com-theme";
 
 const NAV_LINKS = [
 	{
@@ -60,7 +63,26 @@ const SOCIAL_LINKS = [
 ];
 
 export default function NavigationBar() {
-	const { theme, switchTheme } = useTheme();
+	const [theme, setTheme] = useState<Theme>("dark");
+
+	function switchTheme() {
+		const newTheme: Theme = theme === "dark" ? "light" : "dark";
+		setTheme(newTheme);
+		localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+		document.documentElement.setAttribute("data-bs-theme", newTheme);
+	};
+
+	useEffect(() => {
+		const savedTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
+
+		if (savedTheme) {
+			setTheme(savedTheme as Theme);
+			document.documentElement.setAttribute("data-bs-theme", savedTheme);
+		} else {
+			localStorage.setItem(LOCAL_STORAGE_THEME_KEY, "dark");
+			document.documentElement.setAttribute("data-bs-theme", "dark");
+		}
+	}, []);
 
 	return (
 		<Navbar

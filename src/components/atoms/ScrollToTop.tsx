@@ -1,3 +1,5 @@
+"use client";
+
 import { BsArrowUpCircle } from "react-icons/bs";
 
 export default function ScrollToTop() {

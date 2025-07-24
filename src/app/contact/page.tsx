@@ -1,11 +1,7 @@
 "use client";
-
 import { Button, Container, Form } from "react-bootstrap";
-import { useTheme } from "@/context/useTheme";
 
 export default function Contact() {
-	const { theme } = useTheme();
-
 	return (
 		<Container style={{ maxWidth: 900 }}>
 			<header className="text-center">
@@ -22,9 +18,6 @@ export default function Contact() {
 				<Form.Group className="mb-3">
 					<Form.Label>Podaj swoje imię:</Form.Label>
 					<Form.Control
-						className={
-							theme === "dark" ? "text-light bg-dark" : "text-dark bg-light"
-						}
 						type="text"
 						name="name"
 						id="name"
@@ -35,9 +28,6 @@ export default function Contact() {
 				<Form.Group className="mb-3">
 					<Form.Label>Podaj swój adres mailowy:</Form.Label>
 					<Form.Control
-						className={
-							theme === "dark" ? "text-light bg-dark" : "text-dark bg-light"
-						}
 						type="email"
 						name="email"
 						id="email"
@@ -48,9 +38,6 @@ export default function Contact() {
 				<Form.Group className="mb-3">
 					<Form.Label>Napisz wiadomość:</Form.Label>
 					<Form.Control
-						className={
-							theme === "dark" ? "text-light bg-dark" : "text-dark bg-light"
-						}
 						as="textarea"
 						name="comment"
 						id="comment"
@@ -64,13 +51,13 @@ export default function Contact() {
 					name="_formsubmit_id"
 					type="text"
 					style={{ display: "none" }}
-				></input>
-				{/* <input
+				/>
+				<input
 					name="_redirect"
 					type="hidden"
 					id="name"
 					value="https://www.vadimgierko.com/email-sent-successfully"
-				></input> */}
+				/>
 
 				<div className="d-grid">
 					<Button variant="success" type="submit">

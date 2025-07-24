@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { skills as SKILLS } from "../../content/skills";
 import Icon from "../atoms/Icon";
 
-export default function IconsList({ skills = [], size }) {
+export default function IconsList({ skills = [] }) {
 	const [windowSize, setWindowSize] = useState();
 
 	useEffect(() => {

@@ -5,8 +5,9 @@ import Project from "@/components/organisms/Project";
 // lib:
 import getPageContent from "@/lib/getPageContent";
 import { Metadata } from "next";
-import getRepoReadmeFileContentFromGitHub from "@/lib/getRepoReadmeFileContentFromGitHub";
-import getRepoDataFromGitHub from "@/lib/getRepoDataFromGitHub";
+import getRepoReadmeFileContentFromGitHub from "@/lib/github/getRepoReadmeFileContentFromGitHub";
+import getRepoDataFromGitHub from "@/lib/github/getRepoDataFromGitHub";
+import checkGithubApiTokenRateLimits from "@/lib/github/checkGithubApiTokenRateLimits";
 
 export async function generateMetadata({
 	params,
@@ -55,6 +56,7 @@ export default async function Page({
 		const readmeMarkdown = await getRepoReadmeFileContentFromGitHub(
 			repoData.name
 		);
+		await checkGithubApiTokenRateLimits();
 
 		// replace readme's h1 with h2:
 		const fixedMarkdown = readmeMarkdown.replace("#", "##");

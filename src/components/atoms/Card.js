@@ -1,6 +1,4 @@
 "use client";
-
-import { useTheme } from "../../context/useTheme";
 // react-bootstrap:
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
@@ -9,13 +7,9 @@ import Col from "react-bootstrap/Col";
 import Link from "next/link";
 
 export default function CustomCard({ item = {}, left = true, linkText = "" }) {
-	const { theme } = useTheme();
-
 	return (
 		<Card
-			className={`mb-3 p-3 shadow bg-${theme} text-${
-				theme === "light" ? "dark" : "light"
-			}`}
+			className="mb-3 p-3 shadow"
 		>
 			{item.img.src ? (
 				<Row>

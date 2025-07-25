@@ -6,16 +6,16 @@ import Article from "@/components/organisms/Article";
 import Project from "@/components/organisms/Project";
 // lib:
 import getPageContent from "@/lib/getPageContent";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import getRepoReadmeFileContentFromGitHub from "@/lib/github/getRepoReadmeFileContentFromGitHub";
 import getRepoDataFromGitHub from "@/lib/github/getRepoDataFromGitHub";
 import checkGithubApiTokenRateLimits from "@/lib/github/checkGithubApiTokenRateLimits";
 
-export async function generateMetadata({
-	params,
-}: {
-	params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }
+	// 	: {
+	// 	params: Promise<{ slug: string }>;
+	// }): Promise<Metadata> 
+) {
 	const slug = (await params).slug;
 	const pageContent = getPageContent(slug);
 
@@ -38,15 +38,15 @@ export async function generateMetadata({
 	};
 }
 
-export default async function Page({
-	params,
-}: {
-	params: Promise<{ slug: string }>;
-}) {
+export default async function Page({ params }
+	// 	: {
+	// 	params: Promise<{ slug: string }>;
+	// }
+) {
 	const slug = (await params).slug; // ❗❗❗
 	const pageContent = getPageContent(slug);
 
-	
+
 	// console.log(pageContent);
 
 	//================= FOR DEV PROJECTS ==================:

@@ -2,7 +2,11 @@ import getAllPagesContent from "./getAllPagesContent";
 
 export default function getAllSlugs() {
 	const pages = getAllPagesContent();
-	let slugs = []; // slugs of fieldsOfInterests, articles, projects ( + o-mnie )
+	const slugs: {
+		params: {
+			slug: string,
+		},
+	}[] = []; // slugs of fieldsOfInterests, articles, projects ( + o-mnie )
 	// to get slug we need to remove / from link using slice(1):
 	// TODO: consider removing / from all the links in content...
 	pages.forEach(

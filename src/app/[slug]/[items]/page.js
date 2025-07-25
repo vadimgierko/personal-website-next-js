@@ -12,10 +12,14 @@ import Gallery from "@/components/molecules/Gallery";
 import getPageContent from "@/lib/getPageContent";
 // content:
 import { icons } from "@/content/icons";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
 	const slug = (await params).slug;
 	const pageContent = getPageContent(slug);
+
+	if (!pageContent) return {};
+
 	const { title } = pageContent;
 	const itemsType = (await params).items;
 
@@ -43,9 +47,14 @@ export default async function ItemsPage({ params }) {
 	// }
 	const slug = (await params).slug; // ❗❗❗
 	const pageContent = getPageContent(slug);
+	if (!pageContent) return notFound();
+
 	const { title, icon } = pageContent;
+
 	const itemsType = (await params).items;
 	const items = pageContent[itemsType] ? pageContent[itemsType] : null;
+
+		if (!items) return notFound();
 
 	console.log(itemsType);
 

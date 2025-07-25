@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation'
+
 // custom components:
 import FieldOfInterests from "@/components/organisms/FieldOfInterests";
 import Article from "@/components/organisms/Article";
@@ -16,6 +18,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const slug = (await params).slug;
 	const pageContent = getPageContent(slug);
+
+	if (!pageContent) return {}
 
 	return {
 		title: `${pageContent.title} | Vadim Gierko`,
@@ -41,6 +45,8 @@ export default async function Page({
 }) {
 	const slug = (await params).slug; // ❗❗❗
 	const pageContent = getPageContent(slug);
+
+	
 	// console.log(pageContent);
 
 	//================= FOR DEV PROJECTS ==================:
@@ -81,6 +87,8 @@ export default async function Page({
 			],
 		};
 	}
+
+	if (!pageContent) return notFound();
 
 	return (
 		<>

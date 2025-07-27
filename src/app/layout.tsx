@@ -12,8 +12,9 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Vadim Gierko",
 		description: "Vadim Gierko's personal website",
-		images: "https://www.vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png"
-	}
+		images:
+			"https://www.vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png",
+	},
 };
 
 export default function RootLayout({
@@ -26,7 +27,7 @@ export default function RootLayout({
 			<body>
 				<Layout>{children}</Layout>
 			</body>
-			<GoogleAnalytics gaId="G-SDYR1XY35B" />
+			{/* <GoogleAnalytics gaId="G-SDYR1XY35B" /> */}
 		</html>
 	);
 }

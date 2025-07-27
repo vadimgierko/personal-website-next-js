@@ -10,8 +10,9 @@ import { RiMindMap } from "react-icons/ri";
 import { MdDraw, MdOutlineFacebook } from "react-icons/md";
 import { GiMusicalNotes } from "react-icons/gi";
 import { FaGraduationCap } from "react-icons/fa";
+import { Icon } from "@/types";
 
-export const icons = {
+export const icons: {[key: string]: Icon} = {
 	laptop: {
 		Icon: AiOutlineLaptop,
 	},

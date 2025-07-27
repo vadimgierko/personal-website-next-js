@@ -1,3 +1,4 @@
+import { Skill } from "@/types";
 import {
 	SiReact,
 	SiJavascript,
@@ -21,7 +22,7 @@ import {
 	SiAstro,
 } from "react-icons/si";
 
-export const skills = {
+export const skills: {[key: string]: Skill} = {
 	svelte: {
 		Icon: SiSvelte,
 		title: "Svelte",

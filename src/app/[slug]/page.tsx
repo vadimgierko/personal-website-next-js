@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 // custom components:
 import FieldOfInterests from "@/components/organisms/FieldOfInterests";
 import Article from "@/components/organisms/Article";
@@ -15,7 +17,11 @@ export async function generateMetadata({
 	params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
 	const slug = (await params).slug;
-	const pageContent = getPageContent(slug);
+	const pageData = getPageContent(slug);
+
+	if (!pageData) return {};
+
+	const { pageContent } = pageData;
 
 	return {
 		title: `${pageContent.title} | Vadim Gierko`,
@@ -26,9 +32,9 @@ export async function generateMetadata({
 			images: pageContent.ogImage
 				? pageContent.ogImage
 				: pageContent.img
-					? pageContent.img.src
-					: "https://www.vadimgierko.com/vadim-gerko-zdjecie-cv.jpg",
-			type: pageContent.pageType === "article" ? "article" : "website",
+				? pageContent.img.src
+				: "https://www.vadimgierko.com/vadim-gerko-zdjecie-cv.jpg",
+			type: pageData.pageType === "article" ? "article" : "website",
 			url: "https://www.vadimgierko.com" + pageContent.link,
 		},
 	};
@@ -40,16 +46,20 @@ export default async function Page({
 	params: Promise<{ slug: string }>;
 }) {
 	const slug = (await params).slug; // ❗❗❗
-	const pageContent = getPageContent(slug);
-	// console.log(pageContent);
+	const pageData = getPageContent(slug);
+
+	if (!pageData) return null;
+
+	const { pageContent, pageType } = pageData;
 
 	//================= FOR DEV PROJECTS ==================:
 	// const isDevProject: boolean = pageContent.pageType === "devProject";
 	// console.log("isDevProject:", isDevProject);
 
 	async function getDevProjectData() {
-		if (pageContent.pageType !== "devProject") return pageContent;
-		if (!pageContent.public) return pageContent; // update additional data in projects
+		if (pageType !== "devProject") return pageContent;
+		// Type guard: ensure pageContent is DevProject before accessing 'public'
+		if (!("public" in pageContent) || !pageContent.public) return pageContent; // update additional data in projects
 
 		// FETCH REPO DATA FROM GITHUB ONLY IF PROJECT IS PUBLIC:
 		const repoData = await getRepoDataFromGitHub(pageContent.repoName);
@@ -82,14 +92,14 @@ export default async function Page({
 		};
 	}
 
+	if (!pageContent) return notFound();
+
 	return (
 		<>
-			{pageContent.pageType === "field" && (
-				<FieldOfInterests field={pageContent} />
-			)}
-			{pageContent.pageType === "article" && <Article article={pageContent} />}
-			{pageContent.pageType === "project" && <Project project={pageContent} />}
-			{pageContent.pageType === "devProject" && (
+			{pageType === "field" && <FieldOfInterests field={pageContent} />}
+			{pageType === "article" && <Article article={pageContent} />}
+			{pageType === "project" && <Project project={pageContent} />}
+			{pageType === "devProject" && (
 				<Project project={await getDevProjectData()} />
 			)}
 		</>

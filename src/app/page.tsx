@@ -1,15 +1,15 @@
-import MarkdownRenderer from "../components/atoms/MarkdownRenderer";
+import MarkdownRenderer from "@/components/atoms/MarkdownRenderer";
 
 // icons bank:
-import { icons } from "../content/icons";
+import { icons } from "@/content/icons";
 // custom components:
 // layout:
-import Section from "../layout/Section";
+import Section from "@/layout/Section";
 // atoms:
-import Icon from "../components/atoms/Icon";
+import Icon from "@/components/atoms/Icon";
 // next.js:
 import Link from "next/link";
-import getEssentialFieldsData from "../lib/getEssentialFieldData.js";
+import getEssentialFieldsData from "../lib/getEssentialFieldData";
 import BioContainer from "./BioContainer";
 
 export default function Home() {

@@ -1,4 +1,6 @@
-export const projects_web_development = [
+import { DevProject } from "@/types";
+
+export const projects_web_development: DevProject[] = [
 	{
 		title: "vadimgierko.com",
 		public: true,
@@ -18,8 +20,10 @@ export const projects_web_development = [
 			"github",
 		],
 		features: ["rwd", "dark mode"],
-		description:
-			"My personal static website designed & developed by myself from scratch using React, Next.js, React-Bootstrap, Bootstrap & Markdown.",
+		description: "My personal static website designed & developed by myself from scratch using React, Next.js, React-Bootstrap, Bootstrap & Markdown.",
+		ogTitle: "",
+		ogDescription: "",
+		ogImage: ""
 	},
 	{
 		title: "kodujemywbiurze.pl",
@@ -32,8 +36,10 @@ export const projects_web_development = [
 		link: "/kodujemywbiurze.pl",
 		skills: ["svelte", "typescript", "markdown", "css", "vercel"],
 		features: ["rwd", "dark mode"],
-		description:
-			"Darmowy kurs programowania webowego dla pracowników biurowych.",
+		description: "Darmowy kurs programowania webowego dla pracowników biurowych.",
+		ogTitle: "",
+		ogDescription: "",
+		ogImage: ""
 	},
 	{
 		title: "Linky Notes",
@@ -62,8 +68,10 @@ export const projects_web_development = [
 			"rwd",
 			"dark mode",
 		],
-		description:
-			"Organize & filter your notes with one or more tags, format your notes using Markdown syntax & create your own unstructured knowledge base!",
+		description: "Organize & filter your notes with one or more tags, format your notes using Markdown syntax & create your own unstructured knowledge base!",
+		ogTitle: "",
+		ogDescription: "",
+		ogImage: ""
 	},
 	{
 		title: "Realtime Chat App React",
@@ -76,8 +84,10 @@ export const projects_web_development = [
 		link: "/chat-app-react",
 		skills: ["react", "react_router", "typescript", "firebase", "bootstrap"],
 		features: ["rwd", "dark mode"],
-		description:
-			"Realtime PWA chat app built with React, TypeScript, Bootstrap, Firebase Authentication & Firestore. Deployed on Vercel.",
+		description: "Realtime PWA chat app built with React, TypeScript, Bootstrap, Firebase Authentication & Firestore. Deployed on Vercel.",
+		ogTitle: "",
+		ogDescription: "",
+		ogImage: ""
 	},
 	{
 		title: "Issue Tracker",
@@ -97,8 +107,10 @@ export const projects_web_development = [
 			"markdown",
 		],
 		features: ["rwd", "dark mode"],
-		description:
-			"Track, manage, filter, sort, rank, nest and mix ordered & unordered issues in your dev projects & have an overview of all issues regardless of the project in 1 table.",
+		description: "Track, manage, filter, sort, rank, nest and mix ordered & unordered issues in your dev projects & have an overview of all issues regardless of the project in 1 table.",
+		ogTitle: "",
+		ogDescription: "",
+		ogImage: ""
 	},
 	{
 		title: "Live Markdown Text Editor",
@@ -112,6 +124,9 @@ export const projects_web_development = [
 		skills: ["react", "react_router", "markdown", "bootstrap"],
 		features: ["routing", "markdown editor", "local storage", "rwd"],
 		description: "Check how your Markdown text will look like when rendered!",
+		ogTitle: "",
+		ogDescription: "",
+		ogImage: ""
 	},
 	// 	{
 	// 		title: "Sklep Ceramika MAKI",

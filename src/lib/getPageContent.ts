@@ -5,6 +5,8 @@ export default function getPageContent(slug: string) {
 	// const pageContent = allPagesContent
 	// 	? allPagesContent.find((page) => page.link === "/" + slug)
 	// 	: null;
-	const pageContent = allPagesContent.find((page) => page.link === "/" + slug)
+	const pageContent = allPagesContent.find(
+		(page) => page.pageContent.link === "/" + slug
+	);
 	return pageContent;
 }

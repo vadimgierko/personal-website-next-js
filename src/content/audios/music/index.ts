@@ -10,8 +10,9 @@ export const audios_music: Audio[] = [
 		ogImage: "",
 		img: {
 			src: "",
-			alt: ""
-		}
+			alt: "",
+		},
+		description: "",
 	},
 	{
 		title: "B-day Theme",
@@ -22,8 +23,9 @@ export const audios_music: Audio[] = [
 		ogImage: "",
 		img: {
 			src: "",
-			alt: ""
-		}
+			alt: "",
+		},
+		description: "",
 	},
 	{
 		title: "Elevator To Sadness",
@@ -34,8 +36,9 @@ export const audios_music: Audio[] = [
 		ogImage: "",
 		img: {
 			src: "",
-			alt: ""
-		}
+			alt: "",
+		},
+		description: "",
 	},
 	// {
 	// 	link: "https://soundcloud.com/vadimgierko/the-moment-of-decision-vadim-gierko",

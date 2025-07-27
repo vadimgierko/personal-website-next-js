@@ -9,20 +9,20 @@ export default function getAllPagesContent() {
 	// so need to be in one array:
 	fieldsOfInterests.forEach((field) => {
 		if (field) {
-			pages.push({ ...field, pageType: "field" });
+			pages.push({ pageContent: field, pageType: "field" });
 			if (field.articles) {
 				field.articles.forEach((article) =>
-					pages.push({ ...article, pageType: "article" })
+					pages.push({ pageContent: article, pageType: "article" })
 				);
 			}
 			if (field.projects) {
 				if (field.link === "/web-development") {
 					field.projects.forEach((project) =>
-						pages.push({ ...project, pageType: "devProject" })
+						pages.push({ pageContent: project, pageType: "devProject" })
 					);
 				} else {
 					field.projects.forEach((project) =>
-						pages.push({ ...project, pageType: "project" })
+						pages.push({ pageContent: project, pageType: "project" })
 					);
 				}
 			}

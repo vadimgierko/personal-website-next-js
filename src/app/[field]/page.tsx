@@ -10,14 +10,15 @@ import { Metadata } from "next";
 import getRepoReadmeFileContentFromGitHub from "@/lib/github/getRepoReadmeFileContentFromGitHub";
 import getRepoDataFromGitHub from "@/lib/github/getRepoDataFromGitHub";
 import checkGithubApiTokenRateLimits from "@/lib/github/checkGithubApiTokenRateLimits";
+import { Article as IArticle, FieldOfInterest } from "@/types";
 
 export async function generateMetadata({
 	params,
 }: {
-	params: Promise<{ slug: string }>;
+	params: Promise<{ field: string }>;
 }): Promise<Metadata> {
-	const slug = (await params).slug;
-	const pageData = getPageContent(slug);
+	const field = (await params).field;
+	const pageData = getPageContent(field);
 
 	if (!pageData) return {};
 
@@ -43,12 +44,12 @@ export async function generateMetadata({
 export default async function Page({
 	params,
 }: {
-	params: Promise<{ slug: string }>;
+	params: Promise<{ field: string }>;
 }) {
-	const slug = (await params).slug; // ❗❗❗
-	const pageData = getPageContent(slug);
+	const field = (await params).field; // ❗❗❗
+	const pageData = getPageContent(field);
 
-	if (!pageData) return null;
+	if (!pageData) return notFound();
 
 	const { pageContent, pageType } = pageData;
 
@@ -92,12 +93,12 @@ export default async function Page({
 		};
 	}
 
-	if (!pageContent) return notFound();
-
 	return (
 		<>
-			{pageType === "field" && <FieldOfInterests field={pageContent} />}
-			{pageType === "article" && <Article article={pageContent} />}
+			{pageType === "field" && (
+				<FieldOfInterests field={pageContent as FieldOfInterest} />
+			)}
+			{pageType === "article" && <Article article={pageContent as IArticle} />}
 			{pageType === "project" && <Project project={pageContent} />}
 			{pageType === "devProject" && (
 				<Project project={await getDevProjectData()} />

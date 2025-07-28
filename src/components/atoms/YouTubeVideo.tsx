@@ -1,6 +1,15 @@
 "use client";
 import { useLayoutEffect, useRef, useState } from "react";
 
+type YouTubeVideoProps = {
+	width: number;
+	height: number;
+	id: string;
+	title: string;
+	description: string;
+	className: string;
+};
+
 export default function YouTubeVideo({
 	width,
 	height,
@@ -8,20 +17,26 @@ export default function YouTubeVideo({
 	title,
 	description,
 	className,
-}) {
-	const ref = useRef();
-	const [newHeight, setNewHeight] = useState();
+}: YouTubeVideoProps) {
+	const ref = useRef<HTMLDivElement>(null);
+	const [newHeight, setNewHeight] = useState<number | undefined>(undefined);
 
 	// set new height when the component is mounted:
 	useLayoutEffect(() => {
-		setNewHeight((ref.current.offsetWidth * height) / width);
+		if (ref.current) {
+			setNewHeight((ref.current.offsetWidth * height) / width);
+		}
 	}, [height, width]);
 
 	// set new height after every resize
 	useLayoutEffect(() => {
-		window.addEventListener("resize", () =>
-			setNewHeight((ref.current.offsetWidth * height) / width)
-		);
+		const handleResize = () => {
+			if (ref.current) {
+				setNewHeight((ref.current.offsetWidth * height) / width);
+			}
+		};
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
 	}, [height, width]);
 
 	return (

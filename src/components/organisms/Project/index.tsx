@@ -4,8 +4,9 @@ import Section from "@/layout/Section";
 import MarkdownRenderer from "@/components/atoms/MarkdownRenderer";
 import IconsList from "@/components/molecules/IconsList";
 import ProjectExternalLinkButton from "./ProjectExternalLinkButton";
+import { DevProject, Project as IProject } from "@/types";
 
-export default function Project({ project }) {
+export default function Project({ project }: { project: IProject }) {
 	return (
 		<>
 			<Container className="article py-3" style={{ maxWidth: 900 }}>
@@ -23,10 +24,10 @@ export default function Project({ project }) {
 					)}
 				</header>
 			</Container>
-			{project.skills && (
+			{(project as DevProject).skills && (
 				<Section>
 					<h3>Tech Stack</h3>
-					<IconsList skills={project.skills} />
+					<IconsList skills={(project as DevProject).skills} />
 				</Section>
 			)}
 			{project.content && (

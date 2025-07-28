@@ -22,8 +22,13 @@ import { GiMusicalNotes } from "react-icons/gi";
 import { BsImages } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
+import { FieldOfInterest } from "@/types";
 
-export default function FieldOfInterests({ field }) {
+export default function FieldOfInterests({
+	field,
+}: {
+	field: FieldOfInterest;
+}) {
 	return (
 		<>
 			<header>
@@ -35,19 +40,14 @@ export default function FieldOfInterests({ field }) {
 				</Container>
 			</header>
 			<main>
-				{field.skills && (
+				{field.skills.length > 0 && (
 					<Section>
 						<FaGraduationCap size={80} />
 						<h2 className="text-center my-3">Umiejętności</h2>
 						<IconsList skills={field.skills} />
 					</Section>
 				)}
-				{field.content && (
-					<Section>
-						<MarkdownRenderer markdown={field.content} />
-					</Section>
-				)}
-				{field.projects && (
+				{field.projects.length > 0 && (
 					<Section>
 						<AiOutlineFolder size={80} />
 						<h2 className="text-center my-3">Projekty</h2>
@@ -58,7 +58,7 @@ export default function FieldOfInterests({ field }) {
 						<Link href={field.link + "/projects"}>Więcej projektów</Link>
 					</Section>
 				)}
-				{field.articles && (
+				{field.articles.length > 0 && (
 					<Section>
 						<RiArticleLine size={80} />
 						<h2 className="text-center my-3">Artykuły</h2>
@@ -69,7 +69,7 @@ export default function FieldOfInterests({ field }) {
 						<Link href={field.link + "/articles"}>Więcej artykułów</Link>
 					</Section>
 				)}
-				{field.videos && (
+				{field.videos.length > 0 && (
 					<Section>
 						<AiOutlineYoutube size={80} />
 						<h2 className="text-center my-3">Filmy</h2>
@@ -87,7 +87,7 @@ export default function FieldOfInterests({ field }) {
 						<Link href={field.link + "/videos"}>Więcej filmów</Link>
 					</Section>
 				)}
-				{field.audios && (
+				{field.audios.length > 0 && (
 					<Section>
 						<GiMusicalNotes size={80} />
 						<h2 className="text-center my-3">Nagrania</h2>

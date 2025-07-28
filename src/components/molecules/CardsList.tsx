@@ -1,7 +1,13 @@
+import { Item } from "@/types";
 import Card from "../atoms/Card";
 
-export default function CardsList({ items = [], linkText }) {
-	//console.log("items in cardslist:", items);
+export default function CardsList({
+	items,
+	linkText,
+}: {
+	items: Item[];
+	linkText: string;
+}) {
 	if (!items || !items.length) return null;
 
 	return items.map((item, i) => (

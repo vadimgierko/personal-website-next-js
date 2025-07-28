@@ -14,23 +14,14 @@ interface Metadata {
 	title: string;
 	description: string;
 	link: string;
-	// og
-	ogTitle: string;
-	ogDescription: string;
-	ogImage: string;
-
-	// to make it work for now...
-	// icon: string;
-}
-
-export interface Video extends Metadata {
 	img: {
 		src: string;
 		alt: string;
 	};
-	id: string;
-	width: string;
-	height: string;
+	// og
+	ogTitle: string;
+	ogDescription: string;
+	ogImage: string;
 }
 
 export interface Skill {
@@ -38,11 +29,20 @@ export interface Skill {
 	title: string;
 }
 
+export interface Icon {
+	Icon: IconType;
+}
+
+//================= items =======================//
+export type Item = Article | Video | Project | DevProject | Audio;
+
+export interface Video extends Metadata {
+	id: string;
+	width: number;
+	height: number;
+}
+
 export interface Project extends Metadata {
-	img: {
-		src: string;
-		alt: string;
-	};
 	externalLinks?: {
 		icon: string;
 		link: string;
@@ -58,39 +58,23 @@ export interface DevProject extends Project {
 	features: string[];
 }
 
-export interface Icon {
-	Icon: IconType;
-}
-
 export interface Audio extends Metadata {
 	src: string;
-	img: {
-		src: string;
-		alt: string;
-	};
 }
 
 export interface Article extends Metadata {
-	img: {
-		src: string;
-		alt: string;
-	};
 	content: string;
 }
 
 export interface FieldOfInterest extends Metadata {
 	icon: string;
-	content: string;
+	skills: string[];
+	// items:
 	projects: (DevProject | Project)[];
 	articles: Article[];
-	skills: string[];
-	videos?: Video[];
-	images?: string[];
-	audios?: Audio[];
-	img: {
-		src: string;
-		alt: string;
-	};
+	videos: Video[];
+	images: string[];
+	audios: Audio[];
 }
 
 export interface Page {

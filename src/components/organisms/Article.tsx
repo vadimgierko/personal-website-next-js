@@ -1,8 +1,9 @@
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import MarkdownRenderer from "../atoms/MarkdownRenderer";
+import { Article as IArticle } from "@/types";
 
-export default function Article({ article }) {
+export default function Article({ article }: { article: IArticle }) {
 	return (
 		<Container className="article py-3" style={{ maxWidth: 900 }}>
 			<header className="text-center">

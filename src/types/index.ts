@@ -38,8 +38,8 @@ export type Item = Article | Video | Project | DevProject | Audio;
 
 export interface Video extends Metadata {
 	id: string;
-	width: number;
-	height: number;
+	width: string;
+	height: string;
 }
 
 export interface Project extends Metadata {

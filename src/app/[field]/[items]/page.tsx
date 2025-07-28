@@ -105,8 +105,8 @@ export default async function ItemsPage({
 							<YouTubeVideo
 								key={(item as { title: string }).title}
 								className="mb-3"
-								width={(item as { width: number }).width}
-								height={(item as { height: number }).height}
+								width={(item as unknown as { width: string }).width}
+								height={(item as unknown as { height: string }).height}
 								id={(item as { id: string }).id}
 								title={(item as { title: string }).title}
 								description={(item as { description: string }).description}

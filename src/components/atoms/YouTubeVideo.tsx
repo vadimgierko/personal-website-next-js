@@ -2,8 +2,8 @@
 import { useLayoutEffect, useRef, useState } from "react";
 
 type YouTubeVideoProps = {
-	width: number;
-	height: number;
+	width: string;
+	height: string;
 	id: string;
 	title: string;
 	description: string;
@@ -24,7 +24,7 @@ export default function YouTubeVideo({
 	// set new height when the component is mounted:
 	useLayoutEffect(() => {
 		if (ref.current) {
-			setNewHeight((ref.current.offsetWidth * height) / width);
+			setNewHeight((ref.current.offsetWidth * Number(height)) / Number(width));
 		}
 	}, [height, width]);
 
@@ -32,7 +32,9 @@ export default function YouTubeVideo({
 	useLayoutEffect(() => {
 		const handleResize = () => {
 			if (ref.current) {
-				setNewHeight((ref.current.offsetWidth * height) / width);
+				setNewHeight(
+					(ref.current.offsetWidth * Number(height)) / Number(width)
+				);
 			}
 		};
 		window.addEventListener("resize", handleResize);

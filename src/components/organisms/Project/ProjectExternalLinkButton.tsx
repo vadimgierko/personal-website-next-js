@@ -3,11 +3,15 @@
 import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Icon from "@/components/atoms/Icon";
-import { icons } from "@/content/icons"
+import { icons } from "@/content/icons";
 import { LOCAL_STORAGE_THEME_KEY } from "@/layout/Navbar";
 
-export default function ProjectExternalLinkButton({link}) {
-	const [windowWidth, setWindowWidth] = useState();
+export default function ProjectExternalLinkButton({
+	link,
+}: {
+	link: { link: string; description: string; icon: string };
+}) {
+	const [windowWidth, setWindowWidth] = useState<number>();
 	const [theme, setTheme] = useState("dark");
 
 	useEffect(() => {
@@ -24,19 +28,17 @@ export default function ProjectExternalLinkButton({link}) {
 		}
 	}, []);
 
-	return <Button
-		href={link.link}
-		variant={`outline-${theme === "dark" ? "light" : "dark"}`}
-		size={windowWidth < 400 ? "sm" : "md"}
-		target="_blank"
-		rel="noreferrer"
-		className="my-3"
-	>
-		{link.description}{" "}
-		<Icon
-			IconType={icons[link.icon].Icon}
-			size={20}
-			className="pb-1"
-		/>
-	</Button>
+	return (
+		<Button
+			href={link.link}
+			variant={`outline-${theme === "dark" ? "light" : "dark"}`}
+			size={windowWidth && windowWidth < 400 ? "sm" : "lg"}
+			target="_blank"
+			rel="noreferrer"
+			className="my-3"
+		>
+			{link.description}{" "}
+			<Icon IconType={icons[link.icon].Icon} size={20} className="pb-1" />
+		</Button>
+	);
 }

@@ -18,10 +18,10 @@ import { ItemsType } from "@/types";
 export async function generateMetadata({
 	params,
 }: {
-	params: Promise<{ slug: string; items: ItemsType }>;
+	params: Promise<{ field: string; items: ItemsType }>;
 }) {
-	const slug = (await params).slug;
-	const pageData = getPageContent(slug);
+	const field = (await params).field;
+	const pageData = getPageContent(field);
 
 	if (!pageData) return {};
 
@@ -49,23 +49,22 @@ export default async function ItemsPage({
 	params,
 }: {
 	params: Promise<{
-		slug: string;
+		field: string;
 		items: ItemsType;
 	}>;
 }) {
-	const slug = (await params).slug; // ❗❗❗
-	const pageData = getPageContent(slug);
+	const field = (await params).field; // ❗❗❗
+	const pageData = getPageContent(field);
 	if (!pageData) return notFound();
 
 	const { pageContent } = pageData;
 	const { title } = pageContent;
+	// icon are only in field
 	const icon =
 		"icon" in pageContent && pageContent.icon ? pageContent.icon : null;
 	const itemsType = (await params).items;
 
-	const items = (pageContent as Record<ItemsType, unknown[]>)[itemsType]
-		? (pageContent as Record<ItemsType, unknown[]>)[itemsType]
-		: null;
+	const items = (pageContent as Record<ItemsType, unknown[]>)[itemsType];
 
 	if (!items) return notFound();
 
@@ -106,11 +105,11 @@ export default async function ItemsPage({
 							<YouTubeVideo
 								key={(item as { title: string }).title}
 								className="mb-3"
-								width={(item as { width: number }).width}
-								height={(item as { height: number }).height}
+								width={(item as unknown as { width: string }).width}
+								height={(item as unknown as { height: string }).height}
 								id={(item as { id: string }).id}
 								title={(item as { title: string }).title}
-								description={(item as { description?: string }).description}
+								description={(item as { description: string }).description}
 							/>
 						) : itemsType === "audios" ? (
 							<SoundCloudAudio

@@ -23,7 +23,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="pl" data-bs-theme="dark">
+		<html lang="pl" data-bs-theme="dark" data-scroll-behavior="smooth">
 			<body>
 				<Layout>{children}</Layout>
 			</body>

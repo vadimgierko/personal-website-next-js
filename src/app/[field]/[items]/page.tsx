@@ -13,7 +13,8 @@ import getPageContent from "@/lib/getPageContent";
 // content:
 import { icons } from "@/content/icons";
 import { notFound } from "next/navigation";
-import { ItemsType } from "@/types";
+import { FieldOfInterest, ItemsType } from "@/types";
+import { fieldsOfInterests } from "@/content/fieldsOfInterests";
 
 export async function generateMetadata({
 	params,
@@ -53,22 +54,21 @@ export default async function ItemsPage({
 		items: ItemsType;
 	}>;
 }) {
-	const field = (await params).field; // ❗❗❗
-	const pageData = getPageContent(field);
-	if (!pageData) return notFound();
+	//====================== FIELD DATA ====================//
+	const fieldSlug = (await params).field; // ❗❗❗
 
-	const { pageContent } = pageData;
-	const { title } = pageContent;
-	// icon are only in field
-	const icon =
-		"icon" in pageContent && pageContent.icon ? pageContent.icon : null;
+	const fieldObject = fieldsOfInterests.find((f) => f.link === "/" + fieldSlug);
+
+	if (!fieldObject) return notFound();
+
+	const { title, icon } = fieldObject;
+
+	//====================== ITEMS DATA ====================//
 	const itemsType = (await params).items;
 
-	const items = (pageContent as Record<ItemsType, unknown[]>)[itemsType];
+	const items = fieldObject[itemsType];
 
-	if (!items) return notFound();
-
-	console.log(itemsType);
+	if (!items || (items && !items.length)) return notFound();
 
 	return (
 		<Container className="py-3 text-center" style={{ maxWidth: 900 }}>
@@ -87,51 +87,52 @@ export default async function ItemsPage({
 					: "Nagrania (Audios)"}
 			</h2>
 			<main>
-				{items && items.length && itemsType !== "images" ? (
-					(
-						items as Array<
-							| {
-									title: string;
-									width: number;
-									height: number;
-									id: string;
-									description?: string;
-							  } // videos
-							| { src: string } // audios
-							| { title: string } // projects/articles (minimal)
-						>
-					).map((item, i) => {
-						return itemsType === "videos" ? (
-							<YouTubeVideo
-								key={(item as { title: string }).title}
-								className="mb-3"
-								width={(item as unknown as { width: string }).width}
-								height={(item as unknown as { height: string }).height}
-								id={(item as { id: string }).id}
-								title={(item as { title: string }).title}
-								description={(item as { description: string }).description}
-							/>
-						) : itemsType === "audios" ? (
-							<SoundCloudAudio
-								key={(item as { src: string }).src}
-								src={(item as { src: string }).src}
-								className="mb-3"
-							/>
-						) : (
-							<Card
-								key={(item as { title: string }).title}
-								item={item}
-								left={i % 2 !== 0}
-								linkText={
-									itemsType === "projects" ? "Więcej info" : "Czytaj dalej"
-								}
-							/>
-						);
-					})
-				) : itemsType !== "images" ? (
-					<p>There are no {itemsType} yet...</p>
-				) : null}
-				{items && itemsType === "images" ? <Gallery images={items} /> : null}
+				{/** ==================== ARTICLES ================= */}
+				{itemsType === "articles" &&
+					fieldObject["articles"] &&
+					fieldObject.articles.map((item, i) => (
+						<Card
+							key={item.title}
+							item={item}
+							left={i % 2 !== 0}
+							linkText="Czytaj dalej"
+						/>
+					))}
+				{/** ==================== PROJECTS ================= */}
+				{itemsType === "projects" &&
+					fieldObject["projects"] &&
+					fieldObject["projects"].map((item, i) => (
+						<Card
+							key={item.title}
+							item={item}
+							left={i % 2 !== 0}
+							linkText="Więcej info"
+						/>
+					))}
+				{/** ==================== VIDEOS ================= */}
+				{itemsType === "videos" &&
+					fieldObject["videos"] &&
+					fieldObject["videos"].map((item) => (
+						<YouTubeVideo
+							key={item.title}
+							className="mb-3"
+							width={item.width}
+							height={item.height}
+							id={item.id}
+							title={item.title}
+							description={item.description}
+						/>
+					))}
+				{/** ==================== AUDIOS ================= */}
+				{itemsType === "audios" &&
+					fieldObject["audios"] &&
+					fieldObject["audios"].map((item) => (
+						<SoundCloudAudio key={item.src} src={item.src} className="mb-3" />
+					))}
+				{/** ==================== IMAGES ================= */}
+				{itemsType === "images" && fieldObject["images"] && (
+					<Gallery images={fieldObject["images"]} />
+				)}
 			</main>
 		</Container>
 	);

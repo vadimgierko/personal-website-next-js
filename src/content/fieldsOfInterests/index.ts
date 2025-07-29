@@ -1,3 +1,6 @@
+import path from "path";
+import fs from "fs";
+
 import { articles_proces_twórczy } from "../articles/proces-twórczy";
 import { articles_myślenie_wizualne } from "../articles/myślenie-wizualne";
 import { articles_web_development } from "../articles/web-development";
@@ -9,19 +12,14 @@ import { projects_myślenie_wizualne } from "../projects/myślenie-wizualne";
 import { videos_myślenie_wizualne } from "../videos/myślenie-wizualne";
 import { audios_music } from "../audios/music";
 
-import { importAllImagesFromFolder } from "../../lib/importAllImagesFromFolder";
+import { FieldOfInterest } from "@/types";
 
-const visual_thinking_gallery = Object.keys(
-	importAllImagesFromFolder(
-		require.context(
-			"../../../public/visual-notes-gallery",
-			false,
-			/\.(png|jpe?g)$/
-		)
-	)
+// get all images files names:
+const visual_thinking_gallery = fs.readdirSync(
+	path.join(process.cwd(), "public", "visual-notes-gallery")
 );
 
-export const fieldsOfInterests = [
+export const fieldsOfInterests: FieldOfInterest[] = [
 	{
 		ogTitle: "Vadim Gierko | Web Developer",
 		ogDescription: "Programowanie stron i aplikacji internetowych | Portfolio",

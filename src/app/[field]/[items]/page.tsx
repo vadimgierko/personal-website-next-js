@@ -13,7 +13,7 @@ import getPageContent from "@/lib/getPageContent";
 // content:
 import { icons } from "@/content/icons";
 import { notFound } from "next/navigation";
-import { FieldOfInterest, ItemsType } from "@/types";
+import { ItemsType } from "@/types";
 import { fieldsOfInterests } from "@/content/fieldsOfInterests";
 
 export async function generateMetadata({

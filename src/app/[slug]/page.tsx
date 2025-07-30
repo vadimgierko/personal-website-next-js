@@ -5,20 +5,21 @@ import FieldOfInterests from "@/components/organisms/FieldOfInterests";
 import Article from "@/components/organisms/Article";
 import Project from "@/components/organisms/Project";
 // lib:
-import getPageContent from "@/lib/getPageContent";
 import { Metadata } from "next";
 import getRepoReadmeFileContentFromGitHub from "@/lib/github/getRepoReadmeFileContentFromGitHub";
 import getRepoDataFromGitHub from "@/lib/github/getRepoDataFromGitHub";
 import checkGithubApiTokenRateLimits from "@/lib/github/checkGithubApiTokenRateLimits";
 import { Article as IArticle, FieldOfInterest } from "@/types";
+import getAllPagesSlugs from "@/content/experimental-static-cms/lib/getAllPagesSlugs";
+import getPageContentExperimental from "@/content/experimental-static-cms/lib/getPageContentExperimental";
 
 export async function generateMetadata({
 	params,
 }: {
-	params: Promise<{ field: string }>;
+	params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-	const field = (await params).field;
-	const pageData = getPageContent(field);
+	const slug = (await params).slug;
+	const pageData = getPageContentExperimental(slug);
 
 	if (!pageData) return {};
 
@@ -41,13 +42,21 @@ export async function generateMetadata({
 	};
 }
 
+export async function generateStaticParams() {
+	const slugs = getAllPagesSlugs();
+
+	return slugs.map((slug) => ({
+		slug,
+	}));
+}
+
 export default async function Page({
 	params,
 }: {
-	params: Promise<{ field: string }>;
+	params: Promise<{ slug: string }>;
 }) {
-	const field = (await params).field; // ❗❗❗
-	const pageData = getPageContent(field);
+	const slug = (await params).slug; // ❗❗❗
+	const pageData = getPageContentExperimental(slug);
 
 	if (!pageData) return notFound();
 

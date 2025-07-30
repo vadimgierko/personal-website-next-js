@@ -8,21 +8,20 @@ import YouTubeVideo from "@/components/atoms/YouTubeVideo";
 import SoundCloudAudio from "@/components/atoms/SoundCloudAudio";
 // molecules:
 import Gallery from "@/components/molecules/Gallery";
-// lib:
-import getPageContent from "@/lib/getPageContent";
 // content:
 import { icons } from "@/content/icons";
 import { notFound } from "next/navigation";
 import { ItemsType } from "@/types";
 import { fieldsOfInterests } from "@/content/fieldsOfInterests";
+import getPageContentExperimental from "@/content/experimental-static-cms/lib/getPageContentExperimental";
 
 export async function generateMetadata({
 	params,
 }: {
-	params: Promise<{ field: string; items: ItemsType }>;
+	params: Promise<{ slug: string; items: ItemsType }>;
 }) {
-	const field = (await params).field;
-	const pageData = getPageContent(field);
+	const slug = (await params).slug;
+	const pageData = getPageContentExperimental(slug);
 
 	if (!pageData) return {};
 
@@ -50,12 +49,12 @@ export default async function ItemsPage({
 	params,
 }: {
 	params: Promise<{
-		field: string;
+		slug: string;
 		items: ItemsType;
 	}>;
 }) {
 	//====================== FIELD DATA ====================//
-	const fieldSlug = (await params).field; // ❗❗❗
+	const fieldSlug = (await params).slug; // ❗❗❗
 
 	const fieldObject = fieldsOfInterests.find((f) => f.link === "/" + fieldSlug);
 

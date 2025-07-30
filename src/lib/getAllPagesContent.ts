@@ -1,7 +1,7 @@
 import { Page } from "@/types";
 import { fieldsOfInterests } from "../content/fieldsOfInterests";
 
-export default function getAllPagesContent() {
+function getAllPagesContent() {
 	const pages: Page[] = [];
 	// we need to iterate through all of fields
 	// to get every field, every field article & every field project,

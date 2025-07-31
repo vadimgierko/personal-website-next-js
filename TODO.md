@@ -1,5 +1,9 @@
 # TODO: Future improvements & additions
 
+- check & update metadata
+  - see [TODO](/TODO.md#seo)
+  - canonical where needed
+  
 ## SEO:
 
 - [ ] add og metadata also to /\[items\] page

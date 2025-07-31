@@ -13,10 +13,12 @@ import { Article as IArticle, FieldOfInterest } from "@/types";
 import getAllPagesSlugs from "@/content/experimental-static-cms/lib/getAllPagesSlugs";
 import getPageContentExperimental from "@/content/experimental-static-cms/lib/getPageContentExperimental";
 
+type SlugPageParams = { slug: string };
+
 export async function generateMetadata({
 	params,
 }: {
-	params: Promise<{ slug: string }>;
+	params: Promise<SlugPageParams>;
 }): Promise<Metadata> {
 	const slug = (await params).slug;
 	const pageData = getPageContentExperimental(slug);
@@ -45,15 +47,17 @@ export async function generateMetadata({
 export async function generateStaticParams() {
 	const slugs = getAllPagesSlugs();
 
-	return slugs.map((slug) => ({
+	const params: SlugPageParams[] = slugs.map((slug) => ({
 		slug,
 	}));
+
+	return params;
 }
 
 export default async function Page({
 	params,
 }: {
-	params: Promise<{ slug: string }>;
+	params: Promise<SlugPageParams>;
 }) {
 	const slug = (await params).slug; // ❗❗❗
 	const pageData = getPageContentExperimental(slug);

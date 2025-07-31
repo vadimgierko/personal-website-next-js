@@ -15,10 +15,12 @@ import { ItemsType } from "@/types";
 import { fieldsOfInterests } from "@/content/fieldsOfInterests";
 import getPageContentExperimental from "@/content/experimental-static-cms/lib/getPageContentExperimental";
 
+type ItemsPageParams = { slug: string; items: ItemsType };
+
 export async function generateMetadata({
 	params,
 }: {
-	params: Promise<{ slug: string; items: ItemsType }>;
+	params: Promise<ItemsPageParams>;
 }) {
 	const slug = (await params).slug;
 	const pageData = getPageContentExperimental(slug);
@@ -45,13 +47,30 @@ export async function generateMetadata({
 	};
 }
 
+export async function generateStaticParams() {
+	// generate slugs only for all fields available items
+	const itemsNames: ItemsType[] = [
+		"articles",
+		"audios",
+		"images",
+		"projects",
+		"videos",
+	];
+	const params: ItemsPageParams[] = [];
+
+	fieldsOfInterests.forEach((field) => {
+		itemsNames.forEach((itemsName) =>
+			params.push({ slug: field.link.slice(1), items: itemsName })
+		);
+	});
+
+	return params;
+}
+
 export default async function ItemsPage({
 	params,
 }: {
-	params: Promise<{
-		slug: string;
-		items: ItemsType;
-	}>;
+	params: Promise<ItemsPageParams>;
 }) {
 	//====================== FIELD DATA ====================//
 	const fieldSlug = (await params).slug; // ❗❗❗

@@ -11,9 +11,13 @@ import Icon from "@/components/atoms/Icon";
 import Link from "next/link";
 import getEssentialFieldsData from "../lib/getEssentialFieldData";
 import BioContainer from "./BioContainer";
+import { getAllPagesContentObject } from "@/lib/getAllPagesContent";
 
 export default function Home() {
 	const fieldsOfInterests = getEssentialFieldsData();
+
+	// const allPagesContentObject = getAllPagesContentObject();
+	// console.log("allPagesContentObject", allPagesContentObject);
 
 	return (
 		<>

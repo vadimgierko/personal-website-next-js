@@ -11,7 +11,7 @@ import Gallery from "@/components/molecules/Gallery";
 // content:
 import { icons } from "@/content/icons";
 import { notFound } from "next/navigation";
-import { ItemsType } from "@/types";
+import { FieldOfInterest, ItemsType } from "@/types";
 import { fieldsOfInterests } from "@/content/fieldsOfInterests";
 import getPageContentExperimental from "@/content/experimental-static-cms/lib/getPageContentExperimental";
 
@@ -23,7 +23,10 @@ export async function generateMetadata({
 	params: Promise<ItemsPageParams>;
 }) {
 	const slug = (await params).slug;
-	const pageData = getPageContentExperimental(slug);
+	// BEFORE:
+	// const pageData = getPageContentExperimental({ slug, from: "array" });
+	// =>
+	const pageData = getPageContentExperimental({ slug, from: "object" });
 
 	if (!pageData) return {};
 
@@ -75,9 +78,15 @@ export default async function ItemsPage({
 	//====================== FIELD DATA ====================//
 	const fieldSlug = (await params).slug; // ❗❗❗
 
-	const fieldObject = fieldsOfInterests.find((f) => f.link === "/" + fieldSlug);
+	// const fieldObject = fieldsOfInterests.find((f) => f.link === "/" + fieldSlug);
+	const pageData = getPageContentExperimental({
+		slug: fieldSlug,
+		from: "object",
+	});
 
-	if (!fieldObject) return notFound();
+	if (!pageData) return notFound();
+
+	const fieldObject = pageData.pageContent as FieldOfInterest;
 
 	const { title, icon } = fieldObject;
 

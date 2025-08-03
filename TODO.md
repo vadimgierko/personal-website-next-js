@@ -6,6 +6,7 @@
   
 ## SEO:
 
+- [ ] expand metadata & open graph
 - [ ] add og metadata also to /\[items\] page
 - [ ] check how many chars title & descritpion should have & fix it
 - [ ] add conditional dynamic og:type property (article, book, website, etc. => find more)
@@ -18,7 +19,7 @@
 ## GitHub API
 
 - [ ] use special repo vadimgierko for content in /web-development
-- [ ] use GitHub API more efficiently to fetch projects repo data
+- ✅ use GitHub API more efficiently to fetch projects repo data
 - [ ] fix all mentioned in portfolio dev projects' repos readme files
 
 ## Fields of interests/ Sections/ Pages

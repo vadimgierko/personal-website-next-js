@@ -21,7 +21,10 @@ export async function generateMetadata({
 	params: Promise<SlugPageParams>;
 }): Promise<Metadata> {
 	const slug = (await params).slug;
-	const pageData = getPageContentExperimental(slug);
+	// BEFORE:
+	// const pageData = getPageContentExperimental({ slug, from: "array" });
+	// =>
+	const pageData = getPageContentExperimental({ slug, from: "object" });
 
 	if (!pageData) return {};
 
@@ -45,7 +48,10 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-	const slugs = getAllPagesSlugs();
+	// BEFORE:
+	// const slugs = getAllPagesSlugs("array");
+	// =>
+	const slugs = getAllPagesSlugs("object");
 
 	const params: SlugPageParams[] = slugs.map((slug) => ({
 		slug,
@@ -60,7 +66,10 @@ export default async function Page({
 	params: Promise<SlugPageParams>;
 }) {
 	const slug = (await params).slug; // ❗❗❗
-	const pageData = getPageContentExperimental(slug);
+	// BEFORE:
+	// const pageData = getPageContentExperimental({ slug, from: "array" });
+	// =>
+	const pageData = getPageContentExperimental({ slug, from: "object" });
 
 	if (!pageData) return notFound();
 

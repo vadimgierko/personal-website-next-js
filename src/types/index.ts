@@ -1,7 +1,20 @@
 import { IconType } from "react-icons";
 
+//================================= OLD TYPES ====================================//
+
 export type PageType = "article" | "project" | "devProject" | "field";
-export type ItemType = "article" | "project";
+export type ItemType =
+	| "article"
+	| "audio"
+	| "devProject"
+	| "image"
+	| "project"
+	| "video";
+export type FieldName =
+	| "web-development"
+	| "creative-process-management"
+	| "music"
+	| "visual-thinking";
 export type ItemsType =
 	| "articles"
 	| "projects"
@@ -10,7 +23,7 @@ export type ItemsType =
 	| "images";
 export type Theme = "light" | "dark";
 
-interface Metadata {
+export interface Metadata {
 	title: string;
 	description: string;
 	link: string;
@@ -82,169 +95,19 @@ export interface Page {
 	pageContent: Article | Project | DevProject | FieldOfInterest;
 }
 
-//================================================
+//================================= NEW TYPES ====================================//
 
-//=============== 🚀 TODO 🚀 ===============//
+// const CONTENT_TYPES = {
+// 	FIELD: "field",
+// 	ITEM: "item",
+// } as const;
 
-/**
- * 🚀 TODO 🚀
- *
- * - `FieldOfInterest` = `Category`
- *   - items (as for now) are only in field
- * - [slug] = `Category` | `Item`
- * - ~~`Page`~~ => add `pageType` prop to `Item`
- * - `Item`
- *   ```ts
- *   {
- *     type: ItemType
- *     metadata: Metadata,
- *     props: Item
- *     field: ...
- *   }
- *   ```
- * - ~~`DevProject`~~ => `Project`
- *   ```ts
- *   {
- *     type: "default" | "dev"
- *     props: Project | DevProject
- *   }
- *   ```
- */
+// type ContentType = (typeof CONTENT_TYPES)[keyof typeof CONTENT_TYPES];
 
-//============== OTHER... ==================//
-
-// export type Theme = "light" | "dark";
-
-// export interface Skill {
-// 	Icon: IconType;
-// 	title: string;
+// type BaseContentItem = {
+// 	metadata: Metadata
 // }
 
-// export interface Icon {
-// 	Icon: IconType;
-// }
-
-// //============= PAGES RELATED ==============//
-
-// export type PageType = "article" | "project" | "devProject" | "field";
-
-// /**
-//  * 🚀 TODO:
-//  * - EXPAND METADATA
-//  * - EXPAND OPEN GRAPH, ESPECIALLY TYPES (https://ogp.me/#types)
-//  */
-// interface Metadata {
-// 	title: string;
-// 	description: string;
-// 	/**
-// 	 * ❗❗❗ NOT LINK (with "/") AS PREV ❗❗❗
-// 	 */
-// 	slug: string;
-// 	/**
-// 	 * Cover image used to be displayed on the website.
-// 	 * (also default for og:image)
-// 	 */
-// 	img: {
-// 		src: string;
-// 		alt: string;
-// 	};
-// 	openGraph: {
-// 		title: string;
-// 		description: string;
-// 		images: string | string[];
-// 	};
-// }
-
-// //================= ITEMS =======================//
-// export type ItemType =
-// 	| "article"
-// 	| "project"
-// 	| "devProject"
-// 	| "video"
-// 	| "audio"
-// 	| "image";
-// export const itemTypes: ItemType[] = [
-// 	"article",
-// 	"audio",
-// 	"devProject",
-// 	"image",
-// 	"project",
-// 	"video",
-// ];
-
-// /**
-//  * ❗❗❗ SHOULD DEVPROJECTS BE HERE?❗❗❗
-//  * BECUASE IT IS USED IN /[ITEMS] ROUTE & NO DEVPROJECTS THERE...
-//  */
-// export type ItemsType =
-// 	| "articles"
-// 	| "projects"
-// 	| "videos"
-// 	| "audios"
-// 	| "images";
-
-// export const itemsTypes: ItemsType[] = [
-// 	"articles",
-// 	"audios",
-// 	"images",
-// 	"projects",
-// 	"videos",
-// ];
-
-// // export type Item = Article | Video | Project | DevProject | Audio;
-// export interface Item {
-// 	type: ItemType;
-// 	metadata: Metadata;
-// 	props: Article | Video | Project | Audio;
-// 	field: "web-development" | "visual-thinking" | "creative-process" | "music";
-// }
-
-// export interface VideoProps extends Metadata {
-// 	id: string;
-// 	width: string;
-// 	height: string;
-// }
-
-// export interface ProjectProps {
-// 	type: "default" | "dev"
-// 	externalLinks?: {
-// 		icon: string;
-// 		link: string;
-// 		description: string;
-// 	}[];
-// 	content?: string;
-// }
-
-// export interface DevProject extends Project {
-// 	public: boolean;
-// 	repoName: string;
-// 	skills: string[];
-// 	features: string[];
-// }
-
-// export interface Audio extends Metadata {
-// 	src: string;
-// }
-
-// export interface Article extends Metadata {
-// 	content: string;
-// }
-
-// /**
-//  * Kinda Category
-//  */
-// export interface FieldOfInterest extends Metadata {
-// 	icon: string;
-// 	skills: string[];
-// 	// items:
-// 	projects: (DevProject | Project)[];
-// 	articles: Article[];
-// 	videos: Video[];
-// 	images: string[];
-// 	audios: Audio[];
-// }
-
-// export interface Page {
-// 	pageType: PageType;
-// 	pageContent: Article | Project | DevProject | FieldOfInterest;
+// type Article = BaseContentItem & {
+// 	itemType: "article"
 // }

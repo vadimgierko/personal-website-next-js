@@ -11,25 +11,37 @@ import Icon from "@/components/atoms/Icon";
 import Link from "next/link";
 import getEssentialFieldsData from "../lib/getEssentialFieldData";
 import BioContainer from "./BioContainer";
-import { getAllPagesContentObject } from "@/lib/getAllPagesContent";
+import { newContent } from "@/scripts/new-content";
+import { NewField } from "@/scripts";
+import { allowedFieldNames, FieldName } from "@/types";
 
 export default function Home() {
-	const fieldsOfInterests = getEssentialFieldsData();
-
-	// const allPagesContentObject = getAllPagesContentObject();
-	// console.log("allPagesContentObject", allPagesContentObject);
+	// const fieldsOfInterests: {
+	// 	title: string;
+	// 	description: string;
+	// 	link: string;
+	// 	icon: string;
+	// }[];
+	// const fieldsOfInterests = getEssentialFieldsData();
+	const fields = allowedFieldNames.map(
+		(fieldName) => newContent.fields[fieldName]
+	);
 
 	return (
 		<>
 			<BioContainer />
-			{fieldsOfInterests.map((field) => (
-				<Section key={field.link}>
-					{field.icon && <Icon IconType={icons[field.icon].Icon} size={80} />}
-					{field.title && <h2 className="text-center my-3">{field.title}</h2>}
-					{field.description && (
-						<MarkdownRenderer markdown={field.description} />
+			{fields.map((field) => (
+				<Section key={field.metadata.link}>
+					{field.props.icon && (
+						<Icon IconType={icons[field.props.icon].Icon} size={80} />
 					)}
-					<Link href={field.link}>Więcej info</Link>
+					{field.metadata.title && (
+						<h2 className="text-center my-3">{field.metadata.title}</h2>
+					)}
+					{field.metadata.description && (
+						<MarkdownRenderer markdown={field.metadata.description} />
+					)}
+					<Link href={field.metadata.link}>Więcej info</Link>
 				</Section>
 			))}
 		</>

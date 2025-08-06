@@ -22,91 +22,147 @@ import { GiMusicalNotes } from "react-icons/gi";
 import { BsImages } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
-import { FieldOfInterest } from "@/types";
+import { ItemsType } from "@/types";
+import { NewAudio, NewField, NewItem, NewVideo } from "@/scripts";
+import { newContent } from "@/scripts/new-content";
 
-export default function FieldOfInterests({
-	field,
+// function getFieldItems(field: NewField): NewItem[] {
+// 	const items: NewItem[] = [];
+
+// 	Object.keys(field.items).forEach((itemsType) =>
+// 		Object.keys(newContent.items[itemsType as ItemsType]).forEach((slug) =>
+// 			items.push(newContent.items[itemsType as ItemsType][slug])
+// 		)
+// 	);
+
+// 	return items;
+// }
+
+export function getFieldItemBySlug({
+	slug,
+	itemsType,
 }: {
-	field: FieldOfInterest;
-}) {
+	slug: string;
+	itemsType: ItemsType;
+}): NewItem {
+	const item = newContent.items[itemsType][slug];
+
+	return item;
+}
+
+export default function FieldOfInterests({ field }: { field: NewField }) {
 	return (
 		<>
 			<header>
 				<Container className="py-3 text-center" style={{ maxWidth: 900 }}>
-					{field.icon && <Icon IconType={icons[field.icon].Icon} size={100} />}
-					<h1>{field.title}</h1>
+					{field.props.icon && (
+						<Icon IconType={icons[field.props.icon].Icon} size={100} />
+					)}
+					<h1>{field.metadata.title}</h1>
 					<hr />
-					<MarkdownRenderer markdown={field.description} />
+					<MarkdownRenderer markdown={field.metadata.description} />
 				</Container>
 			</header>
 			<main>
-				{field.skills.length > 0 && (
+				{/** ===================== SKILLS ================== */}
+				{field.props.skills.length > 0 && (
 					<Section>
 						<FaGraduationCap size={80} />
 						<h2 className="text-center my-3">Umiejętności</h2>
-						<IconsList skills={field.skills} />
+						<IconsList skills={field.props.skills} />
 					</Section>
 				)}
-				{field.projects.length > 0 && (
+				{/** ===================== ITEMS (except images) ================== */}
+
+				{field.items.projects.length > 0 && (
 					<Section>
 						<AiOutlineFolder size={80} />
 						<h2 className="text-center my-3">Projekty</h2>
 						<CardsList
-							items={field.projects.slice(0, 3)}
+							items={field.items.projects
+								.slice(0, 3)
+								.map((slug) =>
+									getFieldItemBySlug({ slug, itemsType: "projects" })
+								)}
 							linkText="Więcej info"
 						/>
-						<Link href={field.link + "/projects"}>Więcej projektów</Link>
+						<Link href={field.metadata.link + "/projects"}>
+							Więcej projektów
+						</Link>
 					</Section>
 				)}
-				{field.articles.length > 0 && (
+				{field.items.articles.length > 0 && (
 					<Section>
 						<RiArticleLine size={80} />
 						<h2 className="text-center my-3">Artykuły</h2>
 						<CardsList
-							items={field.articles.slice(0, 3)}
+							items={field.items.articles
+								.slice(0, 3)
+								.map((slug) =>
+									getFieldItemBySlug({ slug, itemsType: "articles" })
+								)}
 							linkText="Czytaj dalej"
 						/>
-						<Link href={field.link + "/articles"}>Więcej artykułów</Link>
+						<Link href={field.metadata.link + "/articles"}>
+							Więcej artykułów
+						</Link>
 					</Section>
 				)}
-				{field.videos.length > 0 && (
+				{field.items.videos.length > 0 && (
 					<Section>
 						<AiOutlineYoutube size={80} />
 						<h2 className="text-center my-3">Filmy</h2>
-						{field.videos.slice(0, 3).map((video) => (
-							<YouTubeVideo
-								key={video.title}
-								className="mb-3"
-								width={video.width}
-								height={video.height}
-								id={video.id}
-								title={video.title}
-								description={video.description}
-							/>
-						))}
-						<Link href={field.link + "/videos"}>Więcej filmów</Link>
+						{field.items.videos
+							.slice(0, 3)
+							.map((slug) => getFieldItemBySlug({ slug, itemsType: "videos" }))
+							.map((v) => {
+								const video = v as NewVideo;
+								return (
+									<YouTubeVideo
+										key={video.metadata.title}
+										className="mb-3"
+										width={video.props.width}
+										height={video.props.height}
+										id={video.props.id}
+										title={video.metadata.title}
+										description={video.metadata.description}
+									/>
+								);
+							})}
+						<Link href={field.metadata.link + "/videos"}>Więcej filmów</Link>
 					</Section>
 				)}
-				{field.audios.length > 0 && (
+				{field.items.audios.length > 0 && (
 					<Section>
 						<GiMusicalNotes size={80} />
 						<h2 className="text-center my-3">Nagrania</h2>
-						{field.audios.slice(0, 3).map((audio) => (
-							<SoundCloudAudio
-								key={audio.src}
-								className="mb-3"
-								src={audio.src}
-							/>
-						))}
-						<Link href={field.link + "/audios"}>Więcej nagrań</Link>
+						{field.items.audios
+							.slice(0, 3)
+							.map((slug) => getFieldItemBySlug({ slug, itemsType: "audios" }))
+							.map((a) => {
+								const audio = a as NewAudio;
+
+								return (
+									<SoundCloudAudio
+										key={audio.props.src}
+										className="mb-3"
+										src={audio.props.src}
+									/>
+								);
+							})}
+						<Link href={field.metadata.link + "/audios"}>Więcej nagrań</Link>
 					</Section>
 				)}
-				{field.link === "/visual-thinking" && (
+
+				{/**========================== IMAGES ====================== */}
+				{field.metadata.link === "/visual-thinking" && (
 					<Section>
 						<BsImages size={80} />
 						<h2 className="text-center my-3">Galeria</h2>
-						{field.images && <Gallery images={field.images.slice(0, 4)} />}
-						<Link href={field.link + "/images"}>Więcej zdjęć</Link>
+						{field.items.images && (
+							<Gallery images={field.items.images.slice(0, 4)} />
+						)}
+						<Link href={field.metadata.link + "/images"}>Więcej zdjęć</Link>
 					</Section>
 				)}
 			</main>

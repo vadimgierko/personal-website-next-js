@@ -15,12 +15,25 @@ export type FieldName =
 	| "creative-process-management"
 	| "music"
 	| "visual-thinking";
+export const allowedFieldNames: FieldName[] = [
+	"creative-process-management",
+	"music",
+	"visual-thinking",
+	"web-development",
+];
 export type ItemsType =
 	| "articles"
 	| "projects"
 	| "videos"
 	| "audios"
 	| "images";
+export const allowedItemsTypes: ItemsType[] = [
+	"articles",
+	"audios",
+	"images",
+	"projects",
+	"videos",
+];
 export type Theme = "light" | "dark";
 
 export interface Metadata {

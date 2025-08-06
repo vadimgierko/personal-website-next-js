@@ -4,35 +4,39 @@ import Section from "@/layout/Section";
 import MarkdownRenderer from "@/components/atoms/MarkdownRenderer";
 import IconsList from "@/components/molecules/IconsList";
 import ProjectExternalLinkButton from "./ProjectExternalLinkButton";
-import { DevProject, Project as IProject } from "@/types";
+import { NewProject } from "@/scripts";
 
-export default function Project({ project }: { project: IProject }) {
+export default function Project({ project }: { project: NewProject }) {
 	return (
 		<>
 			<Container className="article py-3" style={{ maxWidth: 900 }}>
 				<header className="text-center">
-					<h1>{project.title}</h1>
+					<h1>{project.metadata.title}</h1>
 					<hr />
-					<p className="text-center">{project.description}</p>
-					<Image src={project.img.src} alt={project.img.alt} fluid />
-					{project.externalLinks && (
+					<p className="text-center">{project.metadata.description}</p>
+					<Image
+						src={project.metadata.img.src}
+						alt={project.metadata.img.alt}
+						fluid
+					/>
+					{project.props.externalLinks && (
 						<div className="d-flex justify-content-center align-items-center gap-2 my-2">
-							{project.externalLinks.map((link) => (
+							{project.props.externalLinks.map((link) => (
 								<ProjectExternalLinkButton key={link.link} link={link} />
 							))}
 						</div>
 					)}
 				</header>
 			</Container>
-			{(project as DevProject).skills && (
+			{project.itemType === "devProject" && project.props.skills && (
 				<Section>
 					<h3>Tech Stack</h3>
-					<IconsList skills={(project as DevProject).skills} />
+					<IconsList skills={project.props.skills} />
 				</Section>
 			)}
-			{project.content && (
+			{project.props.content && (
 				<Container className="article py-3" style={{ maxWidth: 900 }}>
-					<MarkdownRenderer markdown={project.content} />
+					<MarkdownRenderer markdown={project.props.content} />
 				</Container>
 			)}
 		</>

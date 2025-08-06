@@ -1844,5 +1844,215 @@
         ]
       }
     }
+  },
+  "pages": {
+    "web-development": {
+      "pageType": "field",
+      "slug": "web-development"
+    },
+    "5-reasons-why-i-started-learning-programming": {
+      "pageType": "item",
+      "slug": "5-reasons-why-i-started-learning-programming",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "summary-of-my-first-year-of-learning-web-development-roadmap-projects-and-tips-for-newbies": {
+      "pageType": "item",
+      "slug": "summary-of-my-first-year-of-learning-web-development-roadmap-projects-and-tips-for-newbies",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "personal-website-next-js": {
+      "pageType": "item",
+      "slug": "personal-website-next-js",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "devProject"
+      }
+    },
+    "kodujemywbiurze.pl": {
+      "pageType": "item",
+      "slug": "kodujemywbiurze.pl",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "devProject"
+      }
+    },
+    "linky-notes": {
+      "pageType": "item",
+      "slug": "linky-notes",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "devProject"
+      }
+    },
+    "chat-app-react": {
+      "pageType": "item",
+      "slug": "chat-app-react",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "devProject"
+      }
+    },
+    "issue-tracker": {
+      "pageType": "item",
+      "slug": "issue-tracker",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "devProject"
+      }
+    },
+    "markdown-text-editor": {
+      "pageType": "item",
+      "slug": "markdown-text-editor",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "devProject"
+      }
+    },
+    "creative-process-management": {
+      "pageType": "field",
+      "slug": "creative-process-management"
+    },
+    "zarzadzanie-procesem-tworczym-czyli-jak-zapanowac-nad-chaosem-tworzenia": {
+      "pageType": "item",
+      "slug": "zarzadzanie-procesem-tworczym-czyli-jak-zapanowac-nad-chaosem-tworzenia",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "jak-uporzadkowac-pomysly-wielka-ksiega-pomyslow": {
+      "pageType": "item",
+      "slug": "jak-uporzadkowac-pomysly-wielka-ksiega-pomyslow",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "dokumentacja-procesu-tworczego-dlaczego-warto-jak-to-robic-krok-po-kroku": {
+      "pageType": "item",
+      "slug": "dokumentacja-procesu-tworczego-dlaczego-warto-jak-to-robic-krok-po-kroku",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "jak-media-spolecznosciowe-stymuluja-rozwoj-tworczy-i-kreatywnosc-przyklad-instagrama": {
+      "pageType": "item",
+      "slug": "jak-media-spolecznosciowe-stymuluja-rozwoj-tworczy-i-kreatywnosc-przyklad-instagrama",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "jak-jedno-postanowienie-noworoczne-moze-odmienic-twoje-zycie-jesli-skupisz-sie-wylacznie-na-nim-przez-rok-studium-mojego-przypadku": {
+      "pageType": "item",
+      "slug": "jak-jedno-postanowienie-noworoczne-moze-odmienic-twoje-zycie-jesli-skupisz-sie-wylacznie-na-nim-przez-rok-studium-mojego-przypadku",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "ebook-zarzadzanie-procesem-tworczym": {
+      "pageType": "item",
+      "slug": "ebook-zarzadzanie-procesem-tworczym",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "project"
+      }
+    },
+    "warsztaty-zarzadzania-procesem-tworczym": {
+      "pageType": "item",
+      "slug": "warsztaty-zarzadzania-procesem-tworczym",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "project"
+      }
+    },
+    "blog-lowca-pomyslow": {
+      "pageType": "item",
+      "slug": "blog-lowca-pomyslow",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "project"
+      }
+    },
+    "profil-lowca-pomyslow-na-facebooku-i-instagramie": {
+      "pageType": "item",
+      "slug": "profil-lowca-pomyslow-na-facebooku-i-instagramie",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "project"
+      }
+    },
+    "visual-thinking": {
+      "pageType": "field",
+      "slug": "visual-thinking"
+    },
+    "jak-notowac-efektywnie-rob-notatki-wizualne": {
+      "pageType": "item",
+      "slug": "jak-notowac-efektywnie-rob-notatki-wizualne",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "mapy-mysli-jak-je-tworzyc-i-jak-z-nich-korzystac": {
+      "pageType": "item",
+      "slug": "mapy-mysli-jak-je-tworzyc-i-jak-z-nich-korzystac",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "notatki-wizualne-na-pokaz-vs-do-uzytku-wlasnego-porownanie-notatki-nt-patronite-i-jej-szkicu": {
+      "pageType": "item",
+      "slug": "notatki-wizualne-na-pokaz-vs-do-uzytku-wlasnego-porownanie-notatki-nt-patronite-i-jej-szkicu",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "jak-zaczalem-notowac-wizualnie-moja-historia": {
+      "pageType": "item",
+      "slug": "jak-zaczalem-notowac-wizualnie-moja-historia",
+      "props": {
+        "itemsType": "articles",
+        "itemType": "article"
+      }
+    },
+    "profil-kreatywne-notatki-na-instagramie-i-facebooku": {
+      "pageType": "item",
+      "slug": "profil-kreatywne-notatki-na-instagramie-i-facebooku",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "project"
+      }
+    },
+    "blog-kreatywne-notatki": {
+      "pageType": "item",
+      "slug": "blog-kreatywne-notatki",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "project"
+      }
+    },
+    "warsztaty-myslenia-wizualnego-notatki-wizualne-mapy-mysli": {
+      "pageType": "item",
+      "slug": "warsztaty-myslenia-wizualnego-notatki-wizualne-mapy-mysli",
+      "props": {
+        "itemsType": "projects",
+        "itemType": "project"
+      }
+    },
+    "music": {
+      "pageType": "field",
+      "slug": "music"
+    }
   }
 }

@@ -54,8 +54,17 @@
 - [ ] enable adding tags to content
 - [ ] enable filtering content by tags
 
-## CMS
+## Git-based CMS
 
-- [ ] enable full CRUD
-- [ ] API
-- [ ] json & md files
+1. The ultimate goal is to shift managing content (and website data overall)
+   - from dev-oriented (by hardcoding & literally typing content in the code)
+   - to user-oriented (even if the user is the dev) (managing content via forms in dev mode (for now!) or in production, if the CMS will be deployed as Node.js app on hosting server or VPS).
+2. The content still will be stored locally, but
+   - instead of `.ts` files containing js objects managed by hand
+   - => `.json` (for metadata, db-like structures etc.) & `.md` (for rich-text & large content) files managed automatically in response to user actions performed via form.
+   - \+ ❗❗❗ REMEMBER TO ALSO ENABLE MANAGING IMAGES, OTHER FILES & EMBEDED MEDIA (OR EVEN LOCALLY SAVED FILES)❗❗❗
+3. After building
+   - `inside-app` CMS
+   - build a `standalone` CMS
+     - `for myself` at the beginning (as a central hub for all of my static websites, which will be switched to consume content via `API`,
+     - then build a standarized/abstract version of the app, which could be forked on gh `for other users`

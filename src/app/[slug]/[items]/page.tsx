@@ -11,9 +11,10 @@ import Gallery from "@/components/molecules/Gallery";
 // content:
 import { icons } from "@/content/icons";
 import { notFound } from "next/navigation";
-import { FieldOfInterest, ItemsType } from "@/types";
+import { allowedItemsTypes, FieldOfInterest, ItemsType } from "@/types";
 import { fieldsOfInterests } from "@/content/fieldsOfInterests";
 import getPageContentExperimental from "@/content/experimental-static-cms/lib/getPageContentExperimental";
+import { getFieldItemBySlug } from "@/components/organisms/FieldOfInterests";
 
 type ItemsPageParams = { slug: string; items: ItemsType };
 
@@ -51,18 +52,10 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-	// generate slugs only for all fields available items
-	const itemsNames: ItemsType[] = [
-		"articles",
-		"audios",
-		"images",
-		"projects",
-		"videos",
-	];
 	const params: ItemsPageParams[] = [];
 
 	fieldsOfInterests.forEach((field) => {
-		itemsNames.forEach((itemsName) =>
+		allowedItemsTypes.forEach((itemsName) =>
 			params.push({ slug: field.link.slice(1), items: itemsName })
 		);
 	});
@@ -120,7 +113,10 @@ export default async function ItemsPage({
 					fieldObject.articles.map((item, i) => (
 						<Card
 							key={item.title}
-							item={item}
+							item={getFieldItemBySlug({
+								slug: item.link.slice(1),
+								itemsType,
+							})}
 							left={i % 2 !== 0}
 							linkText="Czytaj dalej"
 						/>
@@ -131,7 +127,10 @@ export default async function ItemsPage({
 					fieldObject["projects"].map((item, i) => (
 						<Card
 							key={item.title}
-							item={item}
+							item={getFieldItemBySlug({
+								slug: item.link.slice(1),
+								itemsType,
+							})}
 							left={i % 2 !== 0}
 							linkText="Więcej info"
 						/>

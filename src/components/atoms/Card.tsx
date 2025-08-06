@@ -5,17 +5,24 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // next.js:
 import Link from "next/link";
+import { NewItem } from "@/scripts";
 
-export default function CustomCard({ item = {}, left = true, linkText = "" }) {
+export default function CustomCard({
+	item,
+	left = true,
+	linkText = "",
+}: {
+	item: NewItem;
+	left: boolean;
+	linkText: string;
+}) {
 	return (
-		<Card
-			className="mb-3 p-3 shadow"
-		>
-			{item.img.src ? (
+		<Card className="mb-3 p-3 shadow">
+			{item.metadata.img.src ? (
 				<Row>
 					{left && (
 						<Col md={6} sm={7}>
-							<Card.Img src={item.img.src} />
+							<Card.Img src={item.metadata.img.src} />
 						</Col>
 					)}
 					<Col>
@@ -27,14 +34,14 @@ export default function CustomCard({ item = {}, left = true, linkText = "" }) {
 								height: "100%",
 							}}
 						>
-							<Card.Title>{item.title}</Card.Title>
-							<Card.Text>{item.description}</Card.Text>
-							<Link href={item.link}>{linkText}</Link>
+							<Card.Title>{item.metadata.title}</Card.Title>
+							<Card.Text>{item.metadata.description}</Card.Text>
+							<Link href={item.metadata.link}>{linkText}</Link>
 						</Card.Body>
 					</Col>
 					{!left && (
 						<Col md={6} sm={7}>
-							<Card.Img src={item.img.src} />
+							<Card.Img src={item.metadata.img.src} />
 						</Col>
 					)}
 				</Row>
@@ -47,9 +54,9 @@ export default function CustomCard({ item = {}, left = true, linkText = "" }) {
 						height: "100%",
 					}}
 				>
-					<Card.Title>{item.title}</Card.Title>
-					<Card.Text>{item.description}</Card.Text>
-					<Link href={item.link}>{linkText}</Link>
+					<Card.Title>{item.metadata.title}</Card.Title>
+					<Card.Text>{item.metadata.description}</Card.Text>
+					<Link href={item.metadata.link}>{linkText}</Link>
 				</Card.Body>
 			)}
 		</Card>

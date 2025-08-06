@@ -9,9 +9,9 @@ import { Metadata } from "next";
 import getRepoReadmeFileContentFromGitHub from "@/lib/github/getRepoReadmeFileContentFromGitHub";
 import getRepoDataFromGitHub from "@/lib/github/getRepoDataFromGitHub";
 import checkGithubApiTokenRateLimits from "@/lib/github/checkGithubApiTokenRateLimits";
-import { Article as IArticle, FieldOfInterest } from "@/types";
-import getAllPagesSlugs from "@/content/experimental-static-cms/lib/getAllPagesSlugs";
-import getPageContentExperimental from "@/content/experimental-static-cms/lib/getPageContentExperimental";
+import { FieldName } from "@/types";
+import { newContent } from "@/scripts/new-content";
+import { NewDevProject } from "@/scripts";
 
 type SlugPageParams = { slug: string };
 
@@ -24,25 +24,37 @@ export async function generateMetadata({
 	// BEFORE:
 	// const pageData = getPageContentExperimental({ slug, from: "array" });
 	// =>
-	const pageData = getPageContentExperimental({ slug, from: "object" });
+	// const pageData = getPageContentExperimental({ slug, from: "object" });
+
+	//=== ❗❗❗ 👇TODO: EXTRACT AS getPageMetadata(slug)👇 ===❗❗❗
+	const pageData = newContent.pages[slug];
 
 	if (!pageData) return {};
 
-	const { pageContent } = pageData;
+	const pageMetadata =
+		pageData.pageType === "field"
+			? newContent.fields[slug as FieldName].metadata
+			: newContent.items[pageData.props.itemsType][slug].metadata;
+	//=== ❗❗❗ 👆TODO: EXTRACT AS getPageMetadata(slug)👆 ===❗❗❗
+
+	if (!pageMetadata) return {};
 
 	return {
-		title: `${pageContent.title} | Vadim Gierko`,
-		description: `${pageContent.description}`,
+		title: `${pageMetadata.title} | Vadim Gierko`,
+		description: `${pageMetadata.description}`,
 		openGraph: {
-			title: `${pageContent.ogTitle || pageContent.title} | Vadim Gierko`,
-			description: `${pageContent.ogDescription || pageContent.description}`,
-			images: pageContent.ogImage
-				? pageContent.ogImage
-				: pageContent.img
-				? pageContent.img.src
+			title: `${pageMetadata.ogTitle || pageMetadata.title} | Vadim Gierko`,
+			description: `${pageMetadata.ogDescription || pageMetadata.description}`,
+			images: pageMetadata.ogImage
+				? pageMetadata.ogImage
+				: pageMetadata.img
+				? pageMetadata.img.src
 				: "https://www.vadimgierko.com/vadim-gerko-zdjecie-cv.jpg",
-			type: pageData.pageType === "article" ? "article" : "website",
-			url: "https://www.vadimgierko.com" + pageContent.link,
+			type:
+				pageData.pageType === "item" && pageData.props.itemType === "article"
+					? "article"
+					: "website",
+			url: "https://www.vadimgierko.com" + pageMetadata.link,
 		},
 	};
 }
@@ -51,7 +63,11 @@ export async function generateStaticParams() {
 	// BEFORE:
 	// const slugs = getAllPagesSlugs("array");
 	// =>
-	const slugs = getAllPagesSlugs("object");
+	// const slugs = getAllPagesSlugs("object");
+
+	//=== ❗❗❗ 👇TODO: EXTRACT AS getAllPagesSlugs👇 ===❗❗❗
+	const slugs = Object.keys(newContent.pages);
+	//=== ❗❗❗ 👆TODO: EXTRACT AS getAllPagesSlugs👆 ===❗❗❗
 
 	const params: SlugPageParams[] = slugs.map((slug) => ({
 		slug,
@@ -69,23 +85,30 @@ export default async function Page({
 	// BEFORE:
 	// const pageData = getPageContentExperimental({ slug, from: "array" });
 	// =>
-	const pageData = getPageContentExperimental({ slug, from: "object" });
+	// const pageData = getPageContentExperimental({ slug, from: "object" });
+
+	//=== ❗❗❗ 👇TODO: EXTRACT AS getPageMetadata(slug)👇 ===❗❗❗
+	const pageData = newContent.pages[slug];
 
 	if (!pageData) return notFound();
 
-	const { pageContent, pageType } = pageData;
+	const page =
+		pageData.pageType === "field"
+			? newContent.fields[slug as FieldName]
+			: newContent.items[pageData.props.itemsType][slug];
+	//=== ❗❗❗ 👆TODO: EXTRACT AS getPageMetadata(slug)👆 ===❗❗❗
+
+	const {} = page;
 
 	//================= FOR DEV PROJECTS ==================:
 	// const isDevProject: boolean = pageContent.pageType === "devProject";
 	// console.log("isDevProject:", isDevProject);
 
-	async function getDevProjectData() {
-		if (pageType !== "devProject") return pageContent;
-		// Type guard: ensure pageContent is DevProject before accessing 'public'
-		if (!("public" in pageContent) || !pageContent.public) return pageContent; // update additional data in projects
-
+	async function getDevProjectData(
+		devProject: NewDevProject
+	): Promise<NewDevProject> {
 		// FETCH REPO DATA FROM GITHUB ONLY IF PROJECT IS PUBLIC:
-		const repoData = await getRepoDataFromGitHub(pageContent.repoName);
+		const repoData = await getRepoDataFromGitHub(devProject.props.repoName);
 		const readmeMarkdown = await getRepoReadmeFileContentFromGitHub(
 			repoData.name
 		);
@@ -94,37 +117,49 @@ export default async function Page({
 		// replace readme's h1 with h2:
 		const fixedMarkdown = readmeMarkdown.replace("#", "##");
 
-		return {
-			...pageContent,
-			content: fixedMarkdown,
-			description: repoData.description,
-			createdAt: repoData.created_at,
-			updatedAt: repoData.updated_at,
-			externalLinks: [
-				{
-					icon: "github",
-					link: "https://github.com/vadimgierko/" + repoData.name,
-					description: "Zobacz kod na GitHub",
-				},
-				{
-					icon: "global",
-					link: repoData.homepage,
-					description: "Strona www projektu",
-				},
-			],
+		const updatedDevProject: NewDevProject = {
+			fieldName: "web-development",
+			itemType: "devProject",
+			metadata: {
+				...devProject.metadata,
+				description: repoData.description,
+			},
+			props: {
+				...devProject.props,
+				content: fixedMarkdown,
+				externalLinks: [
+					{
+						icon: "github",
+						link: "https://github.com/vadimgierko/" + repoData.name,
+						description: "Zobacz kod na GitHub",
+					},
+					{
+						icon: "global",
+						link: repoData.homepage,
+						description: "Strona www projektu",
+					},
+				],
+			},
 		};
+
+		return updatedDevProject;
 	}
 
-	return (
-		<>
-			{pageType === "field" && (
-				<FieldOfInterests field={pageContent as FieldOfInterest} />
-			)}
-			{pageType === "article" && <Article article={pageContent as IArticle} />}
-			{pageType === "project" && <Project project={pageContent} />}
-			{pageType === "devProject" && (
-				<Project project={await getDevProjectData()} />
-			)}
-		</>
-	);
+	if (pageData.pageType === "field")
+		return <FieldOfInterests field={newContent.fields[pageData.slug]} />;
+
+	switch (pageData.props.itemType) {
+		case "article":
+			return <Article article={newContent.items["articles"][pageData.slug]} />;
+		case "project":
+			return <Project project={newContent.items["projects"][pageData.slug]} />;
+		case "devProject":
+			return (
+				<Project
+					project={await getDevProjectData(
+						newContent.items["projects"][pageData.slug] as NewDevProject
+					)}
+				/>
+			);
+	}
 }

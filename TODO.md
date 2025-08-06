@@ -19,7 +19,6 @@
 ## GitHub API
 
 - [ ] use special repo vadimgierko for content in /web-development
-- ✅ use GitHub API more efficiently to fetch projects repo data
 - [ ] fix all mentioned in portfolio dev projects' repos readme files
 
 ## Fields of interests/ Sections/ Pages
@@ -48,10 +47,15 @@
   - [ ] navbar
   - [ ] /[items] page
 - [ ] add search page for search results
-  - [ ] /search?field= itemType= title= ??
-  - [ ] /search?value= keywords= ??
+  - [ ] /search?field= itemType= ?? keywords= ??
 
 ## Tags
 
 - [ ] enable adding tags to content
 - [ ] enable filtering content by tags
+
+## CMS
+
+- [ ] enable full CRUD
+- [ ] API
+- [ ] json & md files

@@ -1,12 +1,11 @@
-import { Item } from "@/types";
 import Card from "../atoms/Card";
-import { NewItem } from "@/scripts";
+import { Item } from "@/types";
 
 export default function CardsList({
 	items,
 	linkText,
 }: {
-	items: NewItem[];
+	items: Item[];
 	linkText: string;
 }) {
 	if (!items || !items.length) return null;

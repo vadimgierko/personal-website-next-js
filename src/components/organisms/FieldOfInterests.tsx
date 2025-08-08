@@ -22,16 +22,15 @@ import { GiMusicalNotes } from "react-icons/gi";
 import { BsImages } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
-import { ItemsType } from "@/types";
-import { NewAudio, NewField, NewItem, NewVideo } from "@/scripts";
-import { newContent } from "@/scripts/new-content";
+import { Audio, Field, Video, ItemsType } from "@/types";
+import { content } from "@/content/content";
 
-// function getFieldItems(field: NewField): NewItem[] {
+// function getFieldItems(field: Field): NewItem[] {
 // 	const items: NewItem[] = [];
 
 // 	Object.keys(field.items).forEach((itemsType) =>
-// 		Object.keys(newContent.items[itemsType as ItemsType]).forEach((slug) =>
-// 			items.push(newContent.items[itemsType as ItemsType][slug])
+// 		Object.keys(content.items[itemsType as ItemsType]).forEach((slug) =>
+// 			items.push(content.items[itemsType as ItemsType][slug])
 // 		)
 // 	);
 
@@ -44,13 +43,15 @@ export function getFieldItemBySlug({
 }: {
 	slug: string;
 	itemsType: ItemsType;
-}): NewItem {
-	const item = newContent.items[itemsType][slug];
+}) {
+	const item = content.items[itemsType][slug];
+
+	if (!item) return undefined;
 
 	return item;
 }
 
-export default function FieldOfInterests({ field }: { field: NewField }) {
+export default function FieldOfInterests({ field }: { field: Field }) {
 	return (
 		<>
 			<header>
@@ -83,7 +84,8 @@ export default function FieldOfInterests({ field }: { field: NewField }) {
 								.slice(0, 3)
 								.map((slug) =>
 									getFieldItemBySlug({ slug, itemsType: "projects" })
-								)}
+								)
+								.filter((item) => item !== undefined)}
 							linkText="Więcej info"
 						/>
 						<Link href={field.metadata.link + "/projects"}>
@@ -100,7 +102,8 @@ export default function FieldOfInterests({ field }: { field: NewField }) {
 								.slice(0, 3)
 								.map((slug) =>
 									getFieldItemBySlug({ slug, itemsType: "articles" })
-								)}
+								)
+								.filter((item) => item !== undefined)}
 							linkText="Czytaj dalej"
 						/>
 						<Link href={field.metadata.link + "/articles"}>
@@ -116,7 +119,7 @@ export default function FieldOfInterests({ field }: { field: NewField }) {
 							.slice(0, 3)
 							.map((slug) => getFieldItemBySlug({ slug, itemsType: "videos" }))
 							.map((v) => {
-								const video = v as NewVideo;
+								const video = v as Video;
 								return (
 									<YouTubeVideo
 										key={video.metadata.title}
@@ -140,7 +143,7 @@ export default function FieldOfInterests({ field }: { field: NewField }) {
 							.slice(0, 3)
 							.map((slug) => getFieldItemBySlug({ slug, itemsType: "audios" }))
 							.map((a) => {
-								const audio = a as NewAudio;
+								const audio = a as Audio;
 
 								return (
 									<SoundCloudAudio

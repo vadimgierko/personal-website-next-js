@@ -1,6 +1,6 @@
-import { NewContent } from ".";
+import { Content } from "@/types";
 
-export const newContent: NewContent = {
+export const content: Content = {
 	items: {
 		articles: {
 			"5-reasons-why-i-started-learning-programming": {

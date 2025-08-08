@@ -5,14 +5,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // next.js:
 import Link from "next/link";
-import { NewItem } from "@/scripts";
+import { Item } from "@/types";
 
 export default function CustomCard({
 	item,
 	left = true,
 	linkText = "",
 }: {
-	item: NewItem;
+	item: Item;
 	left: boolean;
 	linkText: string;
 }) {

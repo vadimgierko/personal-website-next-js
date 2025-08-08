@@ -63,6 +63,7 @@
    - instead of `.ts` files containing js objects managed by hand
    - => `.json` (for metadata, db-like structures etc.) & `.md` (for rich-text & large content) files managed automatically in response to user actions performed via form.
    - \+ ❗❗❗ REMEMBER TO ALSO ENABLE MANAGING IMAGES, OTHER FILES & EMBEDED MEDIA (OR EVEN LOCALLY SAVED FILES)❗❗❗
+   - \+ ❗❗❗ REMEMBER TO NOT RELY ON `FieldName` (&`ItemsType`), because they will be custom names made by user❗❗❗
 3. After building
    - `inside-app` CMS
    - build a `standalone` CMS

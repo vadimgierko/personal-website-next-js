@@ -4,9 +4,9 @@ import Section from "@/layout/Section";
 import MarkdownRenderer from "@/components/atoms/MarkdownRenderer";
 import IconsList from "@/components/molecules/IconsList";
 import ProjectExternalLinkButton from "./ProjectExternalLinkButton";
-import { NewProject } from "@/scripts";
+import { Project as IProject } from "@/types";
 
-export default function Project({ project }: { project: NewProject }) {
+export default function Project({ project }: { project: IProject }) {
 	return (
 		<>
 			<Container className="article py-3" style={{ maxWidth: 900 }}>

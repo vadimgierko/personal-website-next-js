@@ -10,8 +10,8 @@ import getRepoReadmeFileContentFromGitHub from "@/lib/github/getRepoReadmeFileCo
 import getRepoDataFromGitHub from "@/lib/github/getRepoDataFromGitHub";
 import checkGithubApiTokenRateLimits from "@/lib/github/checkGithubApiTokenRateLimits";
 import { FieldName } from "@/types";
-import { newContent } from "@/scripts/new-content";
-import { NewDevProject } from "@/scripts";
+import { content } from "@/content/content";
+import { DevProject } from "@/types";
 
 type SlugPageParams = { slug: string };
 
@@ -27,14 +27,14 @@ export async function generateMetadata({
 	// const pageData = getPageContentExperimental({ slug, from: "object" });
 
 	//=== ❗❗❗ 👇TODO: EXTRACT AS getPageMetadata(slug)👇 ===❗❗❗
-	const pageData = newContent.pages[slug];
+	const pageData = content.pages[slug];
 
 	if (!pageData) return {};
 
 	const pageMetadata =
 		pageData.pageType === "field"
-			? newContent.fields[slug as FieldName].metadata
-			: newContent.items[pageData.props.itemsType][slug].metadata;
+			? content.fields[slug as FieldName].metadata
+			: content.items[pageData.props.itemsType][slug].metadata;
 	//=== ❗❗❗ 👆TODO: EXTRACT AS getPageMetadata(slug)👆 ===❗❗❗
 
 	if (!pageMetadata) return {};
@@ -66,7 +66,7 @@ export async function generateStaticParams() {
 	// const slugs = getAllPagesSlugs("object");
 
 	//=== ❗❗❗ 👇TODO: EXTRACT AS getAllPagesSlugs👇 ===❗❗❗
-	const slugs = Object.keys(newContent.pages);
+	const slugs = Object.keys(content.pages);
 	//=== ❗❗❗ 👆TODO: EXTRACT AS getAllPagesSlugs👆 ===❗❗❗
 
 	const params: SlugPageParams[] = slugs.map((slug) => ({
@@ -88,14 +88,14 @@ export default async function Page({
 	// const pageData = getPageContentExperimental({ slug, from: "object" });
 
 	//=== ❗❗❗ 👇TODO: EXTRACT AS getPageMetadata(slug)👇 ===❗❗❗
-	const pageData = newContent.pages[slug];
+	const pageData = content.pages[slug];
 
 	if (!pageData) return notFound();
 
 	const page =
 		pageData.pageType === "field"
-			? newContent.fields[slug as FieldName]
-			: newContent.items[pageData.props.itemsType][slug];
+			? content.fields[slug as FieldName]
+			: content.items[pageData.props.itemsType][slug];
 	//=== ❗❗❗ 👆TODO: EXTRACT AS getPageMetadata(slug)👆 ===❗❗❗
 
 	const {} = page;
@@ -105,8 +105,8 @@ export default async function Page({
 	// console.log("isDevProject:", isDevProject);
 
 	async function getDevProjectData(
-		devProject: NewDevProject
-	): Promise<NewDevProject> {
+		devProject: DevProject
+	): Promise<DevProject> {
 		// FETCH REPO DATA FROM GITHUB ONLY IF PROJECT IS PUBLIC:
 		const repoData = await getRepoDataFromGitHub(devProject.props.repoName);
 		const readmeMarkdown = await getRepoReadmeFileContentFromGitHub(
@@ -117,7 +117,7 @@ export default async function Page({
 		// replace readme's h1 with h2:
 		const fixedMarkdown = readmeMarkdown.replace("#", "##");
 
-		const updatedDevProject: NewDevProject = {
+		const updatedDevProject: DevProject = {
 			fieldName: "web-development",
 			itemType: "devProject",
 			metadata: {
@@ -146,18 +146,18 @@ export default async function Page({
 	}
 
 	if (pageData.pageType === "field")
-		return <FieldOfInterests field={newContent.fields[pageData.slug]} />;
+		return <FieldOfInterests field={content.fields[pageData.slug]} />;
 
 	switch (pageData.props.itemType) {
 		case "article":
-			return <Article article={newContent.items["articles"][pageData.slug]} />;
+			return <Article article={content.items["articles"][pageData.slug]} />;
 		case "project":
-			return <Project project={newContent.items["projects"][pageData.slug]} />;
+			return <Project project={content.items["projects"][pageData.slug]} />;
 		case "devProject":
 			return (
 				<Project
 					project={await getDevProjectData(
-						newContent.items["projects"][pageData.slug] as NewDevProject
+						content.items["projects"][pageData.slug] as DevProject
 					)}
 				/>
 			);

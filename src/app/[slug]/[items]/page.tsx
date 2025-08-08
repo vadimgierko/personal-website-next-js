@@ -11,10 +11,9 @@ import Gallery from "@/components/molecules/Gallery";
 // content:
 import { icons } from "@/content/icons";
 import { notFound } from "next/navigation";
-import { allowedItemsTypes, FieldOfInterest, ItemsType } from "@/types";
-import { fieldsOfInterests } from "@/content/fieldsOfInterests";
-import getPageContentExperimental from "@/content/experimental-static-cms/lib/getPageContentExperimental";
+import { allowedItemsTypes, FieldName, ItemsType } from "@/types";
 import { getFieldItemBySlug } from "@/components/organisms/FieldOfInterests";
+import { content } from "@/content/content";
 
 type ItemsPageParams = { slug: string; items: ItemsType };
 
@@ -27,16 +26,19 @@ export async function generateMetadata({
 	// BEFORE:
 	// const pageData = getPageContentExperimental({ slug, from: "array" });
 	// =>
-	const pageData = getPageContentExperimental({ slug, from: "object" });
+	//const pageData = getPageContentExperimental({ slug, from: "object" });
+	//=== ❗❗❗ 👇TODO: EXTRACT AS getPageMetadata(slug)👇 ===❗❗❗
+	const slugPageData = content.pages[slug];
 
-	if (!pageData) return {};
+	if (!slugPageData || slugPageData.pageType !== "field") return {};
 
-	const { pageContent } = pageData;
-	const { title } = pageContent;
+	const slugPageMetadata = content.fields[slug as FieldName].metadata;
+	//=== ❗❗❗ 👆TODO: EXTRACT AS getPageMetadata(slug)👆 ===❗❗❗
+
 	const itemsType = (await params).items;
 
 	return {
-		title: `Vadim Gierko | ${title} |
+		title: `Vadim Gierko | ${slugPageMetadata.title} |
           ${
 						itemsType === "projects"
 							? "Projekty (Projects)"
@@ -54,11 +56,11 @@ export async function generateMetadata({
 export async function generateStaticParams() {
 	const params: ItemsPageParams[] = [];
 
-	fieldsOfInterests.forEach((field) => {
-		allowedItemsTypes.forEach((itemsName) =>
-			params.push({ slug: field.link.slice(1), items: itemsName })
-		);
-	});
+	Object.keys(content.fields).forEach((fieldName) =>
+		allowedItemsTypes.forEach((itemsType) =>
+			params.push({ slug: fieldName, items: itemsType })
+		)
+	);
 
 	return params;
 }
@@ -69,31 +71,28 @@ export default async function ItemsPage({
 	params: Promise<ItemsPageParams>;
 }) {
 	//====================== FIELD DATA ====================//
-	const fieldSlug = (await params).slug; // ❗❗❗
+	const slug = (await params).slug; // ❗❗❗
 
 	// const fieldObject = fieldsOfInterests.find((f) => f.link === "/" + fieldSlug);
-	const pageData = getPageContentExperimental({
-		slug: fieldSlug,
-		from: "object",
-	});
+	const pageData = content.pages[slug];
 
-	if (!pageData) return notFound();
+	if (!pageData || pageData.pageType !== "field") return notFound();
 
-	const fieldObject = pageData.pageContent as FieldOfInterest;
-
-	const { title, icon } = fieldObject;
+	const field = content.fields[slug as FieldName];
 
 	//====================== ITEMS DATA ====================//
 	const itemsType = (await params).items;
 
-	const items = fieldObject[itemsType];
+	const items = field.items[itemsType];
 
 	if (!items || (items && !items.length)) return notFound();
 
 	return (
 		<Container className="py-3 text-center" style={{ maxWidth: 900 }}>
-			{icon && <Icon IconType={icons[icon].Icon} size={100} />}
-			<h1>{title}</h1>
+			{field.props.icon && (
+				<Icon IconType={icons[field.props.icon].Icon} size={100} />
+			)}
+			<h1>{field.metadata.title}</h1>
 			<hr />
 			<h2 className="mb-3">
 				{itemsType === "projects"
@@ -107,57 +106,52 @@ export default async function ItemsPage({
 					: "Nagrania (Audios)"}
 			</h2>
 			<main>
-				{/** ==================== ARTICLES ================= */}
-				{itemsType === "articles" &&
-					fieldObject["articles"] &&
-					fieldObject.articles.map((item, i) => (
-						<Card
-							key={item.title}
-							item={getFieldItemBySlug({
-								slug: item.link.slice(1),
-								itemsType,
-							})}
-							left={i % 2 !== 0}
-							linkText="Czytaj dalej"
-						/>
-					))}
-				{/** ==================== PROJECTS ================= */}
-				{itemsType === "projects" &&
-					fieldObject["projects"] &&
-					fieldObject["projects"].map((item, i) => (
-						<Card
-							key={item.title}
-							item={getFieldItemBySlug({
-								slug: item.link.slice(1),
-								itemsType,
-							})}
-							left={i % 2 !== 0}
-							linkText="Więcej info"
-						/>
-					))}
-				{/** ==================== VIDEOS ================= */}
-				{itemsType === "videos" &&
-					fieldObject["videos"] &&
-					fieldObject["videos"].map((item) => (
-						<YouTubeVideo
-							key={item.title}
-							className="mb-3"
-							width={item.width}
-							height={item.height}
-							id={item.id}
-							title={item.title}
-							description={item.description}
-						/>
-					))}
-				{/** ==================== AUDIOS ================= */}
-				{itemsType === "audios" &&
-					fieldObject["audios"] &&
-					fieldObject["audios"].map((item) => (
-						<SoundCloudAudio key={item.src} src={item.src} className="mb-3" />
-					))}
+				{field.items[itemsType] &&
+					field.items[itemsType].map((itemSlug, i) => {
+						const item = getFieldItemBySlug({ slug: itemSlug, itemsType });
+
+						if (!item) return null;
+
+						/** ==================== ARTICLES / PROJECTS ================= */
+						if (itemsType === "articles" || itemsType === "projects")
+							return (
+								<Card
+									key={item.metadata.title}
+									item={item}
+									left={i % 2 !== 0}
+									linkText={
+										itemsType === "articles" ? "Czytaj dalej" : "Więcej info"
+									}
+								/>
+							);
+						/** ==================== VIDEOS ================= */
+						if (itemsType === "videos" && item.itemType === "video")
+							return (
+								<YouTubeVideo
+									key={item.metadata.title}
+									className="mb-3"
+									width={item.props.width}
+									height={item.props.height}
+									id={item.props.id}
+									title={item.metadata.title}
+									description={item.metadata.description}
+								/>
+							);
+
+						/** ==================== AUDIOS ================= */
+						if (itemsType === "audios" && item.itemType === "audio")
+							return (
+								<SoundCloudAudio
+									key={item.props.src}
+									src={item.props.src}
+									className="mb-3"
+								/>
+							);
+					})}
+
 				{/** ==================== IMAGES ================= */}
-				{itemsType === "images" && fieldObject["images"] && (
-					<Gallery images={fieldObject["images"]} />
+				{itemsType === "images" && field.items.images.length > 0 && (
+					<Gallery images={field.items.images} />
 				)}
 			</main>
 		</Container>

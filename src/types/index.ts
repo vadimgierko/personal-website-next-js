@@ -1,8 +1,9 @@
 import { IconType } from "react-icons";
 
-//================================= OLD TYPES ====================================//
+export type Theme = "light" | "dark";
 
-export type PageType = "article" | "project" | "devProject" | "field";
+//==================================================//
+
 export type ItemType =
 	| "article"
 	| "audio"
@@ -34,7 +35,6 @@ export const allowedItemsTypes: ItemsType[] = [
 	"projects",
 	"videos",
 ];
-export type Theme = "light" | "dark";
 
 export interface Metadata {
 	title: string;
@@ -59,68 +59,116 @@ export interface Icon {
 	Icon: IconType;
 }
 
-//================= items =======================//
-export type Item = Article | Video | Project | DevProject | Audio;
+//====================== ITEMS =======================//
+type BaseItem<K extends ItemType, P> = {
+	fieldName: FieldName;
+	itemType: K;
+	metadata: Metadata;
+	props: P;
+};
 
-export interface Video extends Metadata {
-	id: string;
-	width: string;
-	height: string;
-}
-
-export interface Project extends Metadata {
+export type Article = BaseItem<"article", { content: string }>;
+export type Audio = BaseItem<"audio", { src: string }>;
+export type Image = BaseItem<"image", { slug: string }>;
+type ProjectBaseProps = {
 	externalLinks?: {
 		icon: string;
 		link: string;
 		description: string;
 	}[];
 	content?: string;
-}
+};
+export type DefaultProject = BaseItem<"project", ProjectBaseProps>;
+export type DevProject = BaseItem<
+	"devProject",
+	ProjectBaseProps & {
+		public: boolean;
+		repoName: string;
+		skills: string[];
+		features: string[];
+	}
+>;
+export type Project = DefaultProject | DevProject;
+export type Video = BaseItem<
+	"video",
+	{ id: string; width: string; height: string }
+>;
 
-export interface DevProject extends Project {
-	public: boolean;
-	repoName: string;
-	skills: string[];
-	features: string[];
-}
+// type Item = {
+// 	fieldName: FieldName;
+// 	itemType: ItemType;
+// 	metadata: Metadata;
+// 	props: Omit<Item, keyof Metadata>;
+// };
 
-export interface Audio extends Metadata {
-	src: string;
-}
+export type Item = Article | Audio | Image | Project | Video;
 
-export interface Article extends Metadata {
-	content: string;
-}
+//=============================== FIELD ==================================//
 
-export interface FieldOfInterest extends Metadata {
-	icon: string;
-	skills: string[];
-	// items:
-	projects: (DevProject | Project)[];
-	articles: Article[];
-	videos: Video[];
-	images: string[];
-	audios: Audio[];
-}
+export type Field = {
+	fieldName: FieldName;
+	metadata: Metadata;
+	props: {
+		icon: string;
+		skills: string[];
+	};
+	items: {
+		[key in ItemsType]: Item["metadata"]["link"][];
+	};
+};
 
-export interface Page {
-	pageType: PageType;
-	pageContent: Article | Project | DevProject | FieldOfInterest;
-}
+//=============================== PAGE ===================================//
+type PageType = "field" | "item";
 
-//================================= NEW TYPES ====================================//
+type BasePage<K extends PageType, S extends string | FieldName> = {
+	pageType: K;
+	slug: S;
+};
 
-// const CONTENT_TYPES = {
-// 	FIELD: "field",
-// 	ITEM: "item",
-// } as const;
+type FieldPage = BasePage<"field", FieldName>;
+type ItemPage = BasePage<"item", string> & {
+	props: {
+		itemType: ItemType;
+		itemsType: ItemsType;
+	};
+};
 
-// type ContentType = (typeof CONTENT_TYPES)[keyof typeof CONTENT_TYPES];
+//=============================== CONTENT ================================//
 
-// type BaseContentItem = {
-// 	metadata: Metadata
-// }
+export type Content = {
+	items: {
+		// [key in ItemsType]: {
+		// 	[key: string]: Item;
+		// };
+		articles: {
+			[key: string]: Article;
+		};
+		audios: {
+			[key: string]: Audio;
+		};
+		images: {
+			[key: string]: Image;
+		};
+		projects: {
+			[key: string]: Project;
+		};
+		videos: {
+			[key: string]: Video;
+		};
+	};
+	fields: {
+		[key in FieldName]: Field;
+	};
+	pages: {
+		[key: string]: FieldPage | ItemPage;
+	};
+};
 
-// type Article = BaseContentItem & {
-// 	itemType: "article"
+//=============================== WEBSITE ==============================//
+
+// export type Website = {
+// 	metadata: Metadata // ❗❗❗ WEBSITE METADATA IS MUCH BROADER ❗❗❗
+// 	fieldsName: FieldName[];
+// 	itemsTypes: ItemsType[];
+// 	content: Content
 // }

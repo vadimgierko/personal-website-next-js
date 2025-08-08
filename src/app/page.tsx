@@ -9,22 +9,13 @@ import Section from "@/layout/Section";
 import Icon from "@/components/atoms/Icon";
 // next.js:
 import Link from "next/link";
-import getEssentialFieldsData from "../lib/getEssentialFieldData";
 import BioContainer from "./BioContainer";
-import { newContent } from "@/scripts/new-content";
-import { NewField } from "@/scripts";
-import { allowedFieldNames, FieldName } from "@/types";
+import { content } from "@/content/content";
+import { allowedFieldNames } from "@/types";
 
 export default function Home() {
-	// const fieldsOfInterests: {
-	// 	title: string;
-	// 	description: string;
-	// 	link: string;
-	// 	icon: string;
-	// }[];
-	// const fieldsOfInterests = getEssentialFieldsData();
 	const fields = allowedFieldNames.map(
-		(fieldName) => newContent.fields[fieldName]
+		(fieldName) => content.fields[fieldName]
 	);
 
 	return (

@@ -12,37 +12,34 @@ import {
 	BsInstagram,
 	BsSunFill,
 	BsMoonFill,
-	BsEnvelope,
 } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
-import { Theme } from "@/types";
+import { FieldName, ItemsType, Theme } from "@/types";
 import { useEffect, useState } from "react";
+import { NavDropdown } from "react-bootstrap";
+import { content } from "@/content/content";
 
 export const LOCAL_STORAGE_THEME_KEY = "vadimgierko.com-theme";
 
-const NAV_LINKS = [
-	{
-		name: "o mnie",
-		link: "/o-mnie",
-	},
-	{
-		name: "programowanie",
-		link: "/web-development",
-	},
-	{
-		name: "proces twórczy",
-		link: "/creative-process-management",
-	},
-	{
-		name: "myślenie wizualne",
-		link: "/visual-thinking",
-	},
-	{
-		name: "muzyka",
-		link: "/music",
-	},
-];
+const FIELDS_LINKS: {
+	[key in FieldName]: string;
+} = {
+	"web-development": "programowanie",
+	"creative-process-management": "proces twórczy",
+	"visual-thinking": "myślenie wizualne",
+	music: "muzyka",
+};
+
+const ITEMS_LINKS: {
+	[key in ItemsType]: string;
+} = {
+	articles: "artykuły",
+	audios: "nagrania",
+	images: "galeria",
+	projects: "projekty",
+	videos: "wideo",
+};
 
 const SOCIAL_LINKS = [
 	{
@@ -70,7 +67,7 @@ export default function NavigationBar() {
 		setTheme(newTheme);
 		localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
 		document.documentElement.setAttribute("data-bs-theme", newTheme);
-	};
+	}
 
 	useEffect(() => {
 		const savedTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
@@ -106,15 +103,40 @@ export default function NavigationBar() {
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto">
-						{NAV_LINKS.map((navLink) => (
-							<Link
-								key={navLink.name}
-								href={navLink.link}
-								passHref
-								legacyBehavior
+						<Link href="/o-mnie" passHref legacyBehavior>
+							<Nav.Link>o mnie</Nav.Link>
+						</Link>
+
+						{Object.keys(FIELDS_LINKS).map((fieldName) => (
+							<NavDropdown
+								key={fieldName}
+								title={FIELDS_LINKS[fieldName as FieldName]}
 							>
-								<Nav.Link>{navLink.name}</Nav.Link>
-							</Link>
+								{Object.keys(ITEMS_LINKS).map(
+									(itemsType) =>
+										/** CONDITIONALLY RENDER FIELD ITEMS IF EXIST */
+										Object.keys(
+											content.fields[fieldName as FieldName].items[
+												itemsType as ItemsType
+											]
+										).length > 0 && (
+											<Link
+												key={fieldName + "-" + itemsType}
+												href={`/${fieldName}/${itemsType}`}
+												passHref
+												legacyBehavior
+											>
+												<NavDropdown.Item>
+													{ITEMS_LINKS[itemsType as ItemsType]}
+												</NavDropdown.Item>
+											</Link>
+										)
+								)}
+								<NavDropdown.Divider />
+								<NavDropdown.Item href={`/${fieldName}`}>
+									wszystko
+								</NavDropdown.Item>
+							</NavDropdown>
 						))}
 					</Nav>
 					<Nav>
@@ -131,12 +153,6 @@ export default function NavigationBar() {
 								<social.Icon />
 							</Nav.Link>
 						))}
-
-						<Link href="/contact" passHref legacyBehavior>
-							<Nav.Link>
-								<BsEnvelope />
-							</Nav.Link>
-						</Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

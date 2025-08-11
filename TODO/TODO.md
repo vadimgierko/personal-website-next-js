@@ -1,5 +1,20 @@
 # TODO: Future improvements & additions
 
+## Nowe wytyczne (2025-08-11)
+
+Ten projekt nie będzie już wyłącznie generatorem i CMS mojej strony vadimgierko.com, tylko zapoczątkuje i wyłonią się z niego 2 osobne projekty:
+
+1. samodzielny **headless git-based CMS with API routes** do zarządzania kontentem wszystkich moich (nowych-starych/ odbudowanych) stron, które zostaną wymienione w kolejnym punkcie, który może zostać postawiony na Vercelu (w tym przypadku zarządzanie kontentem będzie miało miejsce w edytorze kodu w dev mode) lub na własnym shared hosting lub VPS,
+2. działający, gotowy do forkowania i deployu szablon strony internetowej, pobierający dane z powyższego CMS za pośrednictwem API, który zostanie wykorzystany do postawienia stron
+   - lowcapomyslow.pl
+   - kreatywnenotatki.pl
+   - vadimgierko.pl
+   - jakiejkolwiek innej mojej strony, opartej na kontencie.
+
+ Aczkolwiek, żeby doszło do powyższego, najpierw
+ - dopracuję obecną stronę, wszystkie jej komponenty, rozdzielając całkowicie warstwę danych od UI, co pozwoli później "wyciągnąć" ten kod jako osobny szablon strony
+ - wbuduję CMS do obecnej strony (żeby wykorzystać już "ciągnące się" za tym repo pliki contentu), udostępnię API, przekształcę stronę, by pobierała dane z tego CMS, a wtedy będę mógł wyodrębnić ten projekt jako osobny CMS do forkowania przeze mnie i innych użytkowników. 
+
 - check & update metadata
   - see [TODO](/TODO.md#seo)
   - canonical where needed

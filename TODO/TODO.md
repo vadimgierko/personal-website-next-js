@@ -13,14 +13,21 @@ Ten projekt nie będzie już wyłącznie generatorem i CMS mojej strony vadimgie
 
  Aczkolwiek, żeby doszło do powyższego, najpierw
  - dopracuję obecną stronę, wszystkie jej komponenty, rozdzielając całkowicie warstwę danych od UI, co pozwoli później "wyciągnąć" ten kod jako osobny szablon strony
- - wbuduję CMS do obecnej strony (żeby wykorzystać już "ciągnące się" za tym repo pliki contentu), udostępnię API, przekształcę stronę, by pobierała dane z tego CMS, a wtedy będę mógł wyodrębnić ten projekt jako osobny CMS do forkowania przeze mnie i innych użytkowników. 
+ - wbuduję CMS do obecnej strony (żeby wykorzystać już "ciągnące się" za tym repo pliki contentu), udostępnię API, przekształcę stronę, by pobierała dane z tego CMS, a wtedy będę mógł wyodrębnić ten projekt jako osobny CMS do forkowania przeze mnie i innych użytkowników.
 
-- check & update metadata
-  - see [TODO](/TODO.md#seo)
-  - canonical where needed
+ Wstępne szczegóły znajdują się w poniższych notatkach:
+
+ ![](./2025-08-10-managing-websites-content-cms-note-1.jpg)
+
+ ![](./2025-08-10-managing-websites-content-cms-note-2.jpg)
+
+🚀 TODO: wypisz pomysły/zadania z powyższych notatek w postaci checklisty i realizuj krok po kroku, aż zostaną spełnione [powyższe przesłanki](#nowe-wytyczne-2025-08-11)
   
 ## SEO:
 
+- [ ] check & update metadata
+  - see [TODO](/TODO.md#seo)
+  - canonical where needed
 - [ ] expand metadata & open graph
 - [ ] add og metadata also to /\[items\] page
 - [ ] check how many chars title & descritpion should have & fix it

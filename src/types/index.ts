@@ -11,17 +11,7 @@ export type ItemType =
 	| "image"
 	| "project"
 	| "video";
-export type FieldName =
-	| "web-development"
-	| "creative-process-management"
-	| "music"
-	| "visual-thinking";
-export const allowedFieldNames: FieldName[] = [
-	"creative-process-management",
-	"music",
-	"visual-thinking",
-	"web-development",
-];
+
 export type ItemsType =
 	| "articles"
 	| "projects"
@@ -61,7 +51,7 @@ export interface Icon {
 
 //====================== ITEMS =======================//
 type BaseItem<K extends ItemType, P> = {
-	fieldName: FieldName;
+	category: string;
 	itemType: K;
 	metadata: Metadata;
 	props: P;
@@ -105,8 +95,8 @@ export type Item = Article | Audio | Image | Project | Video;
 
 //=============================== FIELD ==================================//
 
-export type Field = {
-	fieldName: FieldName;
+export type Category = {
+	name: string;
 	metadata: Metadata;
 	props: {
 		icon: string;
@@ -118,14 +108,14 @@ export type Field = {
 };
 
 //=============================== PAGE ===================================//
-type PageType = "field" | "item";
+type PageType = "category" | "item";
 
-type BasePage<K extends PageType, S extends string | FieldName> = {
+type BasePage<K extends PageType, S extends string> = {
 	pageType: K;
 	slug: S;
 };
 
-type FieldPage = BasePage<"field", FieldName>;
+type CategoryPage = BasePage<"category", string>;
 type ItemPage = BasePage<"item", string> & {
 	props: {
 		itemType: ItemType;
@@ -156,19 +146,29 @@ export type Content = {
 			[key: string]: Video;
 		};
 	};
-	fields: {
-		[key in FieldName]: Field;
+	/**
+	 * prev: fields
+	 */
+	categories: {
+		/**
+		 * category slug; prev: FieldName
+		 */
+		[key: string]: Category;
 	};
 	pages: {
-		[key: string]: FieldPage | ItemPage;
+		[key: string]: CategoryPage | ItemPage;
 	};
 };
 
 //=============================== WEBSITE ==============================//
 
-// export type Website = {
-// 	metadata: Metadata // ❗❗❗ WEBSITE METADATA IS MUCH BROADER ❗❗❗
-// 	fieldsName: FieldName[];
-// 	itemsTypes: ItemsType[];
-// 	content: Content
-// }
+type Domain = {
+	metadata: Metadata // ❗❗❗ WEBSITE METADATA IS MUCH BROADER ❗❗❗
+	fieldsNames: string[];
+	itemsTypes: ItemsType[];
+	content: Content
+}
+
+type CMS = {
+	domains: string[];
+}

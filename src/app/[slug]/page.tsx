@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 // custom components:
-import FieldOfInterests from "@/components/organisms/FieldOfInterests";
+import FieldOfInterests from "@/components/organisms/Category";
 import Article from "@/components/organisms/Article";
 import Project from "@/components/organisms/Project";
 // lib:
@@ -9,7 +9,6 @@ import { Metadata } from "next";
 import getRepoReadmeFileContentFromGitHub from "@/lib/github/getRepoReadmeFileContentFromGitHub";
 import getRepoDataFromGitHub from "@/lib/github/getRepoDataFromGitHub";
 import checkGithubApiTokenRateLimits from "@/lib/github/checkGithubApiTokenRateLimits";
-import { FieldName } from "@/types";
 import { content } from "@/content/content";
 import { DevProject } from "@/types";
 
@@ -32,8 +31,8 @@ export async function generateMetadata({
 	if (!pageData) return {};
 
 	const pageMetadata =
-		pageData.pageType === "field"
-			? content.fields[slug as FieldName].metadata
+		pageData.pageType === "category"
+			? content.categories[slug].metadata
 			: content.items[pageData.props.itemsType][slug].metadata;
 	//=== ❗❗❗ 👆TODO: EXTRACT AS getPageMetadata(slug)👆 ===❗❗❗
 
@@ -93,8 +92,8 @@ export default async function Page({
 	if (!pageData) return notFound();
 
 	const page =
-		pageData.pageType === "field"
-			? content.fields[slug as FieldName]
+		pageData.pageType === "category"
+			? content.categories[slug]
 			: content.items[pageData.props.itemsType][slug];
 	//=== ❗❗❗ 👆TODO: EXTRACT AS getPageMetadata(slug)👆 ===❗❗❗
 
@@ -118,7 +117,7 @@ export default async function Page({
 		const fixedMarkdown = readmeMarkdown.replace("#", "##");
 
 		const updatedDevProject: DevProject = {
-			fieldName: "web-development",
+			category: "web-development",
 			itemType: "devProject",
 			metadata: {
 				...devProject.metadata,
@@ -145,8 +144,8 @@ export default async function Page({
 		return updatedDevProject;
 	}
 
-	if (pageData.pageType === "field")
-		return <FieldOfInterests field={content.fields[pageData.slug]} />;
+	if (pageData.pageType === "category")
+		return <FieldOfInterests field={content.categories[pageData.slug]} />;
 
 	switch (pageData.props.itemType) {
 		case "article":

@@ -22,61 +22,10 @@ Ten projekt nie będzie już wyłącznie generatorem i CMS mojej strony vadimgie
  ![](./2025-08-10-managing-websites-content-cms-note-2.jpg)
 
 🚀 TODO: wypisz pomysły/zadania z powyższych notatek w postaci checklisty i realizuj krok po kroku, aż zostaną spełnione [powyższe przesłanki](#nowe-wytyczne-2025-08-11)
-  
-## SEO:
 
-- [ ] check & update metadata
-  - see [TODO](/TODO.md#seo)
-  - canonical where needed
-- [ ] expand metadata & open graph
-- [ ] add og metadata also to /\[items\] page
-- [ ] check how many chars title & descritpion should have & fix it
-- [ ] add conditional dynamic og:type property (article, book, website, etc. => find more)
-- [ ] add keywords prop
-- [ ] add [robots.txt](https://nextjs.org/learn/seo/crawling-and-indexing/robots-txt)
-- [ ] add [sitemap](https://nextjs.org/learn/seo/crawling-and-indexing/xml-sitemaps)
-- [ ] add html lang
-- [ ] do [further reading how to improve SEO](https://nextjs.org/learn/seo/improve)
+---
 
-## GitHub API
-
-- [ ] use special repo vadimgierko for content in /web-development
-- [ ] fix all mentioned in portfolio dev projects' repos readme files
-
-## Fields of interests/ Sections/ Pages
-
-- [ ] add _Services_ (What can I do for you) section to each field of interest page
-- [ ] complete _Music_ section with content
-- [ ] add /[items] page for all articles, projects, videos, audios etc.
-  - [ ] organize by fields?
-  - [ ] enable search/ filter features for each particular /[items] page
-
-## Articles/ Projects
-
-- [ ] add created/updatedAt for
-  - [ ] articles
-  - [ ] projects
-
-## Print layout
-
-- [ ] improve print layout
-  - [ ] hide bootstrap layouts (cols, cards) or manage that with css
-  - [ ] manage big images
-
-## Search/ Filter features
-
-- [ ] add search box in
-  - [ ] navbar
-  - [ ] /[items] page
-- [ ] add search page for search results
-  - [ ] /search?field= itemType= ?? keywords= ??
-
-## Tags
-
-- [ ] enable adding tags to content
-- [ ] enable filtering content by tags
-
-## Git-based CMS
+## Ad. 1. Git-based CMS & Content Types TODO
 
 1. The ultimate goal is to shift managing content (and website data overall)
    - from dev-oriented (by hardcoding & literally typing content in the code)
@@ -91,3 +40,38 @@ Ten projekt nie będzie już wyłącznie generatorem i CMS mojej strony vadimgie
    - build a `standalone` CMS
      - `for myself` at the beginning (as a central hub for all of my static websites, which will be switched to consume content via `API`,
      - then build a standarized/abstract version of the app, which could be forked on gh `for other users`
+
+- enable adding website & all it's metadata
+- enable adding tags to all content
+  - collect tags as separate collection shared for all content & websites
+- add created/updatedAt timestamp for all
+- use special repo vadimgierko for content in /web-development & fetch all dev data from gh, choosing only what projects to show
+- field => category with name given by the user => remove type FieldName & do not use that in logic
+
+## Ad. 2. WWW Template App TODO
+
+- ADD Search/ Filter features
+  - add search box in
+    - navbar
+    - /[items] page
+  - add search page for search results
+    - /search?category= itemtype= ?? tags= ??
+- IMRPOVE Print layout
+  - hide bootstrap layouts (cols, cards) or manage that with css
+  - manage big images
+- ADD _Services_ (What can I do for you) section to each field of interest page
+- ADD /[items] page for all articles, projects, videos, audios etc.
+  - enable search/ filter features for each particular /[items] page
+- UPDATE SEO
+  - [ ] check & update metadata
+    - see [TODO](/TODO.md#seo)
+    - canonical where needed
+  - [ ] expand metadata & open graph
+  - [ ] add og metadata also to /\[items\] page
+  - [ ] check how many chars title & descritpion should have & fix it
+  - [ ] add conditional dynamic og:type property (article, book, website, etc. => find more)
+  - [ ] add keywords prop
+  - [ ] add [robots.txt](https://nextjs.org/learn/seo/crawling-and-indexing/robots-txt)
+  - [ ] add [sitemap](https://nextjs.org/learn/seo/crawling-and-indexing/xml-sitemaps)
+  - [ ] add html lang
+  - [ ] do [further reading how to improve SEO](https://nextjs.org/learn/seo/improve)

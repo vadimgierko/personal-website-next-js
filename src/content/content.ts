@@ -4,7 +4,7 @@ export const content: Content = {
 	items: {
 		articles: {
 			"5-reasons-why-i-started-learning-programming": {
-				fieldName: "web-development",
+				category: "web-development",
 				itemType: "article",
 				metadata: {
 					title: "5 Reasons Why I Started Learning Programming",
@@ -26,7 +26,7 @@ export const content: Content = {
 			},
 			"summary-of-my-first-year-of-learning-web-development-roadmap-projects-and-tips-for-newbies":
 				{
-					fieldName: "web-development",
+					category: "web-development",
 					itemType: "article",
 					metadata: {
 						title:
@@ -49,7 +49,7 @@ export const content: Content = {
 				},
 			"zarzadzanie-procesem-tworczym-czyli-jak-zapanowac-nad-chaosem-tworzenia":
 				{
-					fieldName: "creative-process-management",
+					category: "creative-process-management",
 					itemType: "article",
 					metadata: {
 						title:
@@ -71,7 +71,7 @@ export const content: Content = {
 					},
 				},
 			"jak-uporzadkowac-pomysly-wielka-ksiega-pomyslow": {
-				fieldName: "creative-process-management",
+				category: "creative-process-management",
 				itemType: "article",
 				metadata: {
 					title: "Jak uporządkować pomysły? Wielka Księga Pomysłów",
@@ -93,7 +93,7 @@ export const content: Content = {
 			},
 			"dokumentacja-procesu-tworczego-dlaczego-warto-jak-to-robic-krok-po-kroku":
 				{
-					fieldName: "creative-process-management",
+					category: "creative-process-management",
 					itemType: "article",
 					metadata: {
 						title:
@@ -116,7 +116,7 @@ export const content: Content = {
 				},
 			"jak-media-spolecznosciowe-stymuluja-rozwoj-tworczy-i-kreatywnosc-przyklad-instagrama":
 				{
-					fieldName: "creative-process-management",
+					category: "creative-process-management",
 					itemType: "article",
 					metadata: {
 						title:
@@ -139,7 +139,7 @@ export const content: Content = {
 				},
 			"jak-jedno-postanowienie-noworoczne-moze-odmienic-twoje-zycie-jesli-skupisz-sie-wylacznie-na-nim-przez-rok-studium-mojego-przypadku":
 				{
-					fieldName: "creative-process-management",
+					category: "creative-process-management",
 					itemType: "article",
 					metadata: {
 						title:
@@ -161,7 +161,7 @@ export const content: Content = {
 					},
 				},
 			"jak-notowac-efektywnie-rob-notatki-wizualne": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "article",
 				metadata: {
 					title: "Jak notować efektywnie? Rób notatki wizualne!",
@@ -182,7 +182,7 @@ export const content: Content = {
 				},
 			},
 			"mapy-mysli-jak-je-tworzyc-i-jak-z-nich-korzystac": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "article",
 				metadata: {
 					title: "Mapy myśli. Jak je tworzyć i jak z nich korzystać?",
@@ -204,7 +204,7 @@ export const content: Content = {
 			},
 			"notatki-wizualne-na-pokaz-vs-do-uzytku-wlasnego-porownanie-notatki-nt-patronite-i-jej-szkicu":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "article",
 					metadata: {
 						title:
@@ -226,7 +226,7 @@ export const content: Content = {
 					},
 				},
 			"jak-zaczalem-notowac-wizualnie-moja-historia": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "article",
 				metadata: {
 					title: "Jak zacząłem notować wizualnie? Moja historia",
@@ -249,7 +249,7 @@ export const content: Content = {
 		},
 		projects: {
 			"personal-website-next-js": {
-				fieldName: "web-development",
+				category: "web-development",
 				itemType: "devProject",
 				metadata: {
 					title: "vadimgierko.com",
@@ -280,7 +280,7 @@ export const content: Content = {
 				},
 			},
 			"kodujemywbiurze.pl": {
-				fieldName: "web-development",
+				category: "web-development",
 				itemType: "devProject",
 				metadata: {
 					title: "kodujemywbiurze.pl",
@@ -303,7 +303,7 @@ export const content: Content = {
 				},
 			},
 			"linky-notes": {
-				fieldName: "web-development",
+				category: "web-development",
 				itemType: "devProject",
 				metadata: {
 					title: "Linky Notes",
@@ -342,7 +342,7 @@ export const content: Content = {
 				},
 			},
 			"chat-app-react": {
-				fieldName: "web-development",
+				category: "web-development",
 				itemType: "devProject",
 				metadata: {
 					title: "Realtime Chat App React",
@@ -371,7 +371,7 @@ export const content: Content = {
 				},
 			},
 			"issue-tracker": {
-				fieldName: "web-development",
+				category: "web-development",
 				itemType: "devProject",
 				metadata: {
 					title: "Issue Tracker",
@@ -401,7 +401,7 @@ export const content: Content = {
 				},
 			},
 			"markdown-text-editor": {
-				fieldName: "web-development",
+				category: "web-development",
 				itemType: "devProject",
 				metadata: {
 					title: "Live Markdown Text Editor",
@@ -424,7 +424,7 @@ export const content: Content = {
 				},
 			},
 			"ebook-zarzadzanie-procesem-tworczym": {
-				fieldName: "creative-process-management",
+				category: "creative-process-management",
 				itemType: "project",
 				metadata: {
 					title: 'Ebook "Zarządzanie Procesem Twórczym"',
@@ -445,7 +445,7 @@ export const content: Content = {
 				},
 			},
 			"warsztaty-zarzadzania-procesem-tworczym": {
-				fieldName: "creative-process-management",
+				category: "creative-process-management",
 				itemType: "project",
 				metadata: {
 					title: "Warsztaty Zarządzania Procesem Twórczym",
@@ -463,7 +463,7 @@ export const content: Content = {
 				props: {},
 			},
 			"blog-lowca-pomyslow": {
-				fieldName: "creative-process-management",
+				category: "creative-process-management",
 				itemType: "project",
 				metadata: {
 					title: 'Blog nt. Zarządzania Procesem Twórczym "Łowca Pomysłów"',
@@ -481,7 +481,7 @@ export const content: Content = {
 				props: {},
 			},
 			"profil-lowca-pomyslow-na-facebooku-i-instagramie": {
-				fieldName: "creative-process-management",
+				category: "creative-process-management",
 				itemType: "project",
 				metadata: {
 					title:
@@ -513,7 +513,7 @@ export const content: Content = {
 				},
 			},
 			"profil-kreatywne-notatki-na-instagramie-i-facebooku": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "project",
 				metadata: {
 					title: 'Profil "Kreatywne Notatki" na Instagramie i Facebooku',
@@ -544,7 +544,7 @@ export const content: Content = {
 				},
 			},
 			"blog-kreatywne-notatki": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "project",
 				metadata: {
 					title: 'Blog "Kreatywne Notatki"',
@@ -562,7 +562,7 @@ export const content: Content = {
 				props: {},
 			},
 			"warsztaty-myslenia-wizualnego-notatki-wizualne-mapy-mysli": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "project",
 				metadata: {
 					title: "Warsztaty Notowania Wizualnego oraz Tworzenia Map Myśli",
@@ -586,7 +586,7 @@ export const content: Content = {
 		videos: {
 			"jak-tworzyc-lepsze-notatki-ktore-pomoga-w-efektywnej-nauce-or-rozmowa-z-vadimem-gierko-(czesc-1)":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "video",
 					metadata: {
 						title:
@@ -610,7 +610,7 @@ export const content: Content = {
 				},
 			"skuteczne-notatki.-jak-je-tworzyc-or-rozmowa-z-vadimem-gierko-(czesc-2)":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "video",
 					metadata: {
 						title:
@@ -633,7 +633,7 @@ export const content: Content = {
 					},
 				},
 			"notatka-ktora-hakuje-pamiec...-i-poprawia-nauke:-)": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "video",
 				metadata: {
 					title: "Notatka, która HAKUJE PAMIĘĆ... i poprawia naukę:-)",
@@ -657,7 +657,7 @@ export const content: Content = {
 		},
 		audios: {
 			"august-gardens": {
-				fieldName: "music",
+				category: "music",
 				itemType: "audio",
 				metadata: {
 					title: "August Gardens",
@@ -676,7 +676,7 @@ export const content: Content = {
 				},
 			},
 			"b-day-theme": {
-				fieldName: "music",
+				category: "music",
 				itemType: "audio",
 				metadata: {
 					title: "B-day Theme",
@@ -695,7 +695,7 @@ export const content: Content = {
 				},
 			},
 			"elevator-to-sadness": {
-				fieldName: "music",
+				category: "music",
 				itemType: "audio",
 				metadata: {
 					title: "Elevator To Sadness",
@@ -717,7 +717,7 @@ export const content: Content = {
 		images: {
 			"ebook-dlaczego-warto-vadim-gierko-kreatywne-notatki-notatka-wizualna-sketchnoting-poradnik-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -736,7 +736,7 @@ export const content: Content = {
 					},
 				},
 			"esej-vadim-gierko-pisanie-kreatywne-notatki.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -755,7 +755,7 @@ export const content: Content = {
 				},
 			},
 			"freddie-mercury-queen-vadim-gierko-notatka-wizualna-819x1024.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -775,7 +775,7 @@ export const content: Content = {
 			},
 			"grafika-grafiki-klosinski-jak-tworzyc-notatka-wizualna-kreatywne-notatki-vadim-gierko-819x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -795,7 +795,7 @@ export const content: Content = {
 				},
 			"instagram-media-spolecznosciowe-rozwoj-tworczy-kreatywnosc-vadim-gierko-notatka-wizualna-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -814,7 +814,7 @@ export const content: Content = {
 					},
 				},
 			"introwertyk-kreatywne-notatki-vadim-gierko-1024x955.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -834,7 +834,7 @@ export const content: Content = {
 			},
 			"jak-napisac-tekst-vadim-gierko-kreatywne-notatki-notatka-wizualna-sketchnoting-bartlomiej-krawczyk-1024x723.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -853,7 +853,7 @@ export const content: Content = {
 					},
 				},
 			"jak-oszczedzac-prad-gaz-woda-vadim-gierko-kreatywne-notatki.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -873,7 +873,7 @@ export const content: Content = {
 			},
 			"jak-zhakowac-mozg-vadim-gierko-kreatywne-notatki-notatka-wizualna-sketchnoting-dobra-pamiec-1024x765.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -893,7 +893,7 @@ export const content: Content = {
 				},
 			"mapa-mapy-mysli-vadim-gierko-notatki-wizualne-poradnik-artykul-nauka-zarzadzanie.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -913,7 +913,7 @@ export const content: Content = {
 				},
 			"mapa-mysli-design-thinking-vadim-gierko-kreatywne-notatki-1-1024x717.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -932,7 +932,7 @@ export const content: Content = {
 					},
 				},
 			"mapa-mysli-notatka-wizualna-vadim-gierko-linkedin-892x1024.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -951,7 +951,7 @@ export const content: Content = {
 				},
 			},
 			"marcin-osman-ebook-kreatywne-notatki-vadim-gierko-1024x722.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -971,7 +971,7 @@ export const content: Content = {
 			},
 			"notatka-wizualna-vadim-gierko-kreatywne-notatki-firma-czyli-ty-paul-jarvis-gosia-zimniak-1024x730.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -991,7 +991,7 @@ export const content: Content = {
 				},
 			"notatka-wizualna-vadim-gierko-kreatywne-notatki-warunki-pracy-kreatywnosc-mapa-mysli-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1011,7 +1011,7 @@ export const content: Content = {
 				},
 			"notatki-wizualne-artykul-efektywna-nauka-notowanie-vadim-gierko-sketchnoting-887x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1030,7 +1030,7 @@ export const content: Content = {
 					},
 				},
 			"patronite-vadim-gierko-kreatywne-wizualne-notatki-819x1024.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1049,7 +1049,7 @@ export const content: Content = {
 				},
 			},
 			"projekty-praca-tworcza-lowca-pomyslow-notatka-wizualna-1024x1024.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1069,7 +1069,7 @@ export const content: Content = {
 			},
 			"vadim-gierko-kreatywne-notatki-czytanie-produktywnosc-ksiazki-lektura-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1089,7 +1089,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-dalai-lama-czas-zarzadzanie-rozwoj-osobisty-860x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1109,7 +1109,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-folowers-instagram-haremska-sprawny-marketing-819x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1128,7 +1128,7 @@ export const content: Content = {
 					},
 				},
 			"vadim-gierko-kreatywne-notatki-freddie-mercury-queen-1024x1024.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1148,7 +1148,7 @@ export const content: Content = {
 			},
 			"vadim-gierko-kreatywne-notatki-identyfikacja-wizualna-instagram-marka-osobista-sprawny-marketing-879x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1168,7 +1168,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-instagram-bledy-content-marketing-sprawny-1024x957.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1187,7 +1187,7 @@ export const content: Content = {
 					},
 				},
 			"vadim-gierko-kreatywne-notatki-inteligencja-einstein-838x1024.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1207,7 +1207,7 @@ export const content: Content = {
 			},
 			"vadim-gierko-kreatywne-notatki-jak-pisac-lepiej-poradnik-blog-pisanie-pisarz-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1226,7 +1226,7 @@ export const content: Content = {
 					},
 				},
 			"vadim-gierko-kreatywne-notatki-koncentracja-1024x1024.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1246,7 +1246,7 @@ export const content: Content = {
 			},
 			"vadim-gierko-kreatywne-notatki-nauka-jezyk-obcy-teachersi-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1266,7 +1266,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-nawyki-dyscyplina-zarzadzanie-czasem-1024x871.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1286,7 +1286,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-perfekcjonizm-rozwoj-osobisty-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1305,7 +1305,7 @@ export const content: Content = {
 					},
 				},
 			"vadim-gierko-kreatywne-notatki-pisanie-poradnik-blog-902x1024.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1325,7 +1325,7 @@ export const content: Content = {
 			},
 			"vadim-gierko-kreatywne-notatki-praca-etat-olekszyk-workbalance-kariera-1024x727.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1344,7 +1344,7 @@ export const content: Content = {
 					},
 				},
 			"vadim-gierko-kreatywne-notatki-praca-gleboka-cal-newport-1024x732.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1364,7 +1364,7 @@ export const content: Content = {
 			},
 			"vadim-gierko-kreatywne-notatki-reguly-kreatywnego-myslenia-chybicka-1024x726.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1384,7 +1384,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-rok-szkolny-rozwoj-osobisty-dzieci-kreatywnosc-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1404,7 +1404,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-rozwoj-osobisty-weekend-tworczosc-kreatywnosc-913x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1424,7 +1424,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-situationship-zwiazek-relacje-psychologia-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1443,7 +1443,7 @@ export const content: Content = {
 					},
 				},
 			"vadim-gierko-kreatywne-notatki-swieta-zero-waste-1024x716.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1463,7 +1463,7 @@ export const content: Content = {
 			},
 			"vadim-gierko-kreatywne-notatki-szkolenia-poradnik-klosinski-sowa-845x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1483,7 +1483,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-tworca-tworczosc-czego-zaluje-niespelniony-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1503,7 +1503,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-warunki-pracy-kreatywnosc-natchnienie-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1523,7 +1523,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-zarzadzanie-czasem-business-insider-1024x928.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1543,7 +1543,7 @@ export const content: Content = {
 				},
 			"vadim-gierko-kreatywne-notatki-zwiazek-psychologia-relacje-kobieta-milosc-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1563,7 +1563,7 @@ export const content: Content = {
 				},
 			"wizualna-kreatywna-notatka-sketchnoting-design-thinking-suslik-vadim-gierko-1024x713.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1583,7 +1583,7 @@ export const content: Content = {
 				},
 			"wizualna-kreatywna-notatka-sketchnoting-klosinski-klient-strategia-vadim-gierko-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1603,7 +1603,7 @@ export const content: Content = {
 				},
 			"wizualna-kreatywna-notatka-sketchnoting-mind-map-instagram-pomysl-vadim-gierko-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1623,7 +1623,7 @@ export const content: Content = {
 				},
 			"wizualna-kreatywna-notatka-sketchnoting-prezentacja-jobs-vadim-gierko-1024x716.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1643,7 +1643,7 @@ export const content: Content = {
 				},
 			"wizualna-kreatywna-notatka-sketchnoting-problem-rozwiazanie-watanabe-vadim-gierko-1024x726.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1662,7 +1662,7 @@ export const content: Content = {
 					},
 				},
 			"zarzadzanie-procesem-tworczym-vadim-gierko-infografika.jpg": {
-				fieldName: "visual-thinking",
+				category: "visual-thinking",
 				itemType: "image",
 				metadata: {
 					title: "",
@@ -1682,7 +1682,7 @@ export const content: Content = {
 			},
 			"zero-waste-vadim-gierko-kreatywne-notatki-notatka-wizualna-sketchnoting-1024x1024.jpg":
 				{
-					fieldName: "visual-thinking",
+					category: "visual-thinking",
 					itemType: "image",
 					metadata: {
 						title: "",
@@ -1702,9 +1702,9 @@ export const content: Content = {
 				},
 		},
 	},
-	fields: {
+	categories: {
 		"web-development": {
-			fieldName: "web-development",
+			name: "web-development",
 			metadata: {
 				title: "Programowanie stron i aplikacji internetowych",
 				description:
@@ -1757,7 +1757,7 @@ export const content: Content = {
 			},
 		},
 		"creative-process-management": {
-			fieldName: "creative-process-management",
+			name: "creative-process-management",
 			metadata: {
 				title: "Zarządzanie Procesem Twórczym (ZPT)",
 				description:
@@ -1796,7 +1796,7 @@ export const content: Content = {
 			},
 		},
 		music: {
-			fieldName: "music",
+			name: "music",
 			metadata: {
 				title: "Muzyka",
 				description:
@@ -1823,7 +1823,7 @@ export const content: Content = {
 			},
 		},
 		"visual-thinking": {
-			fieldName: "visual-thinking",
+			name: "visual-thinking",
 			metadata: {
 				title: "Myślenie wizualne (notatki wizualne i mapy myśli)",
 				description:
@@ -1917,7 +1917,7 @@ export const content: Content = {
 	},
 	pages: {
 		"web-development": {
-			pageType: "field",
+			pageType: "category",
 			slug: "web-development",
 		},
 		"5-reasons-why-i-started-learning-programming": {
@@ -1986,7 +1986,7 @@ export const content: Content = {
 			},
 		},
 		"creative-process-management": {
-			pageType: "field",
+			pageType: "category",
 			slug: "creative-process-management",
 		},
 		"zarzadzanie-procesem-tworczym-czyli-jak-zapanowac-nad-chaosem-tworzenia": {
@@ -2065,7 +2065,7 @@ export const content: Content = {
 			},
 		},
 		"visual-thinking": {
-			pageType: "field",
+			pageType: "category",
 			slug: "visual-thinking",
 		},
 		"jak-notowac-efektywnie-rob-notatki-wizualne": {
@@ -2126,7 +2126,7 @@ export const content: Content = {
 			},
 		},
 		music: {
-			pageType: "field",
+			pageType: "category",
 			slug: "music",
 		},
 	},

@@ -11,8 +11,8 @@ import Gallery from "@/components/molecules/Gallery";
 // content:
 import { icons } from "@/content/icons";
 import { notFound } from "next/navigation";
-import { allowedItemsTypes, FieldName, ItemsType } from "@/types";
-import { getFieldItemBySlug } from "@/components/organisms/FieldOfInterests";
+import { allowedItemsTypes, ItemsType } from "@/types";
+import { getFieldItemBySlug } from "@/components/organisms/Category";
 import { content } from "@/content/content";
 
 type ItemsPageParams = { slug: string; items: ItemsType };
@@ -30,9 +30,9 @@ export async function generateMetadata({
 	//=== ❗❗❗ 👇TODO: EXTRACT AS getPageMetadata(slug)👇 ===❗❗❗
 	const slugPageData = content.pages[slug];
 
-	if (!slugPageData || slugPageData.pageType !== "field") return {};
+	if (!slugPageData || slugPageData.pageType !== "category") return {};
 
-	const slugPageMetadata = content.fields[slug as FieldName].metadata;
+	const slugPageMetadata = content.categories[slug].metadata;
 	//=== ❗❗❗ 👆TODO: EXTRACT AS getPageMetadata(slug)👆 ===❗❗❗
 
 	const itemsType = (await params).items;
@@ -56,9 +56,9 @@ export async function generateMetadata({
 export async function generateStaticParams() {
 	const params: ItemsPageParams[] = [];
 
-	Object.keys(content.fields).forEach((fieldName) =>
+	Object.keys(content.categories).forEach((categoryName) =>
 		allowedItemsTypes.forEach((itemsType) =>
-			params.push({ slug: fieldName, items: itemsType })
+			params.push({ slug: categoryName, items: itemsType })
 		)
 	);
 
@@ -76,23 +76,23 @@ export default async function ItemsPage({
 	// const fieldObject = fieldsOfInterests.find((f) => f.link === "/" + fieldSlug);
 	const pageData = content.pages[slug];
 
-	if (!pageData || pageData.pageType !== "field") return notFound();
+	if (!pageData || pageData.pageType !== "category") return notFound();
 
-	const field = content.fields[slug as FieldName];
+	const category = content.categories[slug];
 
 	//====================== ITEMS DATA ====================//
 	const itemsType = (await params).items;
 
-	const items = field.items[itemsType];
+	const items = category.items[itemsType];
 
 	if (!items || (items && !items.length)) return notFound();
 
 	return (
 		<Container className="py-3 text-center" style={{ maxWidth: 900 }}>
-			{field.props.icon && (
-				<Icon IconType={icons[field.props.icon].Icon} size={100} />
+			{category.props.icon && (
+				<Icon IconType={icons[category.props.icon].Icon} size={100} />
 			)}
-			<h1>{field.metadata.title}</h1>
+			<h1>{category.metadata.title}</h1>
 			<hr />
 			<h2 className="mb-3">
 				{itemsType === "projects"
@@ -106,8 +106,8 @@ export default async function ItemsPage({
 					: "Nagrania (Audios)"}
 			</h2>
 			<main>
-				{field.items[itemsType] &&
-					field.items[itemsType].map((itemSlug, i) => {
+				{category.items[itemsType] &&
+					category.items[itemsType].map((itemSlug, i) => {
 						const item = getFieldItemBySlug({ slug: itemSlug, itemsType });
 
 						if (!item) return null;
@@ -150,8 +150,8 @@ export default async function ItemsPage({
 					})}
 
 				{/** ==================== IMAGES ================= */}
-				{itemsType === "images" && field.items.images.length > 0 && (
-					<Gallery images={field.items.images} />
+				{itemsType === "images" && category.items.images.length > 0 && (
+					<Gallery images={category.items.images} />
 				)}
 			</main>
 		</Container>

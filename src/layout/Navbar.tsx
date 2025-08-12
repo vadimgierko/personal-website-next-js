@@ -15,15 +15,15 @@ import {
 } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
-import { FieldName, ItemsType, Theme } from "@/types";
+import { ItemsType, Theme } from "@/types";
 import { useEffect, useState } from "react";
 import { NavDropdown } from "react-bootstrap";
 import { content } from "@/content/content";
 
 export const LOCAL_STORAGE_THEME_KEY = "vadimgierko.com-theme";
 
-const FIELDS_LINKS: {
-	[key in FieldName]: string;
+const CATEGORIES_LINKS: {
+	[key: string]: string;
 } = {
 	"web-development": "programowanie",
 	"creative-process-management": "proces twórczy",
@@ -107,22 +107,22 @@ export default function NavigationBar() {
 							<Nav.Link>o mnie</Nav.Link>
 						</Link>
 
-						{Object.keys(FIELDS_LINKS).map((fieldName) => (
+						{Object.keys(CATEGORIES_LINKS).map((categoryName) => (
 							<NavDropdown
-								key={fieldName}
-								title={FIELDS_LINKS[fieldName as FieldName]}
+								key={categoryName}
+								title={CATEGORIES_LINKS[categoryName]}
 							>
 								{Object.keys(ITEMS_LINKS).map(
 									(itemsType) =>
 										/** CONDITIONALLY RENDER FIELD ITEMS IF EXIST */
 										Object.keys(
-											content.fields[fieldName as FieldName].items[
-												itemsType as ItemsType
+											content.categories[categoryName].items[
+											itemsType as ItemsType
 											]
 										).length > 0 && (
 											<Link
-												key={fieldName + "-" + itemsType}
-												href={`/${fieldName}/${itemsType}`}
+												key={categoryName + "-" + itemsType}
+												href={`/${categoryName}/${itemsType}`}
 												passHref
 												legacyBehavior
 											>
@@ -133,7 +133,7 @@ export default function NavigationBar() {
 										)
 								)}
 								<NavDropdown.Divider />
-								<NavDropdown.Item href={`/${fieldName}`}>
+								<NavDropdown.Item href={`/${categoryName}`}>
 									wszystko
 								</NavDropdown.Item>
 							</NavDropdown>

@@ -22,7 +22,7 @@ import { GiMusicalNotes } from "react-icons/gi";
 import { BsImages } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
-import { Audio, Field, Video, ItemsType } from "@/types";
+import { Audio, Category, Video, ItemsType } from "@/types";
 import { content } from "@/content/content";
 
 // function getFieldItems(field: Field): NewItem[] {
@@ -51,7 +51,7 @@ export function getFieldItemBySlug({
 	return item;
 }
 
-export default function FieldOfInterests({ field }: { field: Field }) {
+export default function FieldOfInterests({ field }: { field: Category }) {
 	return (
 		<>
 			<header>

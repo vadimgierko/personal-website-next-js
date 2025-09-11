@@ -4,7 +4,10 @@ import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Icon from "@/components/atoms/Icon";
 import { icons } from "@/content/icons";
-import { LOCAL_STORAGE_THEME_KEY } from "@/layout/Navbar";
+import { cms } from "@/content/cms";
+import { websiteConfig } from "../../../../website.config";
+
+const { localStorageThemeKey } = cms.domains.values[websiteConfig.domainName];
 
 export default function ProjectExternalLinkButton({
 	link,
@@ -17,13 +20,13 @@ export default function ProjectExternalLinkButton({
 	useEffect(() => {
 		setWindowWidth(globalThis.window.innerWidth);
 
-		const savedTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
+		const savedTheme = localStorage.getItem(localStorageThemeKey);
 
 		if (savedTheme) {
 			setTheme(savedTheme);
 			document.documentElement.setAttribute("data-bs-theme", savedTheme);
 		} else {
-			localStorage.setItem(LOCAL_STORAGE_THEME_KEY, "dark");
+			localStorage.setItem(localStorageThemeKey, "dark");
 			document.documentElement.setAttribute("data-bs-theme", "dark");
 		}
 	}, []);

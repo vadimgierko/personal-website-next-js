@@ -12,54 +12,39 @@ import {
 	BsInstagram,
 	BsSunFill,
 	BsMoonFill,
+	BsFacebook,
+	BsYoutube,
 } from "react-icons/bs";
 // next.js:
 import Link from "next/link";
-import { ItemsType, Theme } from "@/types";
-import { useEffect, useState } from "react";
+import { Domain, ItemsType, SocialLinkName, Theme } from "@/types";
+import { ReactNode, useEffect, useState } from "react";
 import { NavDropdown } from "react-bootstrap";
 import { content } from "@/content/content";
 
-export const LOCAL_STORAGE_THEME_KEY = "vadimgierko.com-theme";
-
-const CATEGORIES_LINKS: {
-	[key: string]: string;
-} = {
-	"web-development": "programowanie",
-	"creative-process-management": "proces twórczy",
-	"visual-thinking": "myślenie wizualne",
-	music: "muzyka",
+const SOCIAL_LINKS_OBJECTS: { [key in SocialLinkName]: ReactNode } = {
+	facebook: <BsFacebook />,
+	github: <BsGithub />,
+	instagram: <BsInstagram />,
+	linkedin: <BsLinkedin />,
+	youtube: <BsYoutube />,
 };
 
-const ITEMS_LINKS: {
-	[key in ItemsType]: string;
-} = {
-	articles: "artykuły",
-	audios: "nagrania",
-	images: "galeria",
-	projects: "projekty",
-	videos: "wideo",
-};
+export function NavigationBar({
+	brand,
+	links,
+	localStorageThemeKey: LOCAL_STORAGE_THEME_KEY,
+}: {
+	localStorageThemeKey: Domain["localStorageThemeKey"];
+	brand: Domain["layout"]["navbar"]["brand"];
+	links: Domain["layout"]["navbar"]["links"];
+}) {
+	const {
+		social: SOCIAL_LINKS,
+		categories: CATEGORIES_LINKS,
+		items: ITEMS_LINKS,
+	} = links;
 
-const SOCIAL_LINKS = [
-	{
-		name: "github",
-		link: "https://github.com/vadimgierko",
-		Icon: BsGithub,
-	},
-	{
-		name: "linkedin",
-		link: "https://pl.linkedin.com/in/vadimgierko",
-		Icon: BsLinkedin,
-	},
-	{
-		name: "instagram",
-		link: "https://www.instagram.com/vadim.gierko/",
-		Icon: BsInstagram,
-	},
-];
-
-export default function NavigationBar() {
 	const [theme, setTheme] = useState<Theme>("dark");
 
 	function switchTheme() {
@@ -79,7 +64,7 @@ export default function NavigationBar() {
 			localStorage.setItem(LOCAL_STORAGE_THEME_KEY, "dark");
 			document.documentElement.setAttribute("data-bs-theme", "dark");
 		}
-	}, []);
+	}, [LOCAL_STORAGE_THEME_KEY]);
 
 	return (
 		<Navbar
@@ -93,18 +78,18 @@ export default function NavigationBar() {
 			<Container style={{ maxWidth: 900 }}>
 				<Navbar.Brand>
 					<Image
-						src="/vadim-gierko-avatar.jpg"
+						src={brand.image.src}
 						style={{ width: 20, paddingBottom: 4, borderRadius: "50%" }}
-						alt="vadim gierko profile picture"
+						alt={brand.image.alt}
 					/>{" "}
-					Vadim Gierko
+					{brand.value}
 				</Navbar.Brand>
 
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto">
-						<Link href="/o-mnie" passHref legacyBehavior>
-							<Nav.Link>o mnie</Nav.Link>
+						<Link href={links.about.href} passHref legacyBehavior>
+							<Nav.Link>{links.about.value}</Nav.Link>
 						</Link>
 
 						{Object.keys(CATEGORIES_LINKS).map((categoryName) => (
@@ -117,7 +102,7 @@ export default function NavigationBar() {
 										/** CONDITIONALLY RENDER FIELD ITEMS IF EXIST */
 										Object.keys(
 											content.categories[categoryName].items[
-											itemsType as ItemsType
+												itemsType as ItemsType
 											]
 										).length > 0 && (
 											<Link
@@ -148,9 +133,13 @@ export default function NavigationBar() {
 							)}
 						</Nav.Link>
 
-						{SOCIAL_LINKS.map((social) => (
-							<Nav.Link key={social.link} href={social.link} target="_blank">
-								<social.Icon />
+						{Object.keys(SOCIAL_LINKS).map((socialLinkName) => (
+							<Nav.Link
+								key={socialLinkName}
+								href={SOCIAL_LINKS[socialLinkName as SocialLinkName]}
+								target="_blank"
+							>
+								{SOCIAL_LINKS_OBJECTS[socialLinkName as SocialLinkName]}
 							</Nav.Link>
 						))}
 					</Nav>

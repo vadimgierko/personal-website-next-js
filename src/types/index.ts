@@ -162,13 +162,81 @@ export type Content = {
 
 //=============================== WEBSITE ==============================//
 
-type Domain = {
-	metadata: Metadata // ❗❗❗ WEBSITE METADATA IS MUCH BROADER ❗❗❗
-	fieldsNames: string[];
-	itemsTypes: ItemsType[];
-	content: Content
-}
+export type SocialLinkName =
+	| "github"
+	| "linkedin"
+	| "instagram"
+	| "facebook"
+	| "youtube";
 
-type CMS = {
-	domains: string[];
-}
+type NavbarProps = {
+	brand: {
+		image: {
+			alt: string;
+			src: string;
+		};
+		value: string;
+	};
+	links: {
+		about: {
+			href: string;
+			value: string;
+		};
+		categories: {
+			[key: string]: string;
+		};
+		items: {
+			[key in ItemsType]: string;
+		};
+		social: {
+			[key in SocialLinkName]?: string;
+		};
+	};
+};
+
+type FooterProps = {
+	beforeCopyText: string;
+	initYear: number;
+	links: {
+		internal: {
+			href: string;
+			value: string;
+		}[];
+		external: {
+			href: string;
+			value: string;
+		}[];
+	};
+};
+
+export type Domain = {
+	// fieldsNames: string[];
+	// itemsTypes: ItemsType[];
+	// content: Content;
+	gaId: string;
+	localStorageThemeKey: string;
+	layout: {
+		footer: FooterProps;
+		navbar: NavbarProps;
+	};
+	metadata: {
+		title: string;
+		description: string;
+		authorName: string;
+		favicon: string;
+		openGraph: {
+			title: string;
+			description: string;
+			image: string;
+			url: string;
+			type: "article" | "website" | "book";
+		};
+	};
+};
+
+export type CMS = {
+	domains: {
+		names: string[]; // custom
+		values: { [key: string]: Domain };
+	};
+};

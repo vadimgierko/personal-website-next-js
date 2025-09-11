@@ -1,9 +1,18 @@
-import Footer from "@/layout/Footer";
-import Navbar from "@/layout/Navbar";
 import ScrollToTop from "@/components/atoms/ScrollToTop";
 import { ReactNode } from "react";
+import { Footer } from "./Footer";
+import { NavigationBar } from "./Navbar";
+import { Domain } from "@/types";
 
-export default function Layout({ children }: {children: ReactNode}) {
+export default function Layout({
+	children,
+	localStorageThemeKey,
+	layout,
+}: {
+	children: ReactNode;
+	localStorageThemeKey: Domain["localStorageThemeKey"];
+	layout: Domain["layout"];
+}) {
 	return (
 		<div
 			style={{
@@ -12,7 +21,11 @@ export default function Layout({ children }: {children: ReactNode}) {
 				minHeight: "100vh",
 			}}
 		>
-			<Navbar />
+			<NavigationBar
+				localStorageThemeKey={localStorageThemeKey}
+				brand={layout.navbar.brand}
+				links={layout.navbar.links}
+			/>
 			<main
 				style={{
 					display: "flex",
@@ -24,7 +37,7 @@ export default function Layout({ children }: {children: ReactNode}) {
 				{children}
 			</main>
 			<ScrollToTop />
-			<Footer />
+			<Footer {...layout.footer} />
 		</div>
 	);
 }

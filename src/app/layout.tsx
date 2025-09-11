@@ -3,19 +3,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import Layout from "@/layout/index";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { cms } from "@/content/cms";
+import { websiteConfig } from "../../website.config";
 
-export const metadata: Metadata = {
-	title: "Vadim Gierko",
-	description: "Strona internetowa Vadima Gierko",
-	authors: { name: "Vadim Gierko" },
-	icons: "https://vadimgierko.com/vadim-gierko-avatar.jpg",
-	openGraph: {
-		title: "Vadim Gierko",
-		description: "Vadim Gierko's personal website",
-		images:
-			"https://www.vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png",
-	},
-};
+const domain = cms.domains.values[websiteConfig.domainName];
+
+export function generateMetadata(): Metadata {
+	const { title, description, authorName, favicon, openGraph } =
+		domain.metadata;
+	const metadata: Metadata = {
+		title,
+		description,
+		authors: { name: authorName },
+		icons: favicon,
+		openGraph,
+	};
+	return metadata;
+}
 
 export default function RootLayout({
 	children,
@@ -25,9 +29,14 @@ export default function RootLayout({
 	return (
 		<html lang="pl" data-bs-theme="dark" data-scroll-behavior="smooth">
 			<body>
-				<Layout>{children}</Layout>
+				<Layout
+					localStorageThemeKey={domain.localStorageThemeKey}
+					layout={domain.layout}
+				>
+					{children}
+				</Layout>
 			</body>
-			<GoogleAnalytics gaId="G-SDYR1XY35B" />
+			{/* <GoogleAnalytics gaId={domain.gaId} /> */}
 		</html>
 	);
 }

@@ -5,7 +5,7 @@ import { dirname, join } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-async function writeJsonToLocalFile(
+export async function writeJsonToLocalFile(
 	filename: string,
 	data: unknown
 ): Promise<void> {

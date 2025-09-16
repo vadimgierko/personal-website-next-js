@@ -1,7 +1,19 @@
-# Personal Website [vadimgierko.com](https://vadimgierko.com)
-  The project contains the source code, textual, visual & multimedia content (*I like to share my knowledge & creative works with others*) of my personal website written (re)written in **Next.js**.
+# Legacy Version of my Personal Website [vadimgierko.com](https://vadimgierko.com) (*CMS + Website in one repo*)
 
-![vadimgierko.com personal website index root screenshot](https://vadimgierko.com/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png)
+This branch contains the previous combined codebase where both the CMS and the website frontend were developed together in a single repository.
+
+From September 16 2025 the project has been split into two repositories:
+
+- [headless CMS](https://github.com/vadimgierko/headless-cms-next-js),
+- [repository](https://github.com/vadimgierko/vadimgierko.com).
+
+This branch is kept for documentation and reference purposes only and will not receive further updates.
+
+## Legacy Description
+
+The project contains the source code, textual, visual & multimedia content (*I like to share my knowledge & creative works with others*) of my personal website written (re)written in **Next.js**.
+
+![vadimgierko.com personal website index root screenshot](https://raw.githubusercontent.com/vadimgierko/personal-website-next-js/refs/heads/main/public/img/web-development/projects/vadimgierko-com-personal-website-next-js-screen-vadim-gierko.png)
 
 ## Technologies used in the project
 
